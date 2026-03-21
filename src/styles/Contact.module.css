@@ -1,0 +1,222 @@
+.pageHero {
+  background-color: var(--navy);
+  padding: 10rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pageHero::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(192, 122, 45, 0.09) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.pageHero h1 {
+  color: var(--white);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  margin: 0.75rem 0 1.5rem;
+  max-width: 520px;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--amber-light);
+}
+
+.heroSub {
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 540px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Contact grid */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Details list */
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.detailItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.detailIcon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.detailLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-md);
+  margin: 0 0 0.2rem;
+}
+
+.detailValue {
+  font-size: 0.9rem;
+  color: var(--navy);
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0;
+  transition: color var(--transition);
+}
+
+a.detailValue:hover {
+  color: var(--amber);
+}
+
+/* Availability */
+.availability {
+  padding: 1.5rem;
+  background: var(--ivory);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--amber);
+  margin-bottom: 1.75rem;
+}
+
+.availLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.5rem;
+}
+
+.availability p {
+  font-size: 0.875rem;
+  color: var(--gray-dk);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Language badges */
+
+.langBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.langBadge {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--navy);
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-lt);
+  padding: 0.3em 0.8em;
+  border-radius: 100px;
+}
+
+/* Form card */
+.formWrap {
+  position: sticky;
+  top: 7rem;
+}
+
+.formCard {
+  background: var(--white);
+  border: 1px solid var(--gray-lt);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.formSub {
+  font-size: 0.875rem;
+  color: var(--gray-md);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Next steps */
+.nextSteps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.nextStep {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.stepNum {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--amber);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.stepHeading {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.nextStep p {
+  font-size: 0.85rem;
+  color: var(--gray-md);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .formWrap {
+    position: static;
+  }
+
+  .nextSteps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .nextSteps {
+    grid-template-columns: 1fr;
+  }
+}

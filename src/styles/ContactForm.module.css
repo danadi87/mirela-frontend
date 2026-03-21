@@ -1,0 +1,146 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  text-transform: uppercase;
+}
+
+.input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--navy);
+  background-color: var(--white);
+  border: 1.5px solid var(--gray-lt);
+  border-radius: var(--radius-sm);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+  outline: none;
+  resize: vertical;
+}
+
+.input::placeholder {
+  color: var(--gray-md);
+  opacity: 0.65;
+}
+
+.input:focus {
+  border-color: var(--navy-mid);
+  box-shadow: 0 0 0 3px rgba(44, 95, 138, 0.12);
+}
+
+.inputError {
+  border-color: #c53030;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 3px rgba(197, 48, 48, 0.12);
+}
+
+.error {
+  font-size: 0.78rem;
+  color: #c53030;
+  font-weight: 500;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: var(--gray-md);
+  margin: 0;
+}
+
+.submit {
+  flex-shrink: 0;
+  font-size: 0.9rem !important;
+  padding: 0.9rem 2rem !important;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Success state */
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+}
+
+.successIcon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--navy);
+  color: var(--amber-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.success h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--navy);
+}
+
+.success p {
+  color: var(--gray-md);
+  font-size: 0.95rem;
+}
+
+.resetBtn {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .submit {
+    width: 100%;
+    justify-content: center;
+  }
+}

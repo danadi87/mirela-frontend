@@ -1,0 +1,299 @@
+.pageHero {
+  background-color: var(--navy);
+  padding: 10rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pageHero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+}
+
+.pageHero h1 {
+  color: var(--white);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  margin: 0.75rem 0 1.5rem;
+  max-width: 520px;
+}
+
+.heroSub {
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 580px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Services list */
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.serviceItem {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  align-items: start;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid var(--gray-lt);
+}
+
+.serviceItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.reversed {
+  grid-template-columns: 1fr 280px;
+}
+
+.reversed .serviceVisual {
+  order: 2;
+}
+
+.reversed .serviceContent {
+  order: 1;
+}
+
+.serviceVisual {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 6rem;
+}
+
+.serviceIcon {
+  width: 72px;
+  height: 72px;
+  background-color: var(--ivory);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--accent, var(--amber));
+  border: 2px solid var(--accent, var(--amber));
+}
+
+.toolsLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-md);
+  margin-bottom: 0.6rem;
+}
+
+.toolsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tool {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--navy-mid);
+  background-color: var(--gray-bg);
+  padding: 0.3em 0.8em;
+  border-radius: 100px;
+}
+
+.serviceContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.serviceTitle {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.15;
+}
+
+.serviceDesc {
+  font-size: 0.975rem;
+  line-height: 1.8;
+  color: var(--gray-dk);
+  margin: 0;
+}
+
+.outcomesWrap {
+  background-color: var(--ivory);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border-left: 3px solid var(--accent, var(--amber));
+}
+
+.outcomesLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent, var(--amber));
+  margin-bottom: 0.75rem;
+}
+
+.outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.outcomes li {
+  font-size: 0.875rem;
+  color: var(--gray-dk);
+  padding-left: 1.1rem;
+  position: relative;
+  line-height: 1.55;
+}
+
+.outcomes li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent, var(--amber));
+  font-size: 0.75rem;
+  font-weight: 700;
+  top: 0.1em;
+}
+
+.serviceBtn {
+  align-self: flex-start;
+}
+
+/* Process */
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  counter-reset: steps;
+}
+
+.processStep {
+  background: var(--white);
+  border: 1px solid var(--gray-lt);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.processStep:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.stepNum {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--amber);
+  opacity: 0.25;
+  display: block;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.stepHeading {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+.processStep p {
+  font-size: 0.85rem;
+  color: var(--gray-md);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Engagement */
+.engagementGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.engagementCard {
+  border: 1px solid var(--gray-lt);
+  border-top: 3px solid var(--amber);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  transition: box-shadow var(--transition);
+}
+
+.engagementCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.engagementModel {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.engagementDesc {
+  font-size: 0.875rem;
+  color: var(--gray-md);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.engagementIdeal {
+  font-size: 0.8rem;
+  color: var(--gray-dk);
+  margin: 0;
+}
+
+.engagementIdeal strong {
+  color: var(--navy);
+}
+
+/* CTA */
+.cta {
+  padding: var(--space-2xl) 0;
+}
+
+@media (max-width: 960px) {
+  .serviceItem,
+  .reversed {
+    grid-template-columns: 1fr;
+  }
+  .reversed .serviceVisual {
+    order: 0;
+  }
+  .reversed .serviceContent {
+    order: 0;
+  }
+  .serviceVisual {
+    position: static;
+  }
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .engagementGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+}

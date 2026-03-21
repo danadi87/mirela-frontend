@@ -1,0 +1,50 @@
+.switcher {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 2px;
+  gap: 1px;
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+  border: none;
+  padding: 0.3rem 0.55rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+  line-height: 1;
+}
+
+.btn:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn.active {
+  color: var(--navy);
+  background: var(--amber-light);
+}
+
+.btn.active:hover {
+  background: var(--amber);
+}
+
+.mobile .btn {
+  font-size: 0.82rem;
+  padding: 0.45rem 0.85rem;
+}
+
+.mobile {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
