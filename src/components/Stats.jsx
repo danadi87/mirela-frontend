@@ -1,13 +1,14 @@
+import { useLanguage } from "../hooks/useLanguage";
 import styles from "../styles/Stats.module.css";
 
-const stats = [
-  { value: "9+", label: "Years in Finance Transformation" },
-  { value: "10+", label: "European Markets Delivered" },
-  { value: "4", label: "Working Languages" },
-  { value: "3", label: "Major Certifications" },
-];
-
 export default function Stats() {
+  const { t } = useLanguage();
+  const stats = [
+    { value: t("stats", "s1v"), label: t("stats", "s1l") },
+    { value: t("stats", "s2v"), label: t("stats", "s2l") },
+    { value: t("stats", "s3v"), label: t("stats", "s3l") },
+    { value: t("stats", "s4v"), label: t("stats", "s4l") },
+  ];
   return (
     <section className={styles.wrapper}>
       <div className={`container ${styles.grid}`}>

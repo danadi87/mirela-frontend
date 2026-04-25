@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLanguage } from "../hooks/useLanguage";
 import styles from "../styles/ContactForm.module.css";
 
 const INITIAL = { name: "", email: "", subject: "", message: "" };
@@ -6,16 +7,17 @@ const INITIAL = { name: "", email: "", subject: "", message: "" };
 export default function ContactForm() {
   const [form, setForm] = useState(INITIAL);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+  const [status, setStatus] = useState("idle");
+  const { tc } = useLanguage();
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim()) e.name = "Please enter your name.";
+    if (!form.name.trim()) e.name = tc("contactForm", "nameError");
     if (!/\S+@\S+\.\S+/.test(form.email))
-      e.email = "Please enter a valid email address.";
-    if (!form.subject.trim()) e.subject = "Please add a subject.";
+      e.email = tc("contactForm", "emailError");
+    if (!form.subject.trim()) e.subject = tc("contactForm", "subjectError");
     if (form.message.trim().length < 20)
-      e.message = "Message must be at least 20 characters.";
+      e.message = tc("contactForm", "messageError");
     return e;
   };
 
@@ -32,9 +34,8 @@ export default function ContactForm() {
       setErrors(errs);
       return;
     }
-
     setStatus("sending");
-    // Simulate async send — replace with Formspree / EmailJS / Resend
+    // Replace with Formspree / EmailJS call
     await new Promise((res) => setTimeout(res, 1400));
     setStatus("sent");
     setForm(INITIAL);
@@ -44,13 +45,13 @@ export default function ContactForm() {
     return (
       <div className={styles.success}>
         <span className={styles.successIcon}>✓</span>
-        <h3>Message sent — thank you.</h3>
-        <p>I'll get back to you within one business day.</p>
+        <h3>{tc("contactForm", "successTitle")}</h3>
+        <p>{tc("contactForm", "successSub")}</p>
         <button
           className={`btn btn--outline ${styles.resetBtn}`}
           onClick={() => setStatus("idle")}
         >
-          Send another message
+          {tc("contactForm", "sendAnother")}
         </button>
       </div>
     );
@@ -60,56 +61,53 @@ export default function ContactForm() {
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <div className={styles.row}>
         <Field
-          label="Full Name"
+          label={tc("contactForm", "nameLabel")}
           name="name"
           type="text"
           value={form.name}
           onChange={handleChange}
           error={errors.name}
-          placeholder="e.g. Jane Smith"
+          placeholder={tc("contactForm", "namePlaceholder")}
         />
         <Field
-          label="Email Address"
+          label={tc("contactForm", "emailLabel")}
           name="email"
           type="email"
           value={form.email}
           onChange={handleChange}
           error={errors.email}
-          placeholder="you@company.com"
+          placeholder={tc("contactForm", "emailPlaceholder")}
         />
       </div>
-
       <Field
-        label="Subject"
+        label={tc("contactForm", "subjectLabel")}
         name="subject"
         type="text"
         value={form.subject}
         onChange={handleChange}
         error={errors.subject}
-        placeholder="e.g. T&E programme consulting"
+        placeholder={tc("contactForm", "subjectPlaceholder")}
       />
-
       <Field
-        label="Message"
+        label={tc("contactForm", "messageLabel")}
         name="message"
         type="textarea"
         value={form.message}
         onChange={handleChange}
         error={errors.message}
-        placeholder="Tell me about your project, timeline, and what you're looking to achieve…"
+        placeholder={tc("contactForm", "messagePlaceholder")}
         rows={6}
       />
-
       <div className={styles.footer}>
-        <p className={styles.note}>
-          I respond to all enquiries within one business day.
-        </p>
+        <p className={styles.note}>{tc("contactForm", "note")}</p>
         <button
           type="submit"
           className={`btn btn--primary ${styles.submit}`}
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Sending…" : "Send Message →"}
+          {status === "sending"
+            ? tc("contactForm", "sending")
+            : tc("contactForm", "send")}
         </button>
       </div>
     </form>
@@ -140,7 +138,6 @@ function Field({
           placeholder={placeholder}
           rows={rows}
           className={`${styles.input} ${error ? styles.inputError : ""}`}
-          aria-describedby={error ? `${name}-error` : undefined}
         />
       ) : (
         <input
@@ -151,11 +148,10 @@ function Field({
           onChange={onChange}
           placeholder={placeholder}
           className={`${styles.input} ${error ? styles.inputError : ""}`}
-          aria-describedby={error ? `${name}-error` : undefined}
         />
       )}
       {error && (
-        <span id={`${name}-error`} className={styles.error} role="alert">
+        <span className={styles.error} role="alert">
           {error}
         </span>
       )}

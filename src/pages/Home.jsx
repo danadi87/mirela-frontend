@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useLanguage } from "../hooks/useLanguage";
 import ServiceCard from "../components/ServiceCard";
 import CaseStudy from "../components/CaseStudy";
 import Stats from "../components/Stats";
@@ -10,64 +10,43 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   useScrollReveal();
+  const { t } = useLanguage();
 
   return (
     <>
-      {/* ── HERO ──────────────────────────────────────────── */}
       <section className={styles.hero}>
         <div className={styles.heroNoise} aria-hidden="true" />
         <div className={styles.heroGrid} aria-hidden="true" />
 
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroContent}>
-            <p className="tag tag--ivory">
-              Finance Transformation · Project Management
-            </p>
-
-            <h1 className={styles.heroHeading}>
-              I make complex
-              <em className={styles.heroItalic}> European</em> finance
-              programmes land.
-            </h1>
-
-            <p className={styles.heroSub}>
-              9+ years delivering cross-border T&E implementations, corporate
-              card rollouts, and change management programmes — across 10+
-              countries, in four languages, at C-suite stakeholder level.
-            </p>
-
+            <p className="tag tag--ivory">{t("home", "tag")}</p>
+            <h1 className={styles.heroHeading}>{t("home", "heading")}</h1>
+            <p className={styles.heroSub}>{t("home", "sub")}</p>
             <div className={styles.heroBadges}>
-              {[
-                "SAP Concur",
-                "DASM (PMI)",
-                "EN · ES · FR · RO",
-                "Barcelona, Spain",
-              ].map((b) => (
-                <span key={b} className={styles.badge}>
-                  {b}
+              {["badge1", "badge2", "badge3", "badge4"].map((k) => (
+                <span key={k} className={styles.badge}>
+                  {t("home", k)}
                 </span>
               ))}
             </div>
-
             <div className={styles.heroCtas}>
               <Link to="/services" className="btn btn--primary">
-                See What I Do →
+                {t("home", "cta1")}
               </Link>
               <Link to="/projects" className="btn btn--outline-light">
-                View Case Studies
+                {t("home", "cta2")}
               </Link>
             </div>
           </div>
 
           <div className={styles.heroVisual} aria-hidden="true">
             <div className={styles.heroCard}>
-              <div className={styles.heroCardTag}>Current focus</div>
+              <div className={styles.heroCardTag}>{t("home", "cardTag")}</div>
               <div className={styles.heroCardTitle}>
-                Pan-European
-                <br />
-                Travel Agency Transition
+                {t("home", "cardTitle")}
               </div>
-              <div className={styles.heroCardMeta}>10+ entities · Ongoing</div>
+              <div className={styles.heroCardMeta}>{t("home", "cardMeta")}</div>
               <div className={styles.heroCardBar}>
                 <div
                   className={styles.heroCardProgress}
@@ -75,90 +54,58 @@ export default function Home() {
                 />
               </div>
               <div className={styles.heroCardSkills}>
-                {[
-                  "Vendor Management",
-                  "Change Mgmt",
-                  "Contract Negotiation",
-                ].map((s) => (
-                  <span key={s} className={styles.heroCardSkill}>
-                    {s}
+                {["cardSkill1", "cardSkill2", "cardSkill3"].map((k) => (
+                  <span key={k} className={styles.heroCardSkill}>
+                    {t("home", k)}
                   </span>
                 ))}
               </div>
             </div>
-
             <div className={styles.heroFloatA}>
               <span className={styles.heroFloatIcon}>✓</span>
-              <span>Go-live complete — 4 markets</span>
+              <span>{t("home", "float1")}</span>
             </div>
             <div className={styles.heroFloatB}>
               <span className={styles.heroFloatIcon}>◎</span>
-              <span>4 languages delivered</span>
+              <span>{t("home", "float2")}</span>
             </div>
           </div>
         </div>
-
         <div className={styles.heroScroll} aria-hidden="true">
           <span />
         </div>
       </section>
 
-      {/* ── STATS ─────────────────────────────────────────── */}
       <Stats />
 
-      {/* ── INTRO ─────────────────────────────────────────── */}
       <section className={`section section--ivory ${styles.intro}`}>
         <div className="container">
           <div className={styles.introGrid}>
             <div className={`reveal ${styles.introLeft}`}>
-              <p className="section-label">Why it works</p>
-              <h2>
-                Finance transformation is about people, not just platforms.
-              </h2>
+              <p className="section-label">{t("home", "whyLabel")}</p>
+              <h2>{t("home", "whyTitle")}</h2>
               <div className="divider" />
-              <p>
-                The technology is rarely the hard part. The hard part is getting
-                a CFO in Germany, an HR Director in France, and a Procurement
-                team in Spain to agree on the same process — and then actually
-                use it.
-              </p>
-              <p style={{ marginTop: "1rem" }}>
-                I've spent 9 years sitting in those rooms. I know how to manage
-                the stakeholder politics, run the change programme, and deliver
-                the system — all at once, across borders, in multiple languages.
-              </p>
+              <p>{t("home", "whyBody1")}</p>
+              <p style={{ marginTop: "1rem" }}>{t("home", "whyBody2")}</p>
               <Link
                 to="/about"
                 className="btn btn--outline"
                 style={{ marginTop: "2rem" }}
               >
-                About Me →
+                {t("home", "aboutBtn")}
               </Link>
             </div>
-
             <div className={`reveal reveal-delay-2 ${styles.introRight}`}>
               {[
-                {
-                  icon: "◈",
-                  heading: "End-to-end ownership",
-                  text: "I don't hand off deliverables. I own the programme from vendor selection through post-go-live stabilisation.",
-                },
-                {
-                  icon: "◉",
-                  heading: "Cross-border by design",
-                  text: "10+ European markets delivered. I build localisation and regulatory compliance in from day one, not as an afterthought.",
-                },
-                {
-                  icon: "◎",
-                  heading: "Business and tech fluency",
-                  text: "I translate between finance leadership and technical teams — accelerating decisions that would otherwise stall for weeks.",
-                },
-              ].map(({ icon, heading, text }) => (
-                <div key={heading} className={styles.introFeature}>
+                { icon: "◈", hKey: "feat1Title", bKey: "feat1Body" },
+                { icon: "◉", hKey: "feat2Title", bKey: "feat2Body" },
+                { icon: "◎", hKey: "feat3Title", bKey: "feat3Body" },
+              ].map(({ icon, hKey, bKey }) => (
+                <div key={hKey} className={styles.introFeature}>
                   <span className={styles.introIcon}>{icon}</span>
                   <div>
-                    <h4>{heading}</h4>
-                    <p>{text}</p>
+                    <h4>{t("home", hKey)}</h4>
+                    <p>{t("home", bKey)}</p>
                   </div>
                 </div>
               ))}
@@ -167,22 +114,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SERVICES ──────────────────────────────────────── */}
       <section className="section">
         <div className="container">
           <div className={styles.sectionHead}>
             <div className="reveal">
-              <p className="section-label">What I do</p>
-              <h2>Services</h2>
+              <p className="section-label">{t("home", "svcLabel")}</p>
+              <h2>{t("home", "svcTitle")}</h2>
             </div>
             <Link
               to="/services"
               className={`btn btn--ghost reveal reveal-delay-2 ${styles.seeAll}`}
             >
-              All services →
+              {t("home", "svcAll")}
             </Link>
           </div>
-
           <div className={styles.servicesGrid}>
             {services.map((svc, i) => (
               <div key={svc.id} className={`reveal reveal-delay-${i + 1}`}>
@@ -193,22 +138,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CASE STUDIES ──────────────────────────────────── */}
       <section className="section section--ivory">
         <div className="container">
           <div className={styles.sectionHead}>
             <div className="reveal">
-              <p className="section-label">Proof of work</p>
-              <h2>Case Studies</h2>
+              <p className="section-label">{t("home", "caseLabel")}</p>
+              <h2>{t("home", "caseTitle")}</h2>
             </div>
             <Link
               to="/projects"
               className={`btn btn--ghost reveal reveal-delay-2 ${styles.seeAll}`}
             >
-              All case studies →
+              {t("home", "caseAll")}
             </Link>
           </div>
-
           <div className={styles.caseGrid}>
             {projects.map((p, i) => (
               <div key={p.id} className={`reveal reveal-delay-${i + 1}`}>
@@ -219,24 +162,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA BAND ──────────────────────────────────────── */}
       <section className={`section--dark ${styles.ctaBand}`}>
         <div className={`container ${styles.ctaInner}`}>
           <div className="reveal">
-            <p className="tag tag--light">Let's work together</p>
-            <h2>Running a finance transformation project in Europe?</h2>
-            <p>
-              Whether you need someone to lead the programme, manage the vendor,
-              design the change strategy — or all three — let's talk about how I
-              can help.
-            </p>
+            <p className="tag tag--light">{t("home", "ctaTag")}</p>
+            <h2>{t("home", "ctaTitle")}</h2>
+            <p>{t("home", "ctaBody")}</p>
           </div>
           <div className={`reveal reveal-delay-2 ${styles.ctaActions}`}>
             <Link to="/contact" className="btn btn--primary">
-              Start a Conversation
+              {t("home", "ctaBtn1")}
             </Link>
             <Link to="/projects" className="btn btn--outline-light">
-              See My Work First
+              {t("home", "ctaBtn2")}
             </Link>
           </div>
         </div>

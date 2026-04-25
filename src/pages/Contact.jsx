@@ -1,67 +1,57 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useLanguage } from "../hooks/useLanguage";
 import ContactForm from "../components/ContactForm";
 import styles from "../styles/Contact.module.css";
 
 const contactDetails = [
   {
     icon: "📧",
-    label: "Email",
+    labelKey: "Email",
     value: "dragulescumirela@gmail.com",
     href: "mailto:dragulescumirela@gmail.com",
   },
   {
     icon: "📞",
-    label: "Phone",
+    labelKey: "Phone",
     value: "+34 642 251 466",
     href: "tel:+34642251466",
   },
   {
     icon: "🔗",
-    label: "LinkedIn",
+    labelKey: "LinkedIn",
     value: "linkedin.com/in/mirela-dragulescu",
     href: "https://linkedin.com/in/mirela-dragulescu",
   },
-  { icon: "📍", label: "Location", value: "Barcelona, Spain", href: null },
+  { icon: "📍", labelKey: "Location", value: "Barcelona, Spain", href: null },
 ];
 
 export default function Contact() {
   useScrollReveal();
+  const { t } = useLanguage();
 
   return (
     <>
-      {/* ── PAGE HERO ─────────────────────────────────────── */}
       <section className={styles.pageHero}>
         <div className="container">
-          <p className="tag tag--ivory">Contact</p>
-          <h1>
-            Let's talk about
-            <br />
-            your <em className={styles.italic}>project</em>.
-          </h1>
-          <p className={styles.heroSub}>
-            Whether you're planning a T&E transformation, need a programme
-            manager for a multi-country rollout, or want to explore what a
-            consulting engagement could look like — I'd like to hear about it.
-          </p>
+          <p className="tag tag--ivory">{t("contact", "tag")}</p>
+          <h1>{t("contact", "heading")}</h1>
+          <p className={styles.heroSub}>{t("contact", "sub")}</p>
         </div>
       </section>
 
-      {/* ── CONTACT CONTENT ───────────────────────────────── */}
       <section className="section">
         <div className="container">
           <div className={styles.contactGrid}>
-            {/* Left col — info */}
             <div className="reveal">
-              <p className="section-label">Get in touch</p>
-              <h2>How to reach me</h2>
+              <p className="section-label">{t("contact", "getInTouch")}</p>
+              <h2>{t("contact", "howTitle")}</h2>
               <div className="divider" />
-
               <ul className={styles.detailsList}>
-                {contactDetails.map(({ icon, label, value, href }) => (
-                  <li key={label} className={styles.detailItem}>
+                {contactDetails.map(({ icon, labelKey, value, href }) => (
+                  <li key={labelKey} className={styles.detailItem}>
                     <span className={styles.detailIcon}>{icon}</span>
                     <div>
-                      <p className={styles.detailLabel}>{label}</p>
+                      <p className={styles.detailLabel}>{labelKey}</p>
                       {href ? (
                         <a
                           href={href}
@@ -84,18 +74,14 @@ export default function Contact() {
                   </li>
                 ))}
               </ul>
-
               <div className={styles.availability}>
-                <p className={styles.availLabel}>Availability</p>
-                <p>
-                  Open to consulting engagements and senior roles. Available for
-                  hybrid and remote work across Europe. Response time: within
-                  one business day.
+                <p className={styles.availLabel}>
+                  {t("contact", "availLabel")}
                 </p>
+                <p>{t("contact", "availText")}</p>
               </div>
-
               <div className={styles.languages}>
-                <p className={styles.availLabel}>I work in</p>
+                <p className={styles.availLabel}>{t("contact", "worksIn")}</p>
                 <div className={styles.langBadges}>
                   {["🇬🇧 English", "🇪🇸 Spanish", "🇫🇷 French", "🇷🇴 Romanian"].map(
                     (l) => (
@@ -108,14 +94,12 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Right col — form */}
             <div className={`reveal reveal-delay-2 ${styles.formWrap}`}>
               <div className={styles.formCard}>
-                <h3 className={styles.formTitle}>Send a message</h3>
-                <p className={styles.formSub}>
-                  Tell me about your project and I'll get back to you within one
-                  business day.
-                </p>
+                <h3 className={styles.formTitle}>
+                  {t("contact", "formTitle")}
+                </h3>
+                <p className={styles.formSub}>{t("contact", "formSub")}</p>
                 <ContactForm />
               </div>
             </div>
@@ -123,47 +107,31 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── WHAT HAPPENS NEXT ─────────────────────────────── */}
       <section className="section section--ivory">
         <div className="container">
           <div
             className="reveal"
             style={{ textAlign: "center", marginBottom: "3rem" }}
           >
-            <p className="section-label">Process</p>
-            <h2>What happens after you reach out</h2>
+            <p className="section-label">{t("contact", "nextLabel")}</p>
+            <h2>{t("contact", "nextTitle")}</h2>
           </div>
-
           <div className={styles.nextSteps}>
             {[
-              {
-                step: "01",
-                heading: "I respond",
-                body: "Within one business day — with a brief summary of how I understand your need and whether I think I can help.",
-              },
-              {
-                step: "02",
-                heading: "We talk",
-                body: "A 30-minute call to understand your project in detail: scope, timeline, constraints, budget, and what success looks like.",
-              },
-              {
-                step: "03",
-                heading: "I propose",
-                body: "A clear, written proposal outlining the engagement model, deliverables, timeline, and investment.",
-              },
-              {
-                step: "04",
-                heading: "We start",
-                body: "If the proposal works for you, we agree the terms and begin. No complicated procurement process, no unnecessary delay.",
-              },
-            ].map(({ step, heading, body }, i) => (
+              { hKey: "step1h", bKey: "step1b" },
+              { hKey: "step2h", bKey: "step2b" },
+              { hKey: "step3h", bKey: "step3b" },
+              { hKey: "step4h", bKey: "step4b" },
+            ].map(({ hKey, bKey }, i) => (
               <div
-                key={step}
+                key={hKey}
                 className={`reveal reveal-delay-${i + 1} ${styles.nextStep}`}
               >
-                <span className={styles.stepNum}>{step}</span>
-                <h4 className={styles.stepHeading}>{heading}</h4>
-                <p>{body}</p>
+                <span className={styles.stepNum}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h4 className={styles.stepHeading}>{t("contact", hKey)}</h4>
+                <p>{t("contact", bKey)}</p>
               </div>
             ))}
           </div>
