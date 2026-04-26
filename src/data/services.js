@@ -6,13 +6,13 @@ export const services = [
     shortDesc:
       "End-to-end ownership of travel and expense transformation programmes across European entities.",
     description:
-      "From vendor selection through post-go-live stabilisation — I manage the full lifecycle of T&E platform implementations. This includes RFP design, contract negotiation, system configuration oversight, data migration, UAT, and hypercare. I have delivered this at scale across 10+ countries.",
+      "From vendor selection through post-go-live stabilisation, the full lifecycle of a T&E platform implementation is managed end-to-end — covering RFP design, contract negotiation, system configuration oversight, data migration, UAT, and hypercare. Delivered at scale across 10+ countries, this means your organisation gets structured, proven guidance at every stage rather than starting from scratch.",
     outcomes: [
       "Centralised, policy-compliant expense reporting",
       "Reduced out-of-policy spend and manual processing time",
       "Smooth go-live with high user adoption rates",
     ],
-    tools: ["SAP Concur", "JIRA", "MS Project", "Excel"],
+    tools: ["SAP Concur", "Expensya", "MS Project", "Excel"],
     color: "#1A3C5E",
   },
   {
@@ -22,13 +22,13 @@ export const services = [
     shortDesc:
       "Structuring and delivering finance technology rollouts in complex, multi-entity environments.",
     description:
-      "I bridge the gap between finance leadership and technical delivery teams. I translate business requirements into vendor briefs, define system configurations, and manage the cross-functional coordination that makes or breaks an ERP or expense management rollout in a multinational setting.",
+      "The gap between finance leadership and technical delivery teams gets closed — not widened. Business requirements are translated into clear vendor briefs, system configurations are defined with precision, and the cross-functional coordination that makes or breaks an ERP or expense management rollout in a multinational setting is actively managed throughout.",
     outcomes: [
       "Aligned business requirements and technical delivery",
       "On-time, on-budget system rollouts across multiple markets",
       "Integrated compliance with local regulatory requirements",
     ],
-    tools: ["ERP Systems", "SAP Concur", "PowerBI", "MS Project"],
+    tools: ["ERP Systems", "SAP Concur", "Expensya", "PowerBI", "MS Project"],
     color: "#C07A2D",
   },
   {
@@ -38,13 +38,13 @@ export const services = [
     shortDesc:
       "Multilingual change programmes that drive real adoption — not just awareness.",
     description:
-      "I design and deliver change management programmes that actually stick. This means role-specific training materials, multilingual communication cascades (EN/ES/FR/RO), local champion networks, and hypercare models. I have trained 200+ employees across Europe for a single programme rollout.",
+      "Change management programmes are designed and delivered to actually stick — not just to tick a box. Your teams receive role-specific training materials, multilingual communication materials, local champion networks and hypercare models calibrated to drive real adoption. With 800+ employees trained across Europe in a single programme rollout, the methodology is proven at scale.",
     outcomes: [
       "High user adoption within 60–90 days of go-live",
       "Significantly reduced post-launch support volume",
       "Embedded capability in local teams for ongoing use",
     ],
-    tools: ["LMS Platforms", "SharePoint", "PowerPoint", "Teams/Zoom"],
+    tools: ["SharePoint", "PowerPoint", "Teams"],
     color: "#1E6B4A",
   },
   {
@@ -54,13 +54,20 @@ export const services = [
     shortDesc:
       "Diagnosing operational gaps and designing the processes that fix them — with technical precision.",
     description:
-      "With a background in finance operations and hands-on experience building web applications (MERN stack, Ironhack 2025), I can review your current processes, identify inefficiencies, and propose solutions that are practical to implement. I speak both business and tech — which accelerates decisions.",
+      "With deep roots in finance operations and hands-on experience building web applications (MERN stack, Ironhack 2025), your current processes are reviewed with both a business and a technical lens. Inefficiencies are identified, and solutions are proposed that are practical to implement — because the person diagnosing the problem speaks both business and tech, which means decisions move faster and recommendations land with both sides of the coin",
     outcomes: [
       "Clear process maps and gap analysis documentation",
       "Prioritised improvement roadmap with effort/impact scoring",
       "Recommendations that bridge business and technical teams",
     ],
-    tools: ["JIRA", "Miro", "Excel", "PowerBI", "JavaScript / React"],
+    tools: [
+      "ERP",
+      "Power Automate",
+      "PowerApps",
+      "Excel",
+      "PowerBI",
+      "JavaScript / React",
+    ],
     color: "#6B21A8",
   },
 ];
