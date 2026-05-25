@@ -104,8 +104,8 @@ export const translations = {
     },
     services: {
       tag: "Services",
-      heading: "What I do, and how I do it.",
-      sub: "Everything I offer is built around the same core capability: taking complex, cross-border finance transformation programmes from concept to fully adopted reality — without the chaos that usually comes with them.",
+      heading: "What is delivered, and how it is delivered.",
+      sub: "Everything offered is built around the same core capability: taking complex, cross-border finance transformation programmes from concept to fully adopted reality — while avoiding the disruption that typically accompanies them.  ",
       processLabel: "Process",
       processTitle: "How I work",
       processSub:

@@ -12,7 +12,7 @@ export const services = [
       "Reduced out-of-policy spend and manual processing time",
       "Smooth go-live with high user adoption rates",
     ],
-    tools: ["SAP Concur", "Expensya", "MS Project", "Excel"],
+    tools: ["Expensya", "SAP Concur", "MS Project", "Excel"],
     color: "#1A3C5E",
   },
   {

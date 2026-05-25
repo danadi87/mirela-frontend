@@ -43,7 +43,7 @@ export default function Navbar() {
       <nav className={styles.nav}>
         <Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
           <span className={styles.logoInitials}>MD</span>
-          <span className={styles.logoText}>Mirela Dragulescu</span>
+          <span className={styles.logoText}>Consulting</span>
         </Link>
 
         <ul className={styles.links}>

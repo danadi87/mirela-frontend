@@ -28,10 +28,10 @@ const credentials = [
 ];
 
 const languages = [
-  { lang: "English", level: "C1/C2", pct: 95 },
-  { lang: "Spanish", level: "C1/C2", pct: 95 },
-  { lang: "French", level: "B2", pct: 75 },
-  { lang: "Romanian", level: "—", pct: 100 },
+  { lang: "English", level: "Native/Bilingual", pct: 100 },
+  { lang: "Spanish", level: "Native/Bilingual", pct: 100 },
+  { lang: "French", level: "Professional", pct: 75 },
+  { lang: "Romanian", level: "Native", pct: 100 },
 ];
 
 export default function About() {

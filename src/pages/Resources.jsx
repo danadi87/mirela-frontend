@@ -348,7 +348,7 @@ function ResourceModal({ resource, lang, t, onClose }) {
   );
 }
 
-// ─── PAGE ─────────────────────────────────────────────────────────
+// ─── PAGE ───
 export default function Resources() {
   useScrollReveal();
   const { lang, t } = useLanguage();
@@ -365,7 +365,7 @@ export default function Resources() {
         />
       )}
 
-      {/* ── HERO ──────────────────────────────────────────── */}
+      {/* ── HERO ── */}
       <section className={styles.pageHero}>
         <div className="container">
           <p className="tag tag--ivory">{t("resources", "tag")}</p>
@@ -417,7 +417,7 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* ── PREMIUM RESOURCES ─────────────────────────────── */}
+      {/* ── PREMIUM RESOURCES ──*/}
       <section className="section section--ivory">
         <div className="container">
           <div className="reveal" style={{ marginBottom: "3rem" }}>
