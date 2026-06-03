@@ -1,4 +1,4 @@
-/* ── HERO ──────────────────────────────────────────────────── */
+/* ── HERO ── */
 .hero {
   min-height: 100vh;
   background-color: var(--navy);
@@ -250,7 +250,7 @@
   }
 }
 
-/* ── INTRO ─────────────────────────────────────────────────── */
+/* ── INTRO ── */
 .introGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -302,7 +302,7 @@
   margin: 0;
 }
 
-/* ── SERVICES / CASE STUDIES ───────────────────────────────── */
+/* ── SERVICES / CASE STUDIES ── */
 .sectionHead {
   display: flex;
   align-items: flex-end;
@@ -328,7 +328,7 @@
   gap: 1.25rem;
 }
 
-/* ── CTA BAND ──────────────────────────────────────────────── */
+/* ── CTA BAND ── */
 .ctaBand {
   padding: var(--space-2xl) 0;
 }
@@ -359,7 +359,7 @@
   min-width: 220px;
 }
 
-/* ── RESPONSIVE ────────────────────────────────────────────── */
+/* ── RESPONSIVE ── */
 @media (max-width: 960px) {
   .heroInner {
     grid-template-columns: 1fr;
@@ -403,5 +403,73 @@
 
   .ctaActions {
     flex-direction: column;
+  }
+}
+.insightsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Resources teaser grid */
+.resourcesTeaser {
+  /* uses section--ivory already */
+}
+
+.resourcesTeaserGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+/* ─── Responsive ── */
+@media (max-width: 900px) {
+  .insightsGrid,
+  .resourcesTeaserGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .insightsGrid,
+  .resourcesTeaserGrid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Featured / latest article — full-width above the grid */
+.featuredArticleWrap {
+  margin-bottom: 2rem;
+}
+
+/* Insights supporting articles — 3 columns */
+.insightsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Resources grid — 3 columns (free AND paid share this class) */
+.resourcesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 1024px) {
+  .insightsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .resourcesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .insightsGrid,
+  .resourcesGrid {
+    grid-template-columns: 1fr;
   }
 }

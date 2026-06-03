@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from "../hooks/useLanguage";
 import styles from "../styles/ContactForm.module.css";
+import emailjs from "@emailjs/browser";
 
 const INITIAL = { name: "", email: "", subject: "", message: "" };
 
@@ -35,10 +36,25 @@ export default function ContactForm() {
       return;
     }
     setStatus("sending");
-    // Replace with Formspree / EmailJS call
-    await new Promise((res) => setTimeout(res, 1400));
-    setStatus("sent");
-    setForm(INITIAL);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+      setStatus("sent");
+      setForm(INITIAL);
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
   };
 
   if (status === "sent") {

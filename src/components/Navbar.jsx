@@ -42,7 +42,7 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <nav className={styles.nav}>
         <Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
-          <span className={styles.logoInitials}>MD</span>
+          <span className={styles.logoInitials}>Mirela Dragulescu</span>
           <span className={styles.logoText}>Consulting</span>
         </Link>
 

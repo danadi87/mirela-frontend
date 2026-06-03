@@ -7,6 +7,9 @@ import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Resources from "./pages/Resources";
+import Insights from "./components/Insights";
+import Enquiry from "./components/Enquiry";
+import InsightArticle from "./pages/InsightArticle";
 
 import "./App.css";
 
@@ -21,6 +24,9 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/insights" element={<Insights />} />
+        <Route path="/enquiry" element={<Enquiry />} />
+        <Route path="/insights/:id" element={<InsightArticle />} />
       </Routes>
       <Footer />
     </div>

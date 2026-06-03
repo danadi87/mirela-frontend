@@ -1,0 +1,109 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.75rem;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border-left: 3px solid var(--accent, var(--amber));
+  text-decoration: none;
+  transition:
+    box-shadow var(--transition),
+    transform var(--transition);
+  cursor: pointer;
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Premium cards get a slightly richer background */
+.premium {
+  background: var(--ivory);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.icon {
+  font-size: 1.3rem;
+  color: var(--accent, var(--amber));
+}
+
+.badge {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.free {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.paid {
+  background: var(--amber-pale);
+  color: var(--amber);
+}
+
+.category {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent, var(--amber));
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  margin: 0.2rem 0 0.4rem;
+  flex: 1;
+}
+
+.format {
+  font-size: 0.75rem;
+  color: var(--gray-md);
+  font-weight: 500;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.newBadge {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--amber);
+  color: var(--white);
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+}
+
+.cta {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent, var(--amber));
+  letter-spacing: 0.02em;
+}

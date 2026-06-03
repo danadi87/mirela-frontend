@@ -5,6 +5,7 @@
   right: 0;
   z-index: 100;
   padding: 1.4rem 2.5rem;
+  background-color: rgba(13, 27, 42, 0.97);
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease,
@@ -37,7 +38,7 @@
 }
 
 .logoInitials {
-  width: 36px;
+  width: 130 px;
   height: 36px;
   background-color: var(--amber);
   color: var(--white);
@@ -46,10 +47,11 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   flex-shrink: 0;
   transition: background-color var(--transition);
+  padding: 0px 5%;
 }
 
 .logo:hover .logoInitials {

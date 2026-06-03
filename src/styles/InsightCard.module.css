@@ -1,0 +1,125 @@
+.card {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    box-shadow var(--transition),
+    transform var(--transition);
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.featured {
+  background: var(--navy);
+}
+
+.featured .title,
+.featured .excerpt {
+  color: var(--white);
+}
+
+.featured .excerpt {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.featured .readTime {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.cardInner {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent, var(--amber));
+}
+
+.featured .tag {
+  color: var(--amber-light);
+}
+
+.newBadge {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--amber);
+  color: var(--white);
+  padding: 0.15rem 0.55rem;
+  border-radius: 2px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--navy);
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.excerpt {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--gray-md);
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.readTime {
+  font-size: 0.78rem;
+  color: var(--gray-md);
+  font-weight: 500;
+}
+
+.cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0;
+  color: var(--accent, var(--amber));
+}
+
+.accentBar {
+  height: 3px;
+  background: var(--accent, var(--amber));
+  opacity: 0.7;
+}
+
+/* ─── Responsive ── */
+@media (max-width: 768px) {
+  .cardInner {
+    padding: 1.5rem;
+  }
+}

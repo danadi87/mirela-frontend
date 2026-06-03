@@ -7,8 +7,8 @@ const contactDetails = [
   {
     icon: "📧",
     labelKey: "Email",
-    value: "dragulescumirela@gmail.com",
-    href: "mailto:dragulescumirela@gmail.com",
+    value: "business.mdconsulting@gmail.com",
+    href: "mailto:business.mdconsulting@gmail.com",
   },
   {
     icon: "📞",
@@ -19,8 +19,8 @@ const contactDetails = [
   {
     icon: "🔗",
     labelKey: "LinkedIn",
-    value: "linkedin.com/in/mirela-dragulescu",
-    href: "https://linkedin.com/in/mirela-dragulescu",
+    value: "linkedin.com/in/mirela-daniela-dragulescu",
+    href: "https://linkedin.com/in/mirela-daniela-dragulescu",
   },
   { icon: "📍", labelKey: "Location", value: "Barcelona, Spain", href: null },
 ];

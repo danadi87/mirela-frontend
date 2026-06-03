@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { useLanguage } from "../hooks/useLanguage";
+import InsightCard from "../components/InsightCard";
+import { featuredInsights } from "../data/insights";
 import styles from "../styles/Resources.module.css";
 
-// ─── DATA ────────────────────────────────────────────────────────
+// ─── FREE RESOURCES DATA ──
 const freeResources = [
   {
     id: "te-checklist",
@@ -20,9 +22,9 @@ const freeResources = [
       fr: "Checklist d'Implémentation T&E Européenne",
     },
     desc: {
-      en: "47 things most organisations miss before go-live — from vendor evaluation to hypercare planning. Built from real programme experience across 10+ European markets.",
-      es: "47 puntos que la mayoría de las organizaciones pasan por alto antes del lanzamiento — desde la evaluación del proveedor hasta la planificación del hypercare. Basado en experiencia real en más de 10 mercados europeos.",
-      fr: "47 points que la plupart des organisations manquent avant le go-live — de l'évaluation fournisseur à la planification du hypercare. Issu d'une expérience réelle sur 10+ marchés européens.",
+      en: "47 things most organisations miss before go-live — from vendor evaluation to hypercare planning. Built from operational experience across 10+ European markets.",
+      es: "47 puntos que la mayoría de las organizaciones pasan por alto antes del lanzamiento — desde la evaluación del proveedor hasta la planificación del hypercare. Basado en experiencia operativa en más de 10 mercados europeos.",
+      fr: "47 points que la plupart des organisations manquent avant le go-live — de l'évaluation fournisseur à la planification du hypercare. Issu d'une expérience opérationnelle sur 10+ marchés européens.",
     },
     format: "PDF · 8 pages",
     color: "#1A3C5E",
@@ -71,6 +73,7 @@ const freeResources = [
   },
 ];
 
+// ─── PREMIUM RESOURCES DATA ──────────────────────────────────
 const premiumResources = [
   {
     id: "te-playbook",
@@ -177,9 +180,9 @@ const premiumResources = [
       fr: "Session de Revue de Programme de 90 Minutes",
     },
     desc: {
-      en: "A focused 90-minute working session where I review your current T&E or finance transformation programme and give you specific, actionable recommendations. Includes a written summary and priority action list delivered within 48 hours.",
-      es: "Una sesión de trabajo de 90 minutos donde reviso tu programa T&E o de transformación financiera y te doy recomendaciones específicas y accionables. Incluye resumen escrito y lista de acciones prioritarias entregadas en 48 horas.",
-      fr: "Une session de travail de 90 minutes où je passe en revue votre programme T&E ou de transformation financière et vous donne des recommandations spécifiques et actionnables. Inclut un résumé écrit et une liste d'actions prioritaires livré sous 48 heures.",
+      en: "A focused 90-minute working session dedicated to reviewing a current T&E or finance transformation programme. Specific, actionable recommendations are provided — including a written summary and priority action list delivered within 48 hours.",
+      es: "Una sesión de trabajo de 90 minutos dedicada a revisar un programa T&E o de transformación financiera en curso. Se proporcionan recomendaciones específicas y accionables — incluyendo un resumen escrito y lista de acciones prioritarias en 48 horas.",
+      fr: "Une session de travail de 90 minutes dédiée à l'examen d'un programme T&E ou de transformation financière en cours. Des recommandations spécifiques et actionnables sont fournies — incluant un résumé écrit et une liste d'actions prioritaires sous 48 heures.",
     },
     includes: {
       en: [
@@ -210,69 +213,9 @@ const premiumResources = [
   },
 ];
 
-const articles = [
-  {
-    id: "art-1",
-    tag: { en: "Implementation", es: "Implementación", fr: "Implémentation" },
-    title: {
-      en: "5 reasons T&E implementations fail in Europe",
-      es: "5 razones por las que las implementaciones T&E fracasan en Europa",
-      fr: "5 raisons pour lesquelles les implémentations T&E échouent en Europe",
-    },
-    excerpt: {
-      en: "The technology is rarely the problem. The CFO who wasn't briefed, the country manager who opted out, the training that happened once — these are the real risks in any European programme.",
-      es: "La tecnología rara vez es el problema. El CFO que no fue informado, el director de país que se desvinculó, la formación que ocurrió una sola vez — estos son los riesgos reales en cualquier programa europeo.",
-      fr: "La technologie est rarement le problème. Le CFO qui n'a pas été briefé, le directeur pays qui s'est retiré, la formation qui n'a eu lieu qu'une fois — ce sont les vrais risques dans tout programme européen.",
-    },
-    readTime: 4,
-    color: "#1A3C5E",
-  },
-  {
-    id: "art-2",
-    tag: {
-      en: "Change Management",
-      es: "Gestión del Cambio",
-      fr: "Conduite du Changement",
-    },
-    title: {
-      en: "What multilingual change management actually looks like",
-      es: "Cómo es realmente la gestión del cambio multilingüe",
-      fr: "À quoi ressemble vraiment la conduite du changement multilingue",
-    },
-    excerpt: {
-      en: "Running a change programme across 5 countries in 4 languages is not just translation. It requires different timing, different tone, and different local champions in each market.",
-      es: "Ejecutar un programa de cambio en 5 países en 4 idiomas no es solo traducir. Requiere tiempos diferentes, un tono diferente y diferentes campeones locales en cada mercado.",
-      fr: "Piloter un programme de changement dans 5 pays en 4 langues, ce n'est pas que de la traduction. Cela demande des délais différents, un ton différent et des champions locaux différents dans chaque marché.",
-    },
-    readTime: 5,
-    color: "#1E6B4A",
-  },
-  {
-    id: "art-3",
-    tag: {
-      en: "Business & Tech",
-      es: "Negocio y Tecnología",
-      fr: "Business & Tech",
-    },
-    title: {
-      en: "Why programme managers should understand code",
-      es: "Por qué los gestores de programas deberían entender de código",
-      fr: "Pourquoi les chefs de programme devraient comprendre le code",
-    },
-    excerpt: {
-      en: "I spent 9 years on the business side of software implementations. Then I learned to code. Here's the specific difference it makes when managing vendors and technical delivery teams.",
-      es: "Pasé 9 años en el lado de negocio de las implementaciones de software. Luego aprendí a programar. Aquí está la diferencia específica que hace al gestionar proveedores y equipos de entrega técnica.",
-      fr: "J'ai passé 9 ans du côté métier des implémentations logicielles. Puis j'ai appris à coder. Voici la différence concrète que cela fait pour gérer les fournisseurs et les équipes de livraison technique.",
-    },
-    readTime: 6,
-    color: "#6B21A8",
-  },
-];
-
-// ─── MODAL COMPONENT ─────────────────────────────────────────────
+// ─── MODAL ───────────────────────────────────────────────────
 function ResourceModal({ resource, lang, t, onClose }) {
   if (!resource) return null;
-
   const isFree = !resource.price;
 
   return (
@@ -348,7 +291,7 @@ function ResourceModal({ resource, lang, t, onClose }) {
   );
 }
 
-// ─── PAGE ───
+// ─── PAGE ────────────────────────────────────────────────────
 export default function Resources() {
   useScrollReveal();
   const { lang, t } = useLanguage();
@@ -374,7 +317,7 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* ── FREE RESOURCES ────────────────────────────────── */}
+      {/* ── FREE RESOURCES ─── */}
       <section className="section">
         <div className="container">
           <div className="reveal" style={{ marginBottom: "3rem" }}>
@@ -417,7 +360,7 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* ── PREMIUM RESOURCES ──*/}
+      {/* ── PREMIUM RESOURCES ── */}
       <section className="section section--ivory">
         <div className="container">
           <div className="reveal" style={{ marginBottom: "3rem" }}>
@@ -475,47 +418,29 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* ── ARTICLES ──────────────────────────────────────── */}
+      {/* ── FEATURED INSIGHTS ── */}
       <section className="section">
         <div className="container">
           <div className="reveal" style={{ marginBottom: "3rem" }}>
-            <p className="section-label">{t("resources", "artLabel")}</p>
-            <h2>{t("resources", "artTitle")}</h2>
+            <p className="section-label">{t("resources", "insightsLabel")}</p>
+            <h2>{t("resources", "insightsTitle")}</h2>
           </div>
           <div className={styles.articlesGrid}>
-            {articles.map((a, i) => (
-              <article
-                key={a.id}
-                className={`reveal reveal-delay-${i + 1} ${styles.articleCard}`}
-                style={{ "--accent": a.color }}
-              >
-                <span className={styles.articleTag}>
-                  {a.tag[lang] || a.tag.en}
-                </span>
-                <h3 className={styles.articleTitle}>
-                  {a.title[lang] || a.title.en}
-                </h3>
-                <p className={styles.articleExcerpt}>
-                  {a.excerpt[lang] || a.excerpt.en}
-                </p>
-                <div className={styles.articleFooter}>
-                  <span className={styles.readTime}>
-                    {a.readTime} {t("resources", "readTime")}
-                  </span>
-                  <Link
-                    to="/contact"
-                    className={`btn btn--ghost ${styles.articleCta}`}
-                  >
-                    {t("resources", "readMore")}
-                  </Link>
-                </div>
-              </article>
+            {featuredInsights.map((a, i) => (
+              <div key={a.id} className={`reveal reveal-delay-${i + 1}`}>
+                <InsightCard article={a} />
+              </div>
             ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+            <Link to="/insights" className="btn btn--outline">
+              {t("resources", "readMore")}
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────── */}
+      {/* ── CTA ── */}
       <section className={`section--dark ${styles.cta}`}>
         <div className="container--narrow">
           <div className="reveal" style={{ textAlign: "center" }}>

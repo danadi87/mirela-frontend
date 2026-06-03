@@ -1,4 +1,4 @@
-/* ─── DESIGN TOKENS ─────────────────────────────────────────── */
+/* ─── DESIGN TOKENS ─── */
 :root {
   /* Colours */
   --navy: #0d1b2a;
@@ -49,7 +49,7 @@
   --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ─── RESET ─────────────────────────────────────────────────── */
+/* ─── RESET ─── */
 *,
 *::before,
 *::after {
@@ -103,7 +103,7 @@ select {
   font-family: inherit;
 }
 
-/* ─── TYPOGRAPHY SCALE ──────────────────────────────────────── */
+/* ─── TYPOGRAPHY SCALE ─── */
 h1,
 h2,
 h3,
@@ -135,7 +135,7 @@ p {
   line-height: 1.75;
 }
 
-/* ─── UTILITIES ─────────────────────────────────────────────── */
+/* ─── UTILITIES ─── */
 .container {
   max-width: var(--container);
   margin: 0 auto;
@@ -196,7 +196,7 @@ p {
   opacity: 0.75;
 }
 
-/* ─── BUTTONS ───────────────────────────────────────────────── */
+/* ─── BUTTONS ─── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -256,7 +256,7 @@ p {
   gap: 0.75rem;
 }
 
-/* ─── SECTION LABEL + HEADING ───────────────────────────────── */
+/* ─── SECTION LABEL + HEADING ─── */
 .section-label {
   font-family: var(--font-body);
   font-size: 0.72rem;
@@ -271,7 +271,7 @@ p {
   color: var(--amber-light);
 }
 
-/* ─── DIVIDER ────────────────────────────────────────────────── */
+/* ─── DIVIDER ─── */
 .divider {
   width: 48px;
   height: 3px;
@@ -280,7 +280,7 @@ p {
   margin: 1.25rem 0 2rem;
 }
 
-/* ─── SCROLL REVEAL ─────────────────────────────────────────── */
+/* ─── SCROLL REVEAL ── */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -310,7 +310,7 @@ p {
   transition-delay: 0.5s;
 }
 
-/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+/* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-md);
