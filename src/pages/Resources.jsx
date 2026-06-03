@@ -4,9 +4,10 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 import { useLanguage } from "../hooks/useLanguage";
 import InsightCard from "../components/InsightCard";
 import { featuredInsights } from "../data/insights";
+import DownloadGateModal from "../components/DownloadGateModal";
 import styles from "../styles/Resources.module.css";
 
-// ─── FREE RESOURCES DATA ──
+// ─── FREE RESOURCES DATA ───
 const freeResources = [
   {
     id: "te-checklist",
@@ -28,6 +29,7 @@ const freeResources = [
     },
     format: "PDF · 8 pages",
     color: "#1A3C5E",
+    downloadUrl: "/downloads/te-checklist.pdf",
   },
   {
     id: "change-framework",
@@ -49,6 +51,7 @@ const freeResources = [
     },
     format: "PDF · 12 pages",
     color: "#1E6B4A",
+    downloadUrl: "/downloads/change-framework.pdf",
   },
   {
     id: "vendor-scorecard",
@@ -70,10 +73,11 @@ const freeResources = [
     },
     format: "Excel + PDF",
     color: "#C07A2D",
+    downloadUrl: "/downloads/vendor-scorecard.pdf",
   },
 ];
 
-// ─── PREMIUM RESOURCES DATA ──────────────────────────────────
+// ─── PREMIUM RESOURCES DATA ──
 const premiumResources = [
   {
     id: "te-playbook",
@@ -120,6 +124,7 @@ const premiumResources = [
     price: "€149",
     format: "PDF + Excel templates",
     color: "#1A3C5E",
+    downloadUrl: "/downloads/te-playbook.pdf",
   },
   {
     id: "change-toolkit",
@@ -165,6 +170,7 @@ const premiumResources = [
     price: "€99",
     format: "Word + PowerPoint + Excel",
     color: "#1E6B4A",
+    downloadUrl: "/downloads/change-toolkit.pdf",
   },
   {
     id: "consulting-session",
@@ -210,11 +216,12 @@ const premiumResources = [
     price: "€299",
     format: "Video call + Written deliverable",
     color: "#C07A2D",
+    downloadUrl: "/downloads/consulting-session.pdf",
   },
 ];
 
-// ─── MODAL ───────────────────────────────────────────────────
-function ResourceModal({ resource, lang, t, onClose }) {
+// ─── MODAL ───
+function ResourceModal({ resource, lang, t, onClose, onDownload }) {
   if (!resource) return null;
   const isFree = !resource.price;
 
@@ -274,9 +281,25 @@ function ResourceModal({ resource, lang, t, onClose }) {
 
         <div className={styles.modalActions}>
           {isFree ? (
-            <Link to="/contact" className="btn btn--primary" onClick={onClose}>
+            <button
+              className="btn btn--primary"
+              onClick={() => {
+                onClose();
+                onDownload(resource);
+              }}
+            >
               {t("resources", "download")}
-            </Link>
+            </button>
+          ) : resource.purchaseUrl ? (
+            <a
+              href={resource.purchaseUrl}
+              className="btn btn--primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+            >
+              {t("resources", "buy")}
+            </a>
           ) : (
             <Link to="/contact" className="btn btn--primary" onClick={onClose}>
               {t("resources", "buy")}
@@ -291,11 +314,12 @@ function ResourceModal({ resource, lang, t, onClose }) {
   );
 }
 
-// ─── PAGE ────────────────────────────────────────────────────
+// ─── PAGE ───
 export default function Resources() {
   useScrollReveal();
   const { lang, t } = useLanguage();
   const [selected, setSelected] = useState(null);
+  const [gateResource, setGateResource] = useState(null);
 
   return (
     <>
@@ -305,6 +329,14 @@ export default function Resources() {
           lang={lang}
           t={t}
           onClose={() => setSelected(null)}
+          onDownload={(r) => setGateResource(r)}
+        />
+      )}
+
+      {gateResource && (
+        <DownloadGateModal
+          resource={gateResource}
+          onClose={() => setGateResource(null)}
         />
       )}
 
