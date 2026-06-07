@@ -1295,21 +1295,453 @@ Cette réponse est presque toujours celle qui s'adapte à l'écosystème existan
     readTime: 5,
     content: {
       en: `
-## The shift that is already happening
+Most finance professionals who have tried using AI for reporting have had some version of this experience: they type a reasonable question, the AI produces something that looks right, and then — on closer inspection — a number is wrong, a trend is invented, or the commentary does not reflect what the data actually says.
 
-Your first paragraph goes here. Write in plain text or markdown.
-Each double line break becomes a new paragraph.
+This is not a failure of the technology. It is a failure of the prompt. The way you communicate with an AI model determines the quality, accuracy, and usefulness of what it produces — particularly in financial reporting, where precision is not optional.
 
-## Why finance teams are ahead of other functions
+[According to recent research, 100% of US financial reporting leaders say they will be using or piloting AI within the next three years, up from 71% in 2024](https://www.withvayu.com/blog/prompt-engineering-for-finance-the-new-core-skill-every-team-needs) ¹. That convergence is happening regardless of whether finance teams are ready for it. The professionals who learn to communicate effectively with AI models will produce faster, more consistent, and more reliable output than those who treat it as a search engine and wonder why the results are unreliable.
 
-Another section here...
+This article explains why generic prompts fail in financial reporting, introduces a practical framework for writing prompts that work, and provides specific examples you can use immediately.
 
-## The 10 processes worth automating first
+---
 
-More content here.
-    `,
-      es: `Spanish version of the full article...`,
-      fr: `French version of the full article...`,
+## Why financial reporting is harder for AI than it looks
+
+AI language models are trained to produce plausible, coherent responses. In most domains, plausible and correct are closely related. In financial reporting, they frequently are not.
+
+Consider asking an AI to "summarise the Q3 performance." A plausible summary sounds like financial commentary. It uses the right vocabulary. It says things like "revenue growth was driven by strong performance in the EMEA region" or "EBITDA margin contracted by 120 basis points." The problem is that if the model does not have the actual data — or if the data was presented ambiguously — it will fill in the gaps with numbers and conclusions that sound right but are not.
+
+[Research confirms that standard large language models frequently hallucinate when handling financial tasks — and even when given actual financial documents, AI can distort the facts](https://www.baytechconsulting.com/blog/hidden-dangers-of-ai-hallucinations-in-financial-services) ². If a report mentions a 6-to-1 stock split, a poorly grounded AI might state it was a 10-to-1 split because its prediction algorithm went off track. That kind of error, in a management report, is not recoverable with a quick correction — it undermines confidence in everything else on the page.
+
+[For financial institutions, AI hallucinations create not just reputational risk but regulatory and compliance challenges that demand proactive mitigation strategies](https://biztechmagazine.com/article/2025/08/llm-hallucinations-what-are-implications-financial-institutions) ³. This is not a reason to avoid AI in financial reporting. It is a reason to prompt precisely.
+
+---
+
+## The four qualities of a prompt that works in finance
+
+Before getting into specific techniques, it helps to understand what a well-constructed financial prompt actually does. Four qualities separate prompts that produce reliable output from prompts that produce plausible-sounding noise.
+
+**Specificity** — the prompt tells the model exactly what it is working with: which dataset, which time period, which entities, which metric definitions. Vague inputs produce vague outputs. In financial reporting, vague outputs are dangerous.
+
+**Context** — the prompt provides the business context the model cannot infer from numbers alone. What is the organisation? What is the reporting audience? What decisions will be made based on this output? Context shapes tone, level of detail, and what counts as significant.
+
+**Constraints** — the prompt sets boundaries on what the model should and should not do. It should not interpolate missing data. It should not draw conclusions beyond what the numbers support. It should flag where data is absent rather than working around it.
+
+**Output format** — the prompt specifies what the output should look like: bullet points, narrative prose, a table, an executive summary of a specific length. Without format instructions, the model makes a choice — and it may not be the right one for your use case.
+
+---
+
+## The R.C.T.F. framework: a structured approach
+
+[The R.C.T.F. framework — Role, Context, Task, Format — is currently where the top 10% of finance teams operate when using AI](https://fpa-trends.com/article/how-fpa-professionals-should-prompt-ai-2026) ⁴. It is a practical template that structures every prompt around the four qualities described above.
+
+**Role** — tell the model who it is. A model that knows it is acting as a senior financial analyst with a CFO audience produces different output than a model operating in a vacuum. Example: *"You are a senior FP&A analyst preparing a management report for the CFO and two non-finance board members."*
+
+**Context** — provide the business background and the data. Paste the data directly, or describe the situation clearly enough that the model has what it needs. Example: *"The following table shows Q3 2026 actual vs. budget for the five largest cost centres in the European business. Currency is EUR. All figures are in thousands."*
+
+**Task** — state precisely what the model should produce. Be specific about what counts as a variance worth commenting on, what tone to use, and what to avoid. Example: *"Write three to five bullet points explaining the largest variances. Focus only on variances exceeding 5% or €50k. Do not speculate about causes that are not supported by the data provided. If you are uncertain about a cause, say so explicitly."*
+
+**Format** — specify the output structure. Example: *"Output as bullet points, each starting with the cost centre name and the variance figure. Maximum 40 words per bullet. Plain language suitable for a non-finance board member."*
+
+Assembled, this becomes a prompt that produces something useful on the first attempt rather than after four iterations of correction.
+
+---
+
+## Specific prompts for common financial reporting tasks
+
+### Variance commentary
+
+**Weak prompt:**
+> "Write commentary on the budget variances."
+
+**Why it fails:** The model has no data, no threshold for what constitutes a significant variance, no audience, and no format guidance. What it produces will be generic commentary that could apply to any organisation in any period.
+
+**Strong prompt:**
+> "You are an FP&A analyst writing the management commentary section of a monthly report for the CFO. The data below shows actual vs. budget for the current month and year to date, by department. Currency: EUR. All figures in thousands.
+>
+> [paste your data table here]
+>
+> Write commentary covering the three largest favourable and three largest adverse variances, measured by absolute value. Only comment on variances exceeding €25k or 8% of budget, whichever is lower. For each variance, state: the line item, the amount, the direction (favourable/adverse), and the most likely cause if it can be inferred directly from the data. Do not speculate beyond what the numbers support. Flag any variance where the cause is unclear with the note 'Requires investigation.' Output as bullet points, maximum 50 words each."
+
+**What this produces:** Structured, accurate commentary with appropriate caveats — ready for review and light editing, not a complete rewrite.
+
+---
+
+### Executive summary of a financial period
+
+**Weak prompt:**
+> "Summarise our Q2 performance."
+
+**Strong prompt:**
+> "You are a senior finance business partner writing the executive summary for a Q2 board pack. The audience is three board members, two of whom are non-finance. The summary should be factual, direct, and free of jargon.
+>
+> Use only the data provided below — do not infer or add information not present in this dataset. If context is missing for a particular trend, note this rather than speculating.
+>
+> [paste revenue, cost, and margin data]
+>
+> Write a 150–200 word executive summary covering: (1) headline revenue and how it compares to prior year and budget; (2) the main cost driver that improved or deteriorated; (3) the resulting margin position and what it means for the full year outlook. Use plain language. Do not use terms like 'robust', 'headwinds', or 'challenging environment' — be specific about what happened."
+
+**What this produces:** A clean, readable summary that a non-finance board member can follow — without the filler language that typically pads financial commentary.
+
+---
+
+### Cash flow narrative
+
+**Weak prompt:**
+> "Explain the cash flow movement this month."
+
+**Strong prompt:**
+> "You are a treasury analyst writing a cash flow commentary for the CFO weekly update. Below is the cash flow bridge for the week ending [date], showing opening balance, operating cash movements, investing activities, and financing items. All figures in EUR thousands.
+>
+> [paste cash flow data]
+>
+> Write a four-sentence narrative that: (1) states the net movement and closing balance; (2) identifies the single largest driver of the movement; (3) notes any item that deviated significantly from the prior week trend; (4) flags any liquidity concern if one is present in the data. If no liquidity concern is apparent, do not invent one — simply omit sentence four. Do not use passive constructions. Write in the present tense."
+
+---
+
+### Out-of-policy expense analysis
+
+**Weak prompt:**
+> "Analyse the out-of-policy expenses."
+
+**Strong prompt:**
+> "You are a finance controls analyst. The table below shows expense submissions flagged as out-of-policy this month, by category, by country, and by amount. The policy thresholds are: meals €50 per person, accommodation €200 per night, client entertainment €150 per person.
+>
+> [paste the flagged expense data]
+>
+> Produce a brief analysis (maximum 200 words) covering: (1) the total value of out-of-policy submissions; (2) the category with the highest out-of-policy rate; (3) the country with the highest out-of-policy value; (4) any pattern in the data that suggests a policy communication gap rather than deliberate non-compliance. Flag any submission that appears to require escalation based on its size or nature. Do not name individuals — refer to submissions by department only."
+
+---
+
+## The single most important rule: give the AI the data, not the question
+
+The most common mistake in financial prompting is asking the model a question and expecting it to find the answer. AI language models do not have access to your financial systems. They cannot pull your ERP data. They do not know what happened in your business last quarter.
+
+What they can do is analyse, interpret, structure, and communicate data that you provide. Every effective financial prompt starts by pasting the relevant data directly into the prompt — or into the document the AI has access to. The question comes after the data, not before it.
+
+[Ambiguous prompts are the enemy of clear and useful answers in financial AI applications](https://www.brightwave.io/blog/prompting-for-performance-part-ii-crafting-high-impact-prompts) ⁵. Providing specific numbers and context — rather than asking the model to assess broadly — produces dramatically more reliable output.
+
+---
+
+## How to handle numbers you are not certain about
+
+One of the legitimate risks of using AI for financial reporting is that the model will generate numbers that look right but are not. The way to mitigate this is to make it structurally impossible — by providing all numbers in the prompt and instructing the model explicitly not to calculate or invent data.
+
+Add this instruction to any prompt involving numerical output:
+
+> "Do not perform calculations. Use only the numbers provided in the data. If a figure is missing from the data and would be needed to complete the analysis, flag it as missing rather than estimating."
+
+This is not foolproof — models can still misread numbers from a table — but it reduces the risk substantially. Any numerical output should be cross-checked against the source data before it is included in a report. AI-generated financial commentary is a first draft, not a final product.
+
+---
+
+## Prompting for tone and audience
+
+Financial reports are read by different people for different purposes. A variance commentary written for the CFO should be concise and assumption-aware. The same commentary written for a non-finance country manager should use plain language and explain the implications rather than stating the accounting mechanics.
+
+AI models adapt tone well when given explicit instructions. Use prompts like:
+
+- *"Write this for a non-finance audience. Avoid accounting terminology. Explain what the numbers mean in business terms."*
+- *"This will be reviewed by the external auditors. Use precise accounting language and cite the relevant line items."*
+- *"This is for the weekly operational update. Bullet points only. Maximum 15 words per bullet. No introductory sentence."*
+
+The same underlying data can produce three very different outputs — all accurate, all appropriate for their audience — from a single well-instructed model.
+
+---
+
+## Building a prompt library
+
+Once a prompt structure works reliably, it should be saved and reused. [Much like spreadsheet mastery once defined financial modelling, prompt engineering is now the key to unlocking AI-powered insight — and the most successful teams are those that invest in skill building and centralise leadership to scale what works](https://www.withvayu.com/blog/prompt-engineering-for-finance-the-new-core-skill-every-team-needs) ¹.
+
+A practical prompt library for a finance team might include:
+
+- Monthly variance commentary template (by entity, by cost centre)
+- Executive summary template (by reporting period)
+- Cash flow narrative template (weekly, monthly)
+- Budget challenge template (for FP&A review meetings)
+- Audit response draft template (for standard queries)
+
+Each template contains the Role, Context, Task, and Format instructions — with placeholders for the data and any period-specific context. The analyst pastes in the data, reviews the output, and edits as needed. The alternative — writing a new prompt from scratch each time, or using a generic prompt and correcting the output — takes significantly longer and produces less consistent results.
+
+---
+
+## What AI cannot do in financial reporting
+
+Knowing the limits is as important as knowing the techniques.
+
+AI cannot access systems it has not been connected to. It cannot validate numbers against your ERP, check whether a variance has already been investigated, or know whether a large expense item is legitimate or anomalous without being told.
+
+[AI hallucinations represent one of the most significant challenges for organisations deploying large language models — and in high-stakes domains like financial reporting, hallucinations undermine trustworthiness, create liability exposures, and generate tangible costs through poor decisions](https://infomineo.com/artificial-intelligence/stop-ai-hallucinations-detection-prevention-verification-guide-2025/) ⁶. The appropriate response is human-in-the-loop oversight — AI produces the first draft, a finance professional reviews it against the source data before it is used.
+
+The goal of well-constructed financial prompts is not to remove the analyst from the process. It is to remove the mechanical parts of the process — the first draft, the structural formatting, the repetitive commentary — so the analyst can focus on what only a human can do: applying business context, exercising judgement, and taking accountability for the output.
+
+---
+
+## References
+
+1. Vayu — *Prompt Engineering for Finance: The New Core Skill Every Team Needs* (2025) — [withvayu.com](https://www.withvayu.com/blog/prompt-engineering-for-finance-the-new-core-skill-every-team-needs)
+2. Baytech Consulting — *Hidden Dangers of AI Hallucinations in Financial Services* (April 2025) — [baytechconsulting.com](https://www.baytechconsulting.com/blog/hidden-dangers-of-ai-hallucinations-in-financial-services)
+3. BizTech Magazine — *LLM Hallucinations: What Are the Implications for Financial Institutions?* (August 2025) — [biztechmagazine.com](https://biztechmagazine.com/article/2025/08/llm-hallucinations-what-are-implications-financial-institutions)
+4. FP&A Trends — *How FP&A Professionals Should Prompt AI in 2026* (March 2026) — [fpa-trends.com](https://fpa-trends.com/article/how-fpa-professionals-should-prompt-ai-2026)
+5. Brightwave — *Prompting for Performance: Crafting High-Impact AI Prompts for Financial Analysis* — [brightwave.io](https://www.brightwave.io/blog/prompting-for-performance-part-ii-crafting-high-impact-prompts)
+6. Infomineo — *Stop AI Hallucinations: Detection, Prevention & Verification Guide 2025* (October 2025) — [infomineo.com](https://infomineo.com/artificial-intelligence/stop-ai-hallucinations-detection-prevention-verification-guide-2025/)
+  `,
+
+      es: `
+La mayoría de los profesionales de finanzas que han intentado usar IA para el reporting han tenido alguna versión de esta experiencia: escriben una pregunta razonable, la IA produce algo que parece correcto, y luego — al examinarlo más de cerca — un número está equivocado, una tendencia está inventada, o el comentario no refleja lo que los datos realmente dicen.
+
+Esto no es un fallo de la tecnología. Es un fallo del prompt. La manera en que te comunicas con un modelo de IA determina la calidad, precisión y utilidad de lo que produce — especialmente en el reporting financiero, donde la precisión no es opcional.
+
+[Según investigaciones recientes, el 100% de los responsables de reporting financiero de EE.UU. afirman que usarán o pilotarán IA en los próximos tres años, frente al 71% en 2024](https://www.withvayu.com/blog/prompt-engineering-for-finance-the-new-core-skill-every-team-needs) ¹. Esa convergencia está ocurriendo independientemente de si los equipos financieros están preparados. Los profesionales que aprendan a comunicarse eficazmente con los modelos de IA producirán resultados más rápidos, más consistentes y más fiables que los que lo traten como un buscador y se pregunten por qué los resultados no son fiables.
+
+Este artículo explica por qué los prompts genéricos fallan en el reporting financiero, presenta un marco práctico para escribir prompts que funcionen, y proporciona ejemplos específicos que puedes usar de inmediato.
+
+---
+
+## Por qué el reporting financiero es más difícil para la IA de lo que parece
+
+Los modelos de IA están entrenados para producir respuestas plausibles y coherentes. En la mayoría de los ámbitos, plausible y correcto están estrechamente relacionados. En el reporting financiero, con frecuencia no lo están.
+
+Considera pedir a una IA que "resuma el rendimiento del T3". Un resumen plausible suena a comentario financiero. Usa el vocabulario correcto. Dice cosas como "el crecimiento de los ingresos fue impulsado por el sólido rendimiento en la región EMEA" o "el margen EBITDA se contrajo 120 puntos básicos". El problema es que si el modelo no tiene los datos reales — o si los datos se presentaron de forma ambigua — rellenará los huecos con números y conclusiones que suenan correctos pero no lo son.
+
+[La investigación confirma que los modelos de lenguaje estándar alucinan con frecuencia al manejar tareas financieras — e incluso cuando se les dan documentos financieros reales, la IA puede distorsionar los hechos](https://www.baytechconsulting.com/blog/hidden-dangers-of-ai-hallucinations-in-financial-services) ². Si un informe menciona un split de acciones de 6 a 1, una IA mal fundamentada podría indicar que fue de 10 a 1 porque su algoritmo de predicción se desvió. Ese tipo de error, en un informe de gestión, no se recupera con una corrección rápida — mina la confianza en todo lo demás en la página.
+
+[Para las instituciones financieras, las alucinaciones de la IA crean no solo riesgo reputacional sino también desafíos regulatorios y de cumplimiento](https://biztechmagazine.com/article/2025/08/llm-hallucinations-what-are-implications-financial-institutions) ³. Esto no es una razón para evitar la IA en el reporting financiero. Es una razón para hacer prompts con precisión.
+
+---
+
+## Las cuatro cualidades de un prompt que funciona en finanzas
+
+Antes de entrar en técnicas específicas, ayuda entender qué hace realmente un prompt financiero bien construido. Cuatro cualidades separan los prompts que producen resultados fiables de los que producen ruido que suena plausible.
+
+**Especificidad** — el prompt le dice al modelo exactamente con qué está trabajando: qué conjunto de datos, qué período, qué entidades, qué definiciones de métricas. Entradas vagas producen resultados vagos. En el reporting financiero, los resultados vagos son peligrosos.
+
+**Contexto** — el prompt proporciona el contexto de negocio que el modelo no puede inferir solo de los números. ¿Cuál es la organización? ¿Quién es el público del reporting? ¿Qué decisiones se tomarán basándose en este resultado? El contexto da forma al tono, el nivel de detalle y lo que cuenta como significativo.
+
+**Restricciones** — el prompt establece límites sobre lo que el modelo debe y no debe hacer. No debe interpolar datos ausentes. No debe sacar conclusiones más allá de lo que soportan los números. Debe señalar dónde faltan datos en lugar de esquivarlos.
+
+**Formato de salida** — el prompt especifica cómo debe verse el resultado: viñetas, narrativa en prosa, una tabla, un resumen ejecutivo de una longitud específica. Sin instrucciones de formato, el modelo toma una decisión — y puede que no sea la correcta para tu caso de uso.
+
+---
+
+## El marco R.C.T.F.: un enfoque estructurado
+
+[El marco R.C.T.F. — Rol, Contexto, Tarea, Formato — es donde actualmente opera el 10% superior de los equipos financieros cuando usan IA](https://fpa-trends.com/article/how-fpa-professionals-should-prompt-ai-2026) ⁴. Es una plantilla práctica que estructura cada prompt en torno a las cuatro cualidades descritas anteriormente.
+
+**Rol** — dile al modelo quién es. Un modelo que sabe que actúa como analista financiero senior con audiencia de CFO produce resultados diferentes a un modelo operando en el vacío. Ejemplo: *"Eres un analista FP&A senior preparando un informe de gestión para el CFO y dos miembros del consejo que no son de finanzas."*
+
+**Contexto** — proporciona el contexto de negocio y los datos. Pega los datos directamente o describe la situación con suficiente claridad para que el modelo tenga lo que necesita. Ejemplo: *"La siguiente tabla muestra el T3 2026 real vs. presupuesto para los cinco centros de coste más grandes del negocio europeo. Moneda: EUR. Todas las cifras en miles."*
+
+**Tarea** — indica con precisión qué debe producir el modelo. Sé específico sobre qué cuenta como una variación que merece comentario, qué tono usar y qué evitar. Ejemplo: *"Escribe de tres a cinco viñetas explicando las variaciones más grandes. Céntrate solo en las variaciones que superen el 5% o 50.000 €. No especules sobre causas que no estén respaldadas por los datos proporcionados. Si no estás seguro de una causa, dilo explícitamente."*
+
+**Formato** — especifica la estructura del resultado. Ejemplo: *"Resultado en viñetas, cada una comenzando con el nombre del centro de coste y la cifra de variación. Máximo 40 palabras por viñeta. Lenguaje claro adecuado para un miembro del consejo que no es de finanzas."*
+
+---
+
+## Prompts específicos para tareas habituales de reporting financiero
+
+### Comentario de variaciones
+
+**Prompt débil:**
+> "Escribe comentarios sobre las variaciones presupuestarias."
+
+**Por qué falla:** El modelo no tiene datos, no tiene umbral para lo que constituye una variación significativa, no tiene audiencia ni orientación de formato.
+
+**Prompt fuerte:**
+> "Eres un analista FP&A escribiendo la sección de comentarios de gestión de un informe mensual para el CFO. Los datos a continuación muestran real vs. presupuesto para el mes actual y el acumulado del año, por departamento. Moneda: EUR. Todas las cifras en miles.
+>
+> [pega tu tabla de datos aquí]
+>
+> Escribe comentarios cubriendo las tres variaciones favorables y las tres adversas más grandes, medidas por valor absoluto. Comenta solo variaciones que superen 25.000 € u el 8% del presupuesto, lo que sea menor. Para cada variación, indica: la línea, el importe, la dirección (favorable/adversa) y la causa más probable si puede inferirse directamente de los datos. No especules más allá de lo que soportan los números. Señala cualquier variación donde la causa no esté clara con la nota 'Requiere investigación'. Resultado en viñetas, máximo 50 palabras cada una."
+
+---
+
+### Resumen ejecutivo de un período financiero
+
+**Prompt fuerte:**
+> "Eres un socio de negocio financiero senior escribiendo el resumen ejecutivo para el board pack del T2. La audiencia son tres miembros del consejo, dos de los cuales no son de finanzas. El resumen debe ser factual, directo y sin jerga.
+>
+> Usa solo los datos proporcionados a continuación — no inferas ni añadas información no presente en este conjunto de datos. Si falta contexto para una tendencia particular, señálalo en lugar de especular.
+>
+> [pega datos de ingresos, costes y márgenes]
+>
+> Escribe un resumen ejecutivo de 150–200 palabras cubriendo: (1) ingresos principales y cómo se comparan con el año anterior y el presupuesto; (2) el principal driver de costes que mejoró o empeoró; (3) la posición de margen resultante y lo que significa para las perspectivas del año completo. Usa lenguaje claro. No uses términos como 'robusto', 'vientos en contra' o 'entorno desafiante' — sé específico sobre lo que ocurrió."
+
+---
+
+## La regla más importante: dale a la IA los datos, no la pregunta
+
+El error más común en los prompts financieros es hacer una pregunta al modelo y esperar que encuentre la respuesta. Los modelos de IA no tienen acceso a tus sistemas financieros. No pueden extraer datos de tu ERP. No saben qué ocurrió en tu negocio el trimestre pasado.
+
+Lo que sí pueden hacer es analizar, interpretar, estructurar y comunicar datos que tú proporciones. [Los prompts ambiguos son el enemigo de las respuestas claras y útiles en las aplicaciones de IA financiera](https://www.brightwave.io/blog/prompting-for-performance-part-ii-crafting-high-impact-prompts) ⁵. Cada prompt financiero efectivo comienza pegando los datos relevantes directamente en el prompt — la pregunta viene después de los datos, no antes.
+
+---
+
+## Cómo manejar los números de los que no estás seguro
+
+Para mitigar el riesgo de que el modelo genere números que parecen correctos pero no lo son, añade esta instrucción a cualquier prompt que implique resultados numéricos:
+
+> "No realices cálculos. Usa únicamente los números proporcionados en los datos. Si falta una cifra en los datos y fuera necesaria para completar el análisis, señálala como ausente en lugar de estimarla."
+
+Cualquier resultado numérico debe verificarse contra los datos fuente antes de incluirse en un informe. Los comentarios financieros generados por IA son un primer borrador, no un producto final.
+
+---
+
+## Crear una biblioteca de prompts
+
+Una vez que una estructura de prompt funciona de forma fiable, debe guardarse y reutilizarse. [Al igual que el dominio de las hojas de cálculo definió en su momento el modelado financiero, la ingeniería de prompts es ahora la clave para desbloquear el insight potenciado por IA](https://www.withvayu.com/blog/prompt-engineering-for-finance-the-new-core-skill-every-team-needs) ¹.
+
+Una biblioteca práctica de prompts para un equipo financiero podría incluir:
+
+- Plantilla de comentario de variaciones mensual (por entidad, por centro de coste)
+- Plantilla de resumen ejecutivo (por período de reporting)
+- Plantilla de narrativa de flujo de caja (semanal, mensual)
+- Plantilla de respuesta a auditoría (para consultas estándar)
+
+Cada plantilla contiene las instrucciones de Rol, Contexto, Tarea y Formato — con marcadores de posición para los datos y el contexto específico del período. El analista pega los datos, revisa el resultado y edita según sea necesario.
+
+---
+
+## Lo que la IA no puede hacer en el reporting financiero
+
+[Las alucinaciones de la IA representan uno de los desafíos más significativos para las organizaciones que despliegan modelos de lenguaje — y en ámbitos de alto riesgo como el reporting financiero, minan la fiabilidad, crean exposición a responsabilidades y generan costes tangibles por malas decisiones](https://infomineo.com/artificial-intelligence/stop-ai-hallucinations-detection-prevention-verification-guide-2025/) ⁶.
+
+El objetivo de los prompts financieros bien construidos no es eliminar al analista del proceso. Es eliminar las partes mecánicas del proceso — el primer borrador, el formateo estructural, los comentarios repetitivos — para que el analista pueda centrarse en lo que solo un humano puede hacer: aplicar el contexto de negocio, ejercer el juicio y asumir la responsabilidad del resultado.
+
+---
+
+## Referencias
+
+1. Vayu — *Prompt Engineering for Finance: The New Core Skill Every Team Needs* (2025) — [withvayu.com](https://www.withvayu.com/blog/prompt-engineering-for-finance-the-new-core-skill-every-team-needs)
+2. Baytech Consulting — *Hidden Dangers of AI Hallucinations in Financial Services* (abril 2025) — [baytechconsulting.com](https://www.baytechconsulting.com/blog/hidden-dangers-of-ai-hallucinations-in-financial-services)
+3. BizTech Magazine — *LLM Hallucinations: What Are the Implications for Financial Institutions?* (agosto 2025) — [biztechmagazine.com](https://biztechmagazine.com/article/2025/08/llm-hallucinations-what-are-implications-financial-institutions)
+4. FP&A Trends — *How FP&A Professionals Should Prompt AI in 2026* (marzo 2026) — [fpa-trends.com](https://fpa-trends.com/article/how-fpa-professionals-should-prompt-ai-2026)
+5. Brightwave — *Prompting for Performance: Crafting High-Impact AI Prompts for Financial Analysis* — [brightwave.io](https://www.brightwave.io/blog/prompting-for-performance-part-ii-crafting-high-impact-prompts)
+6. Infomineo — *Stop AI Hallucinations: Detection, Prevention & Verification Guide 2025* (octubre 2025) — [infomineo.com](https://infomineo.com/artificial-intelligence/stop-ai-hallucinations-detection-prevention-verification-guide-2025/)
+  `,
+
+      fr: `
+La plupart des professionnels de la finance qui ont essayé d'utiliser l'IA pour le reporting ont vécu une version de cette expérience : ils tapent une question raisonnable, l'IA produit quelque chose qui semble correct, et puis — à l'examen — un chiffre est faux, une tendance est inventée, ou le commentaire ne reflète pas ce que les données disent réellement.
+
+Ce n'est pas un échec de la technologie. C'est un échec du prompt. La façon dont vous communiquez avec un modèle IA détermine la qualité, la précision et l'utilité de ce qu'il produit — en particulier dans le reporting financier, où la précision n'est pas optionnelle.
+
+[Selon des recherches récentes, 100% des responsables du reporting financier aux États-Unis déclarent qu'ils utiliseront ou piloteront l'IA dans les trois prochaines années, contre 71% en 2024](https://www.withvayu.com/blog/prompt-engineering-for-finance-the-new-core-skill-every-team-needs) ¹. Cette convergence se produit indépendamment du fait que les équipes financières y soient préparées ou non. Les professionnels qui apprennent à communiquer efficacement avec les modèles IA produiront des résultats plus rapides, plus cohérents et plus fiables que ceux qui les traitent comme des moteurs de recherche et s'interrogent sur la fiabilité des résultats.
+
+Cet article explique pourquoi les prompts génériques échouent dans le reporting financier, présente un cadre pratique pour rédiger des prompts efficaces, et fournit des exemples spécifiques utilisables immédiatement.
+
+---
+
+## Pourquoi le reporting financier est plus difficile pour l'IA qu'il n'y paraît
+
+Les modèles IA sont entraînés à produire des réponses plausibles et cohérentes. Dans la plupart des domaines, plausible et correct sont étroitement liés. Dans le reporting financier, ils ne le sont souvent pas.
+
+Imaginez demander à une IA de "résumer la performance du T3". Un résumé plausible ressemble à un commentaire financier. Il utilise le bon vocabulaire. Il dit des choses comme "la croissance des revenus a été portée par les performances solides dans la région EMEA" ou "la marge EBITDA s'est contractée de 120 points de base". Le problème est que si le modèle n'a pas les données réelles — ou si les données ont été présentées de manière ambiguë — il comblera les lacunes avec des chiffres et des conclusions qui sonnent juste mais qui ne le sont pas.
+
+[La recherche confirme que les modèles de langage standard hallucinent fréquemment sur des tâches financières — et même lorsqu'on leur donne des documents financiers réels, l'IA peut déformer les faits](https://www.baytechconsulting.com/blog/hidden-dangers-of-ai-hallucinations-in-financial-services) ². Si un rapport mentionne un fractionnement d'actions de 6 pour 1, une IA mal ancrée pourrait indiquer qu'il s'agissait d'un fractionnement de 10 pour 1 parce que son algorithme de prédiction a dérivé. Ce type d'erreur, dans un rapport de gestion, n'est pas récupérable avec une correction rapide.
+
+[Pour les institutions financières, les hallucinations IA créent non seulement un risque de réputation mais aussi des défis réglementaires et de conformité qui exigent des stratégies d'atténuation proactives](https://biztechmagazine.com/article/2025/08/llm-hallucinations-what-are-implications-financial-institutions) ³. Ce n'est pas une raison d'éviter l'IA dans le reporting financier. C'est une raison de rédiger des prompts avec précision.
+
+---
+
+## Les quatre qualités d'un prompt qui fonctionne en finance
+
+**Spécificité** — le prompt indique au modèle exactement avec quoi il travaille : quel jeu de données, quelle période, quelles entités, quelles définitions de métriques. Des inputs vagues produisent des outputs vagues. Dans le reporting financier, les outputs vagues sont dangereux.
+
+**Contexte** — le prompt fournit le contexte métier que le modèle ne peut pas inférer des seuls chiffres. Quelle est l'organisation ? Quel est le public du reporting ? Quelles décisions seront prises sur la base de cet output ?
+
+**Contraintes** — le prompt fixe des limites sur ce que le modèle doit et ne doit pas faire. Il ne doit pas interpoler des données manquantes. Il ne doit pas tirer de conclusions au-delà de ce que les chiffres soutiennent. Il doit signaler où les données sont absentes plutôt que de les contourner.
+
+**Format de sortie** — le prompt spécifie à quoi doit ressembler l'output : puces, prose narrative, tableau, résumé exécutif d'une longueur spécifique.
+
+---
+
+## Le cadre R.C.T.F. : une approche structurée
+
+[Le cadre R.C.T.F. — Rôle, Contexte, Tâche, Format — est là où opère actuellement le top 10% des équipes financières qui utilisent l'IA](https://fpa-trends.com/article/how-fpa-professionals-should-prompt-ai-2026) ⁴.
+
+**Rôle** — dites au modèle qui il est. Exemple : *"Vous êtes un analyste FP&A senior préparant un rapport de gestion pour le CFO et deux membres du conseil d'administration non financiers."*
+
+**Contexte** — fournissez le contexte métier et les données. Collez les données directement. Exemple : *"Le tableau suivant montre le T3 2026 réel vs. budget pour les cinq principaux centres de coûts de l'activité européenne. Devise : EUR. Tous les chiffres en milliers."*
+
+**Tâche** — indiquez précisément ce que le modèle doit produire. Exemple : *"Rédigez trois à cinq puces expliquant les écarts les plus importants. Ne commentez que les écarts dépassant 5% ou 50 000 €. Ne spéculez pas sur des causes non étayées par les données fournies. Si vous n'êtes pas certain d'une cause, dites-le explicitement."*
+
+**Format** — spécifiez la structure de l'output. Exemple : *"Output en puces, chacune commençant par le nom du centre de coûts et le montant de l'écart. Maximum 40 mots par puce. Langage clair adapté à un membre du conseil non financier."*
+
+---
+
+## Prompts spécifiques pour les tâches courantes de reporting financier
+
+### Commentaire d'écarts
+
+**Prompt faible :**
+> "Rédigez un commentaire sur les écarts budgétaires."
+
+**Pourquoi il échoue :** Le modèle n'a pas de données, pas de seuil pour ce qui constitue un écart significatif, pas d'audience et pas de format.
+
+**Prompt fort :**
+> "Vous êtes un analyste FP&A rédigeant la section de commentaires de gestion d'un rapport mensuel pour le CFO. Les données ci-dessous montrent le réel vs. budget pour le mois en cours et depuis le début de l'année, par département. Devise : EUR. Tous les chiffres en milliers.
+>
+> [collez votre tableau de données ici]
+>
+> Rédigez un commentaire couvrant les trois écarts favorables et les trois écarts défavorables les plus importants, mesurés en valeur absolue. Ne commentez que les écarts dépassant 25 000 € ou 8% du budget, le plus faible des deux. Pour chaque écart, indiquez : la ligne, le montant, la direction (favorable/défavorable) et la cause la plus probable si elle peut être inférée directement des données. Ne spéculez pas au-delà de ce que les chiffres soutiennent. Signalez tout écart dont la cause n'est pas claire avec la note 'À investiguer'. Output en puces, maximum 50 mots chacune."
+
+---
+
+### Résumé exécutif d'une période financière
+
+**Prompt fort :**
+> "Vous êtes un partenaire financier senior rédigeant le résumé exécutif pour le board pack du T2. L'audience est composée de trois membres du conseil, dont deux ne sont pas financiers. Le résumé doit être factuel, direct et sans jargon.
+>
+> Utilisez uniquement les données fournies ci-dessous — n'inférez ni n'ajoutez d'informations absentes de ce jeu de données.
+>
+> [collez les données de revenus, coûts et marges]
+>
+> Rédigez un résumé exécutif de 150 à 200 mots couvrant : (1) le chiffre d'affaires principal et sa comparaison avec l'année précédente et le budget ; (2) le principal driver de coûts qui s'est amélioré ou dégradé ; (3) la position de marge résultante et ce qu'elle signifie pour les perspectives de l'exercice. Utilisez un langage clair. N'utilisez pas de termes comme 'robuste', 'vents contraires' ou 'environnement difficile' — soyez spécifique sur ce qui s'est passé."
+
+---
+
+## La règle la plus importante : donnez les données à l'IA, pas la question
+
+L'erreur la plus courante dans les prompts financiers est de poser une question au modèle en attendant qu'il trouve la réponse. Les modèles IA n'ont pas accès à vos systèmes financiers. Ils ne peuvent pas extraire vos données ERP.
+
+Ce qu'ils peuvent faire, c'est analyser, interpréter, structurer et communiquer des données que vous fournissez. [Les prompts ambigus sont l'ennemi des réponses claires et utiles dans les applications IA financières](https://www.brightwave.io/blog/prompting-for-performance-part-ii-crafting-high-impact-prompts) ⁵. Chaque prompt financier efficace commence par coller les données pertinentes directement dans le prompt — la question vient après les données, pas avant.
+
+Pour atténuer le risque de chiffres incorrects, ajoutez cette instruction à tout prompt impliquant un output numérique :
+
+> "Ne faites pas de calculs. Utilisez uniquement les chiffres fournis dans les données. Si un chiffre est manquant et serait nécessaire pour compléter l'analyse, signalez-le comme manquant plutôt que de l'estimer."
+
+---
+
+## Construire une bibliothèque de prompts
+
+Une fois qu'une structure de prompt fonctionne de manière fiable, elle doit être sauvegardée et réutilisée. [Comme la maîtrise des feuilles de calcul a jadis défini la modélisation financière, l'ingénierie des prompts est désormais la clé pour débloquer l'insight alimenté par l'IA](https://www.withvayu.com/blog/prompt-engineering-for-finance-the-new-core-skill-every-team-needs) ¹.
+
+Une bibliothèque pratique de prompts pour une équipe financière pourrait inclure :
+
+- Modèle de commentaire d'écarts mensuel (par entité, par centre de coûts)
+- Modèle de résumé exécutif (par période de reporting)
+- Modèle de narratif de trésorerie (hebdomadaire, mensuel)
+- Modèle de réponse aux auditeurs (pour les demandes standard)
+
+---
+
+## Ce que l'IA ne peut pas faire dans le reporting financier
+
+[Les hallucinations IA représentent l'un des défis les plus significatifs pour les organisations déployant des modèles de langage — et dans des domaines à enjeux élevés comme le reporting financier, elles compromettent la fiabilité, créent des expositions à la responsabilité et génèrent des coûts tangibles à travers de mauvaises décisions](https://infomineo.com/artificial-intelligence/stop-ai-hallucinations-detection-prevention-verification-guide-2025/) ⁶.
+
+L'objectif des prompts financiers bien construits n'est pas de retirer l'analyste du processus. C'est de retirer les parties mécaniques du processus — le premier brouillon, le formatage structurel, les commentaires répétitifs — pour que l'analyste puisse se concentrer sur ce que seul un humain peut faire : appliquer le contexte métier, exercer son jugement et assumer la responsabilité de l'output.
+
+---
+
+## Références
+
+1. Vayu — *Prompt Engineering for Finance: The New Core Skill Every Team Needs* (2025) — [withvayu.com](https://www.withvayu.com/blog/prompt-engineering-for-finance-the-new-core-skill-every-team-needs)
+2. Baytech Consulting — *Hidden Dangers of AI Hallucinations in Financial Services* (avril 2025) — [baytechconsulting.com](https://www.baytechconsulting.com/blog/hidden-dangers-of-ai-hallucinations-in-financial-services)
+3. BizTech Magazine — *LLM Hallucinations: What Are the Implications for Financial Institutions?* (août 2025) — [biztechmagazine.com](https://biztechmagazine.com/article/2025/08/llm-hallucinations-what-are-implications-financial-institutions)
+4. FP&A Trends — *How FP&A Professionals Should Prompt AI in 2026* (mars 2026) — [fpa-trends.com](https://fpa-trends.com/article/how-fpa-professionals-should-prompt-ai-2026)
+5. Brightwave — *Prompting for Performance: Crafting High-Impact AI Prompts for Financial Analysis* — [brightwave.io](https://www.brightwave.io/blog/prompting-for-performance-part-ii-crafting-high-impact-prompts)
+6. Infomineo — *Stop AI Hallucinations: Detection, Prevention & Verification Guide 2025* (octobre 2025) — [infomineo.com](https://infomineo.com/artificial-intelligence/stop-ai-hallucinations-detection-prevention-verification-guide-2025/)
+  `,
     },
   },
   // ── T&E & FINANCE TRANSFORMATION ───
@@ -1337,21 +1769,365 @@ More content here.
     readTime: 5,
     content: {
       en: `
-## The shift that is already happening
+Ask any finance director who has been through a T&E implementation that did not go as planned, and the story is almost always the same. The vendor delivered the system. The project went live. And then — gradually, or sometimes immediately — it became clear that something had gone wrong. Users were not logging expenses correctly. The policy was being ignored. The finance team was still spending hours on manual reconciliation. The promised savings never materialised.
 
-Your first paragraph goes here. Write in plain text or markdown.
-Each double line break becomes a new paragraph.
+The technology worked. The implementation failed.
 
-## Why finance teams are ahead of other functions
+This is not an unusual situation. [According to Gartner, over 75% of ERP and enterprise system implementations fail to meet their original objectives](https://www.velosio.com/blog/change-management-mistakes-that-undermine-erp-implementation/) ¹. T&E platforms are not ERP systems in the traditional sense, but they share the same failure patterns — because they share the same root cause. [Deloitte identifies change management as the single biggest failure point for enterprise system projects](https://www.velosio.com/blog/change-management-mistakes-that-undermine-erp-implementation/), due to the critical people-related challenges that surface at every stage ¹.
 
-Another section here...
+This article examines the five reasons T&E implementations fail specifically in European organisations — and what to do differently.
 
-## The 10 processes worth automating first
+---
 
-More content here.
-    `,
-      es: `Spanish version of the full article...`,
-      fr: `French version of the full article...`,
+## Why Europe is harder than it looks
+
+Before examining the five reasons, it is worth stating clearly why a pan-European T&E implementation is more complex than a single-country rollout.
+
+A UK-only or Germany-only deployment is a contained problem. You have one regulatory environment, one language, one set of cultural norms around expenses, and one stakeholder community to manage. Pan-European means ten or more versions of each of those things, simultaneously, with interdependencies between them.
+
+[The T&E tool market is projected to grow from $10.5 billion in 2023 to $26.8 billion by 2033](https://datahorizzonresearch.com/tande-travel-and-expense-tool-market-39168) ², which reflects how many organisations are investing in these platforms for the first time. Many of them are doing it across multiple countries at once, without having done it before, without a playbook, and without a programme manager who has navigated European complexity in this specific domain.
+
+The five reasons below are not theoretical. They are the patterns that appear, consistently, in pan-European T&E programmes that come off the rails.
+
+---
+
+## Reason 1: The vendor is treated as the programme manager
+
+This is the most common and most costly mistake — and it is understandable. The vendor has done hundreds of implementations. They have a methodology, a project template, and a team of implementation consultants who know the system inside out. It feels natural to hand the programme to them.
+
+The problem is that the vendor's job is to implement the software. Your organisation's job is to implement the change. These are not the same thing — and nobody is held accountable for the second one when you assume the vendor is doing both.
+
+The vendor will configure the system to your stated requirements. They will not ensure that your CFO in the Netherlands has been briefed before the steering committee meeting. They will not notice that the Spanish entity's expense categories do not align with the new policy. They will not follow up when the UK finance team stops using the approval workflow three weeks after go-live because it is taking too long.
+
+[Insufficient change management is a leading cause of enterprise system failure, often resulting in low user adoption and resistance](https://kpcteam.com/kpposts/unveiling-the-erp-conundrum-why-55-75-of-erp-projects-fail/) ³. But change management cannot be delegated to the vendor because the vendor does not have the relationships, the organisational context, or the accountability to drive it.
+
+**What to do instead:** Appoint an internal programme owner with explicit accountability for adoption — not just go-live. That person should sit in steering committees, own the change plan, and have the authority to escalate when entities are not engaging. If that internal resource does not exist, a specialist external programme manager with European T&E experience is a more valuable investment than an extra implementation consultant.
+
+---
+
+## Reason 2: Policy design is left until after the platform is selected
+
+T&E policy and T&E platform are treated, in most organisations, as sequential decisions. First we choose the system. Then we figure out the policy. In practice, this sequence creates a problem that is expensive to fix.
+
+Every T&E platform has a data model — a set of categories, approval hierarchies, and rules that define how it handles expense submissions. If your policy is designed after the platform is configured, you end up fitting your policy to the platform's constraints rather than the other way around. What should be a business decision — how your organisation wants to manage expenses — becomes a technical limitation.
+
+The second problem is timeline. Policy design in a pan-European organisation requires alignment across Finance, HR, Legal, and Procurement in multiple countries. That process takes months. If it starts after vendor selection, it sits on the critical path of your go-live. If it starts before, the platform configuration can be built around the agreed policy from day one.
+
+[A 2025 Skift and Navan survey found that 80% of business travellers book off-platform sometimes, citing better prices or convenience](https://navan.com/resources/glossary/what-is-travel-and-expense-t-and-e) ⁴. Off-platform bookings almost always indicate a policy that users do not trust, do not understand, or do not find practical — not a technology failure.
+
+**What to do instead:** Run the policy design workstream in parallel with vendor selection, not after it. Use the RFP process to test whether shortlisted vendors can support the policy you want — rather than discovering post-selection that the policy needs to be simplified to fit what the system can handle.
+
+---
+
+## Reason 3: Country-level differences are underestimated until it is too late
+
+A common assumption in pan-European programmes is that the differences between countries are minor — a few local regulations, some translation work, and perhaps a slightly different approval threshold. The assumption lasts until the first country-level workshop, when it becomes clear that the differences are structural, not cosmetic.
+
+Germany requires receipts for expenses above €150 under German tax law. France has specific rules around meal allowances that differ depending on whether the employee is travelling domestically or internationally. Spain's regulatory framework treats certain expense categories differently for tax deductibility purposes. The Netherlands has specific rules on representation expenses. Each country has its own employment law implications for expense reimbursement timelines.
+
+These are not edge cases. They are standard requirements in every European T&E programme. [Cloud-based T&E software implementations take 4–8 weeks on average for single-country deployments, compared to 6–18 months for complex multi-country implementations](https://dataintelo.com/report/travel-and-expense-te-software-market) ⁵. The timeline difference is almost entirely explained by the time required to navigate country-specific requirements.
+
+The organisations that handle this well build country-specific requirements into the programme plan from day one. The organisations that struggle discover them during UAT, when changing the configuration is expensive and delaying go-live is inevitable.
+
+**What to do instead:** Before configuration begins, run structured discovery sessions with a finance or HR representative from each country. The agenda: what are the regulatory requirements, what are the cultural norms around expenses, what will users find confusing, and what will cause them to reject the system? This is not a long process — a structured 90-minute session per country is usually sufficient. The output feeds directly into the configuration brief.
+
+---
+
+## Reason 4: Training is treated as an event rather than a process
+
+The training plan on most T&E implementation projects looks something like this: two weeks before go-live, run training sessions for all users. Produce a user guide. Send it by email. Mark training as complete.
+
+This approach fails for three predictable reasons.
+
+First, users forget. Training delivered two weeks before go-live is half-forgotten by the time the system is live. The research on learning retention is consistent: [without reinforcement, people forget approximately 70% of new information within 24 hours and 90% within a week](https://www.prosci.com/blog/why-do-erp-implementations-fail/) ⁶. A one-time training event does not produce adoption. It produces attendance records.
+
+Second, training delivered in English to users in France, Germany, and Spain — without localisation — fails to land. The content is technically correct but practically inaccessible. Users who struggle to follow a training session in a second language disengage. They find workarounds. They keep using the old process.
+
+Third, the people who most need to champion the system — managers and team leads — are often the least well-prepared to answer questions from their teams after go-live. When a user in the Hamburg office submits an expense and gets an error message, they ask their manager. If the manager does not know the answer, the user finds a workaround. That workaround becomes the de facto process.
+
+[About 56% of organisations encounter resistance from within during system implementations](https://www.priority-software.com/resources/why-erp-implementations-fail/) ⁷. Resistance is almost always a symptom of insufficient preparation — not of malice. Users resist what they do not understand.
+
+**What to do instead:** Build a local champion network before go-live. Identify one engaged, credible person per country or business unit who receives deeper training, has access to the programme team, and becomes the first point of contact for their colleagues after launch. Pair this with a 30-day hypercare period where the programme team is actively monitoring adoption, answering questions, and resolving issues in near-real time. Training is not a pre-go-live activity — it is a go-live and post-go-live activity.
+
+---
+
+## Reason 5: Adoption is measured at go-live rather than 90 days after
+
+The project timeline ends at go-live. The steering committee celebrates. The implementation consultant moves on to the next client. The internal programme team disbands. And three months later, someone runs a report and discovers that 40% of expenses in Germany are still being submitted outside the system.
+
+This pattern is so common it has a name in programme management: the adoption cliff. The system is live, the project is closed, and nobody is watching what happens next.
+
+[A 2025 Navan survey found that 71% of business travellers spend 30 or more minutes filing a single expense report, with 36% spending over an hour](https://navan.com/resources/glossary/what-is-travel-and-expense-t-and-e) ⁴. This level of friction does not disappear automatically when a new system goes live. If the new system is not significantly easier than the old process in the eyes of the user, they will revert — particularly if nobody is checking.
+
+Adoption is not a binary outcome. It is a process that unfolds over 60–90 days post-go-live, shaped by whether the system is easy to use, whether managers are reinforcing the new behaviour, whether exceptions are handled quickly, and whether the feedback loop between users and the programme team is functioning.
+
+[Organisations that allocate 15–20% of their project budget to change management activities consistently see better adoption outcomes](https://www.elevatiq.com/post/erp-implementation-failures/) ⁸. Most T&E implementations allocate far less than that — and most of what is allocated is spent on pre-go-live activities, not on the 90-day period where adoption is actually won or lost.
+
+**What to do instead:** Define adoption metrics before go-live and measure them monthly for at least three months afterwards. Useful metrics include: the percentage of expenses submitted through the system (by country), the average processing time per claim, the out-of-policy submission rate, and the volume of support requests. Set thresholds — if adoption in any country drops below 80% at 60 days, escalate and intervene. Make the programme manager accountable for these numbers, not just for go-live.
+
+---
+
+## The pattern behind the five reasons
+
+Read across these five failure modes and a common thread appears. They are all, in different ways, versions of the same mistake: treating a T&E implementation as a technology project rather than a change programme.
+
+The technology is the easy part. The hard part is getting a finance team in Frankfurt, a procurement director in Milan, and an HR business partner in Warsaw to agree on the same expense policy — and then ensuring that the 800 employees who report to them actually change their behaviour.
+
+That requires programme management with a change management backbone. It requires someone who understands both the technical configuration and the human dynamics. It requires a deliberate plan for every country, every stakeholder group, and every phase from vendor selection to 90-day adoption review.
+
+Done well, a pan-European T&E implementation delivers real returns: reduced out-of-policy spend, faster processing, better visibility, and a finance team that spends less time chasing receipts. The difference between the implementations that deliver those returns and the ones that do not is almost never the platform. It is the programme.
+
+---
+
+## References
+
+1. Velosio — *Change Management Mistakes that Undermine ERP Implementation* (September 2025) — [velosio.com](https://www.velosio.com/blog/change-management-mistakes-that-undermine-erp-implementation/)
+2. DataHorizzon Research — *T&E Travel and Expense Tool Market Size, Growth, Share & Analysis Report 2033* — [datahorizzonresearch.com](https://datahorizzonresearch.com/tande-travel-and-expense-tool-market-39168)
+3. KPC Team — *ERP Implementation Failure Rate: Why ERP Projects Fail* (March 2026) — [kpcteam.com](https://kpcteam.com/kpposts/unveiling-the-erp-conundrum-why-55-75-of-erp-projects-fail)
+4. Navan — *What Is T&E (Travel and Expense)? Definition* (May 2026) — [navan.com](https://navan.com/resources/glossary/what-is-travel-and-expense-t-and-e)
+5. Dataintelo — *Travel and Expense (T&E) Software Market Research Report 2034* (March 2026) — [dataintelo.com](https://dataintelo.com/report/travel-and-expense-te-software-market)
+6. Prosci — *Why Do ERP Implementations Fail?* (April 2026) — [prosci.com](https://www.prosci.com/blog/why-do-erp-implementations-fail)
+7. Priority Software — *12 Reasons For ERP Implementation Failure* (March 2026) — [priority-software.com](https://www.priority-software.com/resources/why-erp-implementations-fail/)
+8. Elevatiq — *ERP Implementation Failures 2025: What Went Wrong and How to Avoid It* (January 2026) — [elevatiq.com](https://www.elevatiq.com/post/erp-implementation-failures/)
+  `,
+
+      es: `
+Pregunta a cualquier director financiero que haya pasado por una implementación de T&E que no salió como estaba previsto, y la historia es casi siempre la misma. El proveedor entregó el sistema. El proyecto se puso en marcha. Y luego — de forma gradual, o a veces de inmediato — quedó claro que algo había salido mal. Los usuarios no registraban los gastos correctamente. Se ignoraba la política. El equipo financiero seguía dedicando horas a la conciliación manual. Los ahorros prometidos nunca se materializaron.
+
+La tecnología funcionó. La implementación fracasó.
+
+Esta no es una situación inusual. [Según Gartner, más del 75% de las implementaciones de ERP y sistemas empresariales no alcanzan sus objetivos originales](https://www.velosio.com/blog/change-management-mistakes-that-undermine-erp-implementation/) ¹. Las plataformas T&E no son sistemas ERP en el sentido tradicional, pero comparten los mismos patrones de fracaso — porque comparten la misma causa raíz. [Deloitte identifica la gestión del cambio como el principal punto de fracaso en los proyectos de sistemas empresariales](https://www.velosio.com/blog/change-management-mistakes-that-undermine-erp-implementation/), debido a los desafíos críticos relacionados con las personas que surgen en cada etapa ¹.
+
+Este artículo examina las cinco razones por las que las implementaciones de T&E fracasan específicamente en las organizaciones europeas — y qué hacer de manera diferente.
+
+---
+
+## Por qué Europa es más difícil de lo que parece
+
+Antes de examinar las cinco razones, vale la pena señalar claramente por qué una implementación T&E paneuropea es más compleja que un despliegue en un único país.
+
+Un despliegue solo en el Reino Unido o solo en Alemania es un problema contenido. Hay un entorno regulatorio, un idioma, unas normas culturales sobre los gastos y una comunidad de stakeholders que gestionar. Paneuropeo significa diez o más versiones de cada uno de esos elementos, simultáneamente, con interdependencias entre ellos.
+
+[El mercado de herramientas T&E se proyecta que crecerá de 10.500 millones de dólares en 2023 a 26.800 millones en 2033](https://datahorizzonresearch.com/tande-travel-and-expense-tool-market-39168) ², lo que refleja cuántas organizaciones están invirtiendo en estas plataformas por primera vez. Muchas de ellas lo hacen en varios países a la vez, sin haberlo hecho antes, sin un manual de referencia y sin un gestor de programas que haya navegado la complejidad europea en este dominio específico.
+
+Las cinco razones siguientes no son teóricas. Son los patrones que aparecen, de forma constante, en los programas T&E paneuropeos que se descarrilan.
+
+---
+
+## Razón 1: El proveedor es tratado como el gestor del programa
+
+Este es el error más común y más costoso — y es comprensible. El proveedor ha realizado cientos de implementaciones. Tiene una metodología, una plantilla de proyecto y un equipo de consultores que conocen el sistema a fondo. Parece natural entregarle el programa.
+
+El problema es que el trabajo del proveedor es implementar el software. El trabajo de la organización es implementar el cambio. Estas no son lo mismo — y nadie es responsable de la segunda cuando se asume que el proveedor está haciendo ambas.
+
+El proveedor configurará el sistema según los requisitos indicados. No se asegurará de que el CFO en los Países Bajos haya sido informado antes de la reunión del comité directivo. No notará que las categorías de gastos de la entidad española no se alinean con la nueva política. No hará seguimiento cuando el equipo financiero del Reino Unido deje de usar el flujo de aprobación tres semanas después del lanzamiento porque está tardando demasiado.
+
+[La gestión del cambio insuficiente es una causa principal de fracaso en los sistemas empresariales, resultando frecuentemente en baja adopción por parte de los usuarios y resistencia](https://kpcteam.com/kpposts/unveiling-the-erp-conundrum-why-55-75-of-erp-projects-fail/) ³. Pero la gestión del cambio no puede delegarse al proveedor porque este no tiene las relaciones, el contexto organizativo ni la responsabilidad para impulsarla.
+
+**Qué hacer en su lugar:** Designar un responsable del programa interno con responsabilidad explícita sobre la adopción — no solo sobre el go-live. Esa persona debe participar en los comités directivos, ser propietaria del plan de cambio y tener autoridad para escalar cuando las entidades no se implican. Si ese recurso interno no existe, un gestor de programas externo especializado con experiencia en T&E europeo es una inversión más valiosa que un consultor de implementación adicional.
+
+---
+
+## Razón 2: El diseño de la política se deja para después de la selección de la plataforma
+
+La política T&E y la plataforma T&E se tratan, en la mayoría de las organizaciones, como decisiones secuenciales. Primero elegimos el sistema. Luego establecemos la política. En la práctica, esta secuencia crea un problema caro de resolver.
+
+Cada plataforma T&E tiene un modelo de datos — un conjunto de categorías, jerarquías de aprobación y reglas que definen cómo gestiona los envíos de gastos. Si la política se diseña después de que la plataforma esté configurada, la política termina adaptándose a las limitaciones de la plataforma en lugar de al revés. Lo que debería ser una decisión de negocio — cómo la organización quiere gestionar los gastos — se convierte en una limitación técnica.
+
+El segundo problema es el calendario. El diseño de políticas en una organización paneuropea requiere alineación entre Finanzas, RRHH, Legal y Compras en múltiples países. Ese proceso lleva meses. Si empieza después de la selección del proveedor, se sitúa en la ruta crítica del go-live. Si empieza antes, la configuración de la plataforma puede construirse sobre la política acordada desde el primer día.
+
+[Una encuesta de Skift y Navan de 2025 encontró que el 80% de los viajeros de negocios reservan fuera de la plataforma a veces, citando mejores precios o conveniencia](https://navan.com/resources/glossary/what-is-travel-and-expense-t-and-e) ⁴. Las reservas fuera de la plataforma casi siempre indican una política en la que los usuarios no confían, no entienden o no encuentran práctica — no un fallo tecnológico.
+
+**Qué hacer en su lugar:** Ejecutar el flujo de trabajo de diseño de políticas en paralelo con la selección del proveedor, no después. Usar el proceso de RFP para comprobar si los proveedores preseleccionados pueden soportar la política que se quiere — en lugar de descubrir después de la selección que la política necesita simplificarse para encajar en lo que el sistema puede gestionar.
+
+---
+
+## Razón 3: Las diferencias por países se subestiman hasta que es demasiado tarde
+
+Una suposición habitual en los programas paneuropeos es que las diferencias entre países son menores — algunas regulaciones locales, algo de traducción y quizás un umbral de aprobación ligeramente diferente. La suposición dura hasta el primer taller por país, cuando queda claro que las diferencias son estructurales, no cosméticas.
+
+Alemania exige recibos para gastos superiores a 150 € según la legislación fiscal alemana. Francia tiene reglas específicas sobre dietas que difieren dependiendo de si el empleado viaja dentro del país o al extranjero. El marco regulatorio español trata ciertas categorías de gastos de manera diferente a efectos de deducibilidad fiscal. Los Países Bajos tienen reglas específicas sobre gastos de representación. Cada país tiene sus propias implicaciones de derecho laboral para los plazos de reembolso de gastos.
+
+Estos no son casos excepcionales. Son requisitos estándar en cada programa T&E europeo. [Las implementaciones de software T&E basado en la nube tardan de 4 a 8 semanas de media para despliegues en un solo país, frente a 6-18 meses para implementaciones complejas multinacionales](https://dataintelo.com/report/travel-and-expense-te-software-market) ⁵. La diferencia de plazo se explica casi en su totalidad por el tiempo necesario para navegar los requisitos específicos de cada país.
+
+**Qué hacer en su lugar:** Antes de que empiece la configuración, realizar sesiones de diagnóstico estructuradas con un representante de finanzas o RRHH de cada país. El orden del día: cuáles son los requisitos regulatorios, cuáles son las normas culturales en torno a los gastos, qué encontrarán confuso los usuarios y qué les llevará a rechazar el sistema. Esta no es un proceso largo — una sesión estructurada de 90 minutos por país suele ser suficiente. El resultado alimenta directamente el brief de configuración.
+
+---
+
+## Razón 4: La formación se trata como un evento en lugar de un proceso
+
+El plan de formación en la mayoría de los proyectos de implementación T&E tiene este aspecto: dos semanas antes del go-live, realizar sesiones de formación para todos los usuarios. Producir una guía de usuario. Enviarla por email. Marcar la formación como completada.
+
+Este enfoque falla por tres razones predecibles.
+
+Primero, los usuarios olvidan. La formación impartida dos semanas antes del go-live está medio olvidada para cuando el sistema está en marcha. [La investigación sobre retención del aprendizaje es consistente: sin refuerzo, las personas olvidan aproximadamente el 70% de la nueva información en 24 horas y el 90% en una semana](https://www.prosci.com/blog/why-do-erp-implementations-fail/) ⁶. Un evento de formación único no produce adopción. Produce registros de asistencia.
+
+Segundo, la formación impartida en inglés a usuarios en Francia, Alemania y España — sin localización — no cala. El contenido es técnicamente correcto pero prácticamente inaccesible. Los usuarios que tienen dificultades para seguir una sesión de formación en un segundo idioma se desconectan. Encuentran soluciones alternativas. Continúan usando el proceso antiguo.
+
+Tercero, las personas que más necesitan ser defensoras del sistema — directores y jefes de equipo — son a menudo las menos preparadas para responder preguntas de sus equipos después del go-live.
+
+[Alrededor del 56% de las organizaciones encuentran resistencia interna durante las implementaciones de sistemas](https://www.priority-software.com/resources/why-erp-implementations-fail/) ⁷. La resistencia es casi siempre un síntoma de preparación insuficiente — no de mala voluntad.
+
+**Qué hacer en su lugar:** Construir una red de campeones locales antes del go-live. Identificar una persona comprometida y creíble por país o unidad de negocio que reciba formación más profunda, tenga acceso al equipo del programa y se convierta en el primer punto de contacto para sus colegas después del lanzamiento. Complementar esto con un período de hypercare de 30 días donde el equipo del programa monitoriza activamente la adopción, responde preguntas y resuelve problemas en tiempo casi real.
+
+---
+
+## Razón 5: La adopción se mide en el go-live en lugar de 90 días después
+
+El calendario del proyecto termina en el go-live. El comité directivo celebra. El consultor de implementación pasa al siguiente cliente. El equipo del programa interno se disuelve. Y tres meses después, alguien ejecuta un informe y descubre que el 40% de los gastos en Alemania siguen presentándose fuera del sistema.
+
+Este patrón es tan común que tiene nombre en gestión de programas: el precipicio de adopción. El sistema está en marcha, el proyecto está cerrado y nadie está observando lo que ocurre después.
+
+[Una encuesta de Navan de 2025 encontró que el 71% de los viajeros de negocios dedica 30 o más minutos a presentar un único informe de gastos, con el 36% superando una hora](https://navan.com/resources/glossary/what-is-travel-and-expense-t-and-e) ⁴. Este nivel de fricción no desaparece automáticamente cuando un nuevo sistema entra en funcionamiento. Si el nuevo sistema no es significativamente más fácil que el proceso antiguo desde el punto de vista del usuario, revertirán — especialmente si nadie lo está comprobando.
+
+[Las organizaciones que destinan entre el 15 y el 20% de su presupuesto de proyecto a actividades de gestión del cambio obtienen consistentemente mejores resultados de adopción](https://www.elevatiq.com/post/erp-implementation-failures/) ⁸.
+
+**Qué hacer en su lugar:** Definir métricas de adopción antes del go-live y medirlas mensualmente durante al menos tres meses después. Métricas útiles incluyen: el porcentaje de gastos presentados a través del sistema (por país), el tiempo medio de procesamiento por solicitud, la tasa de envíos fuera de política y el volumen de solicitudes de soporte. Establecer umbrales — si la adopción en cualquier país cae por debajo del 80% a los 60 días, escalar e intervenir.
+
+---
+
+## El patrón detrás de las cinco razones
+
+Leyendo estas cinco causas de fracaso, aparece un hilo conductor. Todas son, de diferentes maneras, versiones del mismo error: tratar una implementación T&E como un proyecto tecnológico en lugar de un programa de cambio.
+
+La tecnología es la parte fácil. La parte difícil es conseguir que un equipo financiero en Fráncfort, un director de compras en Milán y un socio de RRHH en Varsovia acuerden la misma política de gastos — y luego asegurarse de que los 800 empleados que dependen de ellos realmente cambien su comportamiento.
+
+Eso requiere gestión de programas con una base de gestión del cambio. Requiere a alguien que entienda tanto la configuración técnica como la dinámica humana. Requiere un plan deliberado para cada país, cada grupo de stakeholders y cada fase desde la selección del proveedor hasta la revisión de adopción a 90 días.
+
+Bien ejecutado, una implementación T&E paneuropea ofrece retornos reales: reducción del gasto fuera de política, procesamiento más rápido, mejor visibilidad y un equipo financiero que dedica menos tiempo a perseguir recibos. La diferencia entre las implementaciones que ofrecen esos retornos y las que no es casi nunca la plataforma. Es el programa.
+
+---
+
+## Referencias
+
+1. Velosio — *Change Management Mistakes that Undermine ERP Implementation* (septiembre 2025) — [velosio.com](https://www.velosio.com/blog/change-management-mistakes-that-undermine-erp-implementation/)
+2. DataHorizzon Research — *T&E Travel and Expense Tool Market Size, Growth, Share & Analysis Report 2033* — [datahorizzonresearch.com](https://datahorizzonresearch.com/tande-travel-and-expense-tool-market-39168)
+3. KPC Team — *ERP Implementation Failure Rate: Why ERP Projects Fail* (marzo 2026) — [kpcteam.com](https://kpcteam.com/kpposts/unveiling-the-erp-conundrum-why-55-75-of-erp-projects-fail)
+4. Navan — *What Is T&E (Travel and Expense)? Definition* (mayo 2026) — [navan.com](https://navan.com/resources/glossary/what-is-travel-and-expense-t-and-e)
+5. Dataintelo — *Travel and Expense (T&E) Software Market Research Report 2034* (marzo 2026) — [dataintelo.com](https://dataintelo.com/report/travel-and-expense-te-software-market)
+6. Prosci — *Why Do ERP Implementations Fail?* (abril 2026) — [prosci.com](https://www.prosci.com/blog/why-do-erp-implementations-fail)
+7. Priority Software — *12 Reasons For ERP Implementation Failure* (marzo 2026) — [priority-software.com](https://www.priority-software.com/resources/why-erp-implementations-fail/)
+8. Elevatiq — *ERP Implementation Failures 2025: What Went Wrong and How to Avoid It* (enero 2026) — [elevatiq.com](https://www.elevatiq.com/post/erp-implementation-failures/)
+  `,
+
+      fr: `
+Demandez à n'importe quel directeur financier qui a vécu une implémentation T&E qui ne s'est pas déroulée comme prévu, et l'histoire est presque toujours la même. Le fournisseur a livré le système. Le projet a été mis en production. Et puis — progressivement, ou parfois immédiatement — il est devenu clair que quelque chose avait mal tourné. Les utilisateurs ne saisissaient pas correctement les dépenses. La politique était ignorée. L'équipe financière passait toujours des heures sur la réconciliation manuelle. Les économies promises ne s'étaient jamais matérialisées.
+
+La technologie a fonctionné. L'implémentation a échoué.
+
+Ce n'est pas une situation inhabituelle. [Selon Gartner, plus de 75% des implémentations ERP et de systèmes d'entreprise n'atteignent pas leurs objectifs initiaux](https://www.velosio.com/blog/change-management-mistakes-that-undermine-erp-implementation/) ¹. Les plateformes T&E ne sont pas des systèmes ERP au sens traditionnel, mais elles partagent les mêmes schémas d'échec — parce qu'elles partagent la même cause profonde. [Deloitte identifie la conduite du changement comme le principal point de défaillance pour les projets de systèmes d'entreprise](https://www.velosio.com/blog/change-management-mistakes-that-undermine-erp-implementation/), en raison des défis critiques liés aux personnes qui émergent à chaque étape ¹.
+
+Cet article examine les cinq raisons pour lesquelles les implémentations T&E échouent spécifiquement dans les organisations européennes — et ce qu'il convient de faire différemment.
+
+---
+
+## Pourquoi l'Europe est plus difficile qu'il n'y paraît
+
+Avant d'examiner les cinq raisons, il vaut la peine d'énoncer clairement pourquoi une implémentation T&E paneuropéenne est plus complexe qu'un déploiement dans un seul pays.
+
+Un déploiement limité au Royaume-Uni ou à l'Allemagne est un problème contenu. Il y a un seul environnement réglementaire, une seule langue, un seul ensemble de normes culturelles autour des frais professionnels et une seule communauté de parties prenantes à gérer. Paneuropéen signifie dix versions ou plus de chacun de ces éléments, simultanément, avec des interdépendances entre eux.
+
+[Le marché des outils T&E devrait croître de 10,5 milliards de dollars en 2023 à 26,8 milliards en 2033](https://datahorizzonresearch.com/tande-travel-and-expense-tool-market-39168) ², ce qui reflète le nombre d'organisations qui investissent dans ces plateformes pour la première fois. Beaucoup d'entre elles le font dans plusieurs pays simultanément, sans l'avoir fait auparavant, sans guide de référence et sans chef de programme ayant navigué la complexité européenne dans ce domaine spécifique.
+
+Les cinq raisons ci-dessous ne sont pas théoriques. Ce sont les schémas qui apparaissent, systématiquement, dans les programmes T&E paneuropéens qui déraillent.
+
+---
+
+## Raison 1 : Le fournisseur est traité comme le chef de programme
+
+C'est l'erreur la plus courante et la plus coûteuse — et elle est compréhensible. Le fournisseur a réalisé des centaines d'implémentations. Il dispose d'une méthodologie, d'un modèle de projet et d'une équipe de consultants qui connaissent le système sur le bout des doigts. Il semble naturel de lui confier le programme.
+
+Le problème est que le rôle du fournisseur est d'implémenter le logiciel. Le rôle de votre organisation est d'implémenter le changement. Ce ne sont pas la même chose — et personne n'est responsable de la seconde lorsqu'on suppose que le fournisseur fait les deux.
+
+Le fournisseur configurera le système selon les exigences indiquées. Il ne s'assurera pas que votre CFO aux Pays-Bas a été briefé avant la réunion du comité de pilotage. Il ne remarquera pas que les catégories de frais de l'entité espagnole ne sont pas alignées avec la nouvelle politique. Il ne fera pas le suivi lorsque l'équipe financière britannique cessera d'utiliser le flux d'approbation trois semaines après le go-live parce qu'il prend trop de temps.
+
+[La conduite du changement insuffisante est l'une des principales causes d'échec des systèmes d'entreprise, entraînant souvent une faible adoption par les utilisateurs et des résistances](https://kpcteam.com/kpposts/unveiling-the-erp-conundrum-why-55-75-of-erp-projects-fail/) ³. Mais la conduite du changement ne peut pas être déléguée au fournisseur car celui-ci n'a pas les relations, le contexte organisationnel ni la responsabilité pour la piloter.
+
+**Que faire à la place :** Nommer un responsable de programme interne avec une responsabilité explicite sur l'adoption — pas seulement sur le go-live. Cette personne doit participer aux comités de pilotage, être propriétaire du plan de changement et avoir l'autorité d'escalader lorsque les entités ne s'engagent pas. Si cette ressource interne n'existe pas, un chef de programme externe spécialisé avec une expérience T&E européenne est un investissement plus précieux qu'un consultant d'implémentation supplémentaire.
+
+---
+
+## Raison 2 : La conception de la politique est laissée après la sélection de la plateforme
+
+La politique T&E et la plateforme T&E sont traitées, dans la plupart des organisations, comme des décisions séquentielles. D'abord on choisit le système. Ensuite on définit la politique. En pratique, cette séquence crée un problème coûteux à résoudre.
+
+Chaque plateforme T&E dispose d'un modèle de données — un ensemble de catégories, de hiérarchies d'approbation et de règles qui définissent comment elle traite les soumissions de frais. Si la politique est conçue après la configuration de la plateforme, on finit par adapter la politique aux contraintes de la plateforme plutôt que l'inverse. Ce qui devrait être une décision métier — comment l'organisation souhaite gérer les frais — devient une limitation technique.
+
+Le deuxième problème est le calendrier. La conception de la politique dans une organisation paneuropéenne nécessite un alignement entre Finance, RH, Juridique et Achats dans plusieurs pays. Ce processus prend des mois. S'il commence après la sélection du fournisseur, il se retrouve sur le chemin critique du go-live.
+
+[Une enquête Skift et Navan de 2025 a révélé que 80% des voyageurs d'affaires réservent parfois hors plateforme, citant de meilleurs prix ou plus de commodité](https://navan.com/resources/glossary/what-is-travel-and-expense-t-and-e) ⁴. Les réservations hors plateforme indiquent presque toujours une politique en laquelle les utilisateurs n'ont pas confiance, qu'ils ne comprennent pas ou qu'ils ne trouvent pas pratique — pas un échec technologique.
+
+**Que faire à la place :** Mener le flux de travail de conception de politique en parallèle avec la sélection du fournisseur, et non après. Utiliser le processus d'appel d'offres pour tester si les fournisseurs présélectionnés peuvent prendre en charge la politique souhaitée — plutôt que de découvrir après la sélection que la politique doit être simplifiée pour correspondre à ce que le système peut gérer.
+
+---
+
+## Raison 3 : Les différences entre pays sont sous-estimées jusqu'à ce qu'il soit trop tard
+
+Une hypothèse courante dans les programmes paneuropéens est que les différences entre pays sont mineures — quelques réglementations locales, un peu de traduction et peut-être un seuil d'approbation légèrement différent. Cette hypothèse dure jusqu'au premier atelier par pays, où il devient clair que les différences sont structurelles, pas cosmétiques.
+
+L'Allemagne exige des justificatifs pour les dépenses supérieures à 150 € en vertu de la loi fiscale allemande. La France a des règles spécifiques sur les indemnités de repas qui diffèrent selon que l'employé voyage en France ou à l'étranger. Le cadre réglementaire espagnol traite certaines catégories de dépenses différemment à des fins de déductibilité fiscale. Les Pays-Bas ont des règles spécifiques sur les dépenses de représentation. Chaque pays a ses propres implications en droit du travail pour les délais de remboursement des frais.
+
+Ce ne sont pas des cas particuliers. Ce sont des exigences standard dans chaque programme T&E européen. [Les implémentations de logiciels T&E basés sur le cloud prennent en moyenne 4 à 8 semaines pour les déploiements dans un seul pays, contre 6 à 18 mois pour les implémentations complexes multi-pays](https://dataintelo.com/report/travel-and-expense-te-software-market) ⁵.
+
+**Que faire à la place :** Avant que la configuration ne commence, mener des sessions de diagnostic structurées avec un représentant Finance ou RH de chaque pays. L'ordre du jour : quelles sont les exigences réglementaires, quelles sont les normes culturelles autour des frais professionnels, qu'est-ce que les utilisateurs trouveront déroutant et qu'est-ce qui les amènera à rejeter le système. Ce n'est pas un processus long — une session structurée de 90 minutes par pays est généralement suffisante. Le résultat alimente directement le cahier des charges de configuration.
+
+---
+
+## Raison 4 : La formation est traitée comme un événement plutôt que comme un processus
+
+Le plan de formation dans la plupart des projets d'implémentation T&E ressemble à ceci : deux semaines avant le go-live, organiser des sessions de formation pour tous les utilisateurs. Produire un guide utilisateur. L'envoyer par e-mail. Marquer la formation comme terminée.
+
+Cette approche échoue pour trois raisons prévisibles.
+
+Premièrement, les utilisateurs oublient. [La recherche sur la rétention des apprentissages est cohérente : sans renforcement, les gens oublient environ 70% des nouvelles informations dans les 24 heures et 90% en une semaine](https://www.prosci.com/blog/why-do-erp-implementations-fail/) ⁶. Un événement de formation unique ne produit pas d'adoption. Il produit des listes de présence.
+
+Deuxièmement, une formation dispensée en anglais à des utilisateurs en France, en Allemagne et en Espagne — sans localisation — ne passe pas. Le contenu est techniquement correct mais pratiquement inaccessible. Les utilisateurs qui peinent à suivre une session de formation dans une deuxième langue se désengagent.
+
+Troisièmement, les personnes qui ont le plus besoin d'être des champions du système — les managers et les responsables d'équipe — sont souvent les moins bien préparées à répondre aux questions de leurs équipes après le go-live.
+
+[Environ 56% des organisations rencontrent une résistance interne lors des implémentations de systèmes](https://www.priority-software.com/resources/why-erp-implementations-fail/) ⁷. La résistance est presque toujours un symptôme d'une préparation insuffisante — pas de mauvaise volonté.
+
+**Que faire à la place :** Construire un réseau de champions locaux avant le go-live. Identifier une personne engagée et crédible par pays ou unité commerciale qui reçoit une formation plus approfondie, a accès à l'équipe programme et devient le premier point de contact pour ses collègues après le lancement. Associer cela à une période d'hypercare de 30 jours où l'équipe programme surveille activement l'adoption, répond aux questions et résout les problèmes en quasi temps réel.
+
+---
+
+## Raison 5 : L'adoption est mesurée au go-live plutôt que 90 jours après
+
+Le calendrier du projet se termine au go-live. Le comité de pilotage célèbre. Le consultant d'implémentation passe au client suivant. L'équipe programme interne se dissout. Et trois mois plus tard, quelqu'un lance un rapport et découvre que 40% des frais en Allemagne sont toujours soumis en dehors du système.
+
+Ce schéma est si courant qu'il a un nom en gestion de programme : la falaise d'adoption. Le système est en production, le projet est clôturé, et personne ne surveille ce qui se passe ensuite.
+
+[Une enquête Navan de 2025 a révélé que 71% des voyageurs d'affaires passent 30 minutes ou plus à soumettre un seul rapport de frais, avec 36% dépassant une heure](https://navan.com/resources/glossary/what-is-travel-and-expense-t-and-e) ⁴. Ce niveau de friction ne disparaît pas automatiquement lorsqu'un nouveau système entre en production. Si le nouveau système n'est pas significativement plus simple que l'ancien processus du point de vue de l'utilisateur, ils reviendront aux anciennes pratiques.
+
+[Les organisations qui allouent 15 à 20% de leur budget de projet aux activités de conduite du changement obtiennent systématiquement de meilleurs résultats d'adoption](https://www.elevatiq.com/post/erp-implementation-failures/) ⁸.
+
+**Que faire à la place :** Définir des métriques d'adoption avant le go-live et les mesurer mensuellement pendant au moins trois mois après. Les métriques utiles incluent : le pourcentage de frais soumis via le système (par pays), le temps de traitement moyen par demande, le taux de soumissions hors politique et le volume de demandes de support. Établir des seuils — si l'adoption dans un pays quelconque tombe en dessous de 80% à 60 jours, escalader et intervenir.
+
+---
+
+## Le schéma derrière les cinq raisons
+
+En lisant ces cinq causes d'échec, un fil conducteur apparaît. Elles sont toutes, de différentes manières, des versions de la même erreur : traiter une implémentation T&E comme un projet technologique plutôt que comme un programme de changement.
+
+La technologie est la partie facile. La partie difficile est d'amener une équipe financière à Francfort, un directeur des achats à Milan et un partenaire RH à Varsovie à s'accorder sur la même politique de frais — et de s'assurer ensuite que les 800 employés qui leur rendent compte changent réellement de comportement.
+
+Cela nécessite une gestion de programme avec un socle de conduite du changement. Cela nécessite quelqu'un qui comprend à la fois la configuration technique et les dynamiques humaines. Cela nécessite un plan délibéré pour chaque pays, chaque groupe de parties prenantes et chaque phase de la sélection du fournisseur à la revue d'adoption à 90 jours.
+
+Bien réalisée, une implémentation T&E paneuropéenne offre des retours réels : réduction des dépenses hors politique, traitement plus rapide, meilleure visibilité et une équipe financière qui passe moins de temps à courir après les justificatifs. La différence entre les implémentations qui délivrent ces retours et celles qui ne le font pas n'est presque jamais la plateforme. C'est le programme.
+
+---
+
+## Références
+
+1. Velosio — *Change Management Mistakes that Undermine ERP Implementation* (septembre 2025) — [velosio.com](https://www.velosio.com/blog/change-management-mistakes-that-undermine-erp-implementation/)
+2. DataHorizzon Research — *T&E Travel and Expense Tool Market Size, Growth, Share & Analysis Report 2033* — [datahorizzonresearch.com](https://datahorizzonresearch.com/tande-travel-and-expense-tool-market-39168)
+3. KPC Team — *ERP Implementation Failure Rate: Why ERP Projects Fail* (mars 2026) — [kpcteam.com](https://kpcteam.com/kpposts/unveiling-the-erp-conundrum-why-55-75-of-erp-projects-fail)
+4. Navan — *What Is T&E (Travel and Expense)? Definition* (mai 2026) — [navan.com](https://navan.com/resources/glossary/what-is-travel-and-expense-t-and-e)
+5. Dataintelo — *Travel and Expense (T&E) Software Market Research Report 2034* (mars 2026) — [dataintelo.com](https://dataintelo.com/report/travel-and-expense-te-software-market)
+6. Prosci — *Why Do ERP Implementations Fail?* (avril 2026) — [prosci.com](https://www.prosci.com/blog/why-do-erp-implementations-fail)
+7. Priority Software — *12 Reasons For ERP Implementation Failure* (mars 2026) — [priority-software.com](https://www.priority-software.com/resources/why-erp-implementations-fail/)
+8. Elevatiq — *ERP Implementation Failures 2025: What Went Wrong and How to Avoid It* (janvier 2026) — [elevatiq.com](https://www.elevatiq.com/post/erp-implementation-failures/)
+  `,
     },
   },
   {
@@ -1378,21 +2154,381 @@ More content here.
     readTime: 6,
     content: {
       en: `
-## The shift that is already happening
+When a European programme team says they have "done change management," what they usually mean is this: they translated the training materials into French, German, and Spanish, sent a launch email from the group CFO, ran a set of webinars with simultaneous interpretation, and marked the communications workstream as complete.
 
-Your first paragraph goes here. Write in plain text or markdown.
-Each double line break becomes a new paragraph.
+That is not multilingual change management. That is multilingual communications. The difference matters enormously — and it is the difference that determines whether the system gets used or quietly abandoned by the second quarter after go-live.
 
-## Why finance teams are ahead of other functions
+Genuine multilingual change management is operationally different from what most pan-European programmes actually deliver. It requires different timing, different tone, different champions, different feedback loops, and a fundamentally different model for how change actually travels through a large organisation with multiple languages and cultures.
 
-Another section here...
+This article explains what that looks like in practice — drawn from delivering change programmes across 10+ European markets.
 
-## The 10 processes worth automating first
+---
 
-More content here.
-    `,
-      es: `Spanish version of the full article...`,
-      fr: `French version of the full article...`,
+## The translation trap
+
+The most seductive mistake in multilingual change management is assuming that language is the main challenge — and that once you have addressed language, you have addressed the people side of the programme.
+
+Translation matters. A German finance manager who cannot read the training materials clearly, because they were written by a native English speaker and mechanically translated without review, will disengage. That is a real problem. But it is the easy problem.
+
+The harder problem is that even perfectly translated communications will fail if they do not reflect the local context. [A Harvard Business Review survey found that 70% of employees working in multinational corporations face challenges related to language barriers and cultural norms when communicating with colleagues from different backgrounds](https://vorecol.com/blogs/blog-internal-communication-challenges-in-multinational-companies-7962) ¹. Cultural norms — not just language — are cited explicitly. The two are not the same challenge, and they do not have the same solution.
+
+A communication that reads as respectful and informative to a UK audience may read as vague and uncommitted to a German one. A directive, detail-rich message that lands well in Germany may feel cold and top-down in Spain, where relationship context matters before task content. The same words, translated correctly, can undermine the change in one market while advancing it in another.
+
+---
+
+## How adoption actually moves through a multilingual organisation
+
+In a single-country change programme, adoption follows a relatively predictable path. Leadership communicates the change. Managers cascade it. Employees receive training. Adoption builds over weeks.
+
+In a pan-European programme, this model breaks down for a simple reason: the cascade moves through multiple languages and interpretive filters before it reaches the person who actually needs to change their behaviour. Each filter introduces distortion. Each translation adds a step where meaning can shift.
+
+[Research from MIT confirms that language barriers reduce management knowledge transfers within organisations, and that lowering communication costs directly increases the quality of interactions between managers and their teams](https://direct.mit.edu/rest/article/doi/10.1162/rest_a_01487/124135/Language-Barriers-in-Multinationals-and-Knowledge) ². The implication for change management is direct: when your change communications have to travel through linguistic and cultural layers before reaching users, the quality and accuracy of what arrives at the end of that chain is materially lower than what was sent at the beginning.
+
+This is not a translation problem. It is an architecture problem. The solution is not to translate better — it is to redesign how the change travels.
+
+---
+
+## What the architecture of multilingual change actually looks like
+
+### 1. Country-level discovery before programme design
+
+The first structural difference between a multilingual change programme and a translated single-country programme is when country-level input enters the process.
+
+In most European programmes, the change plan is designed centrally — by the programme team, typically located in one country — and then localised. This means the plan reflects one cultural frame by default, and localisation is a corrective exercise on a design that was never built for it.
+
+What works better: structured discovery sessions with a representative from each country before the change plan is finalised. Not a consultation. A proper diagnostic. The questions that matter are:
+
+- What is the current sentiment toward this type of change in this market?
+- Who are the credible voices — who do people here trust and follow?
+- What has been tried before that failed, and why?
+- What is the single communication that would most undermine this programme if it were received badly?
+
+Thirty to forty minutes per country, structured well, produces information that changes the design of the programme in meaningful ways. Skipping this step produces a change plan that looks complete on paper and fails in practice, market by market.
+
+### 2. Local champions as the primary change channel
+
+[When global change programmes succeed, the consistent pattern is that regional change ambassadors and champions delivered the communications, vetted the plans, and ensured relevance to the local organisation and culture](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international) ³. The programme team does not drive adoption in each market. The local champion does.
+
+The champion is not a translator. They are a credible, trusted person in that market who understands the change, believes in it, and is willing to advocate for it among their peers. [Champions learn how to advocate for change within their organisations, reduce resistance among team members, and ensure the successful adoption of new initiatives](https://changestrategists.com/change-champion-network-prosci/) ⁴.
+
+Selection criteria for a local champion in a multilingual programme:
+
+- They are respected by their peers — not just by their manager
+- They speak frankly about what will and will not work locally
+- They have enough seniority to get answers when they need them, but are not so senior that they are perceived as the management voice
+- They are willing to be the first point of contact when problems arise after go-live, not just before it
+
+One strong champion per country or major business unit is more valuable than a polished communications cascade that arrives centrally and means nothing locally.
+
+### 3. Market-specific timing, not a global launch date
+
+The assumption that a programme should launch simultaneously in all markets is rarely justified by the needs of the programme. It is usually justified by the needs of the project plan — which is a different thing.
+
+Different markets have different readiness levels. Germany may need more preparation time because the works council process requires formal information and consultation before implementation. France may need earlier engagement with the Comité Social et Économique. Spain may need additional relationship-building at local management level before the formal communication begins.
+
+Forcing all markets onto the same go-live date to satisfy a single milestone in the project plan routinely produces one of two outcomes: markets that are ready but under-utilised, or markets that are not ready but technically live. Both are avoidable.
+
+A phased approach — piloting in one or two markets, learning, and then rolling out with those learnings applied — consistently produces better adoption outcomes than a simultaneous global launch. This is not a slower approach. It is a more reliable one.
+
+### 4. Feedback loops that actually function across languages
+
+One of the most commonly broken elements of multilingual change management is the feedback loop. Most programmes have a channel — an email address, a SharePoint page, a survey — through which users can raise issues. Most of these channels are in English. Most of them are reviewed by someone in the central programme team.
+
+The result is that feedback from non-English-speaking markets is systematically under-represented. Users in Germany, France, and Spain are less likely to raise issues in English. When they do, the nuance is often lost. The issues that surface are the ones that have escalated to the point of being undeniable — not the early signals that, caught in time, could have been resolved before they became adoption barriers.
+
+What works: a feedback mechanism that operates in each local language, reviewed by the local champion, with a clear escalation path to the central team. Issues raised in French should be resolved in French, with the champion mediating between the user and the central programme team. The feedback does not need to be translated — it needs to be acted on. Action, communicated back in the local language, builds more trust than any launch email from the group CFO.
+
+---
+
+## The cultural dimensions that actually affect adoption
+
+Every European change programme runs into the same set of cultural fault lines. None of these are stereotypes — they are consistent patterns that show up in market after market.
+
+### German markets: precision and process
+
+German users — whether in Germany, Austria, or Switzerland — typically want to understand the logic of the change before they will engage with it. Why is this system replacing the current one? What problem is it solving? What will happen to the old process?
+
+A communication that says "we are moving to a new platform on 1 March" without explaining why will generate internal resistance that surfaces only in the post-go-live period, when it is harder to address. A communication that says "we are moving to a new platform on 1 March because the current system does not support [specific business requirement], and here is exactly what changes and what does not" will receive significantly better engagement.
+
+The change plan in German markets should be more detailed, more logical, and more process-oriented than the global standard. This is not over-engineering. It is meeting the audience where they are.
+
+### French markets: relationship and authority
+
+In France, the sequence matters as much as the content. A communication that comes from the group CEO to all employees before local management have been briefed undermines the credibility of local managers and generates resistance. French employees typically look to their direct manager to interpret and contextualise what is coming from central functions. If that manager does not know the answer when asked, trust in the programme deteriorates quickly.
+
+The change sequencing for France should brief local managers first, give them time to prepare their own position on the change, and then allow the central communication to follow. The local manager's role is not to relay the message — it is to interpret and own it.
+
+### Spanish markets: relationship and proximity
+
+Spain shares some characteristics with France in terms of the importance of relationship context, but the dynamic is different. In Spain, the question is often less "does this make logical sense?" and more "do I trust the person telling me about this?" A message that arrives from a distant central function, without any local relationship context, lands differently than the same message delivered by someone the team knows and respects.
+
+Investing time in building relationships with local management before the formal change communications begin is not a nice-to-have in Spanish markets. It is a prerequisite for the communications to be received well.
+
+---
+
+## What the research says about why this matters
+
+[The true cost of language barriers in multinational organisations cannot be measured in translation costs alone — it has to be seen in how it distorts and damages relationships, which then imposes constraints on the strategies pursued and the systems adopted](https://harzing.com/blog/2018/10/language-barriers-in-multinational-companies) ⁵.
+
+That framing, from decades of multinational research, applies precisely to change management. When employees do not understand, cannot ask questions in their own language, or receive communications that feel generic and distant, they do not adopt. They comply at the surface level while maintaining their previous behaviour underneath — which is why so many pan-European programmes report technically successful go-lives followed by poor adoption metrics six months later.
+
+[Research from Prosci shows that 89% of large enterprises are currently engaged in digital and AI transformation](https://www.prosci.com/resources) ⁶. Most of those transformations involve multi-country programmes. Most of those programmes will treat multilingualism as a translation exercise rather than an architecture challenge. The minority that treat it correctly will achieve adoption rates that the majority cannot replicate — not because they spent more money, but because they designed the change to travel through real human networks rather than around them.
+
+---
+
+## A practical checklist for multilingual change
+
+For any European programme with three or more languages and countries:
+
+**Before the programme design is finalised:**
+- Run structured discovery sessions with one representative per country
+- Identify local champions — not job roles, specific people
+- Map the formal consultation requirements per country (works councils, CSE, etc.)
+- Identify the credible communication channels in each market
+
+**Before go-live:**
+- Brief local managers before central communications are sent
+- Deliver training in each local language, not translated at the last minute
+- Run champion briefing sessions in the local language with a two-way conversation, not a webinar
+- Establish local-language feedback channels with clear response commitments
+
+**After go-live:**
+- Monitor adoption metrics by country, not just globally
+- Treat any country falling below 70% adoption at 30 days as an active problem requiring intervention
+- Make the champion the first line of response, backed by the central team
+- Hold a structured retrospective at 90 days with input from each market
+
+The difference between this and what most programmes actually deliver is not cost. It is intentionality — designing the change to work in each specific context rather than designing it to work generically and hoping it translates.
+
+---
+
+## References
+
+1. Vorecol — *Internal Communication Challenges in Multinational Companies* — [vorecol.com](https://vorecol.com/blogs/blog-internal-communication-challenges-in-multinational-companies-7962)
+2. MIT Press / Review of Economics and Statistics — *Language Barriers in Multinationals and Knowledge Transfers* (2024) — [direct.mit.edu](https://direct.mit.edu/rest/article/doi/10.1162/rest_a_01487/124135/Language-Barriers-in-Multinationals-and-Knowledge)
+3. Prosci — *Building a Global Change Ambassador Network at Matthews International* (August 2024) — [prosci.com](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international)
+4. Change Strategists — *Building a Prosci Change Champion Network* (April 2025) — [changestrategists.com](https://changestrategists.com/change-champion-network-prosci/)
+5. Harzing.com — *Language Barriers in Multinational Companies* (2018) — [harzing.com](https://harzing.com/blog/2018/10/language-barriers-in-multinational-companies)
+6. Prosci — *Change Management Resource Centre* (2025) — [prosci.com](https://www.prosci.com/resources)
+  `,
+
+      es: `
+Cuando un equipo de programa europeo dice que ha "hecho la gestión del cambio", lo que normalmente quieren decir es esto: tradujeron los materiales de formación al francés, alemán y español, enviaron un email de lanzamiento del CFO del grupo, realizaron una serie de webinars con interpretación simultánea y marcaron el flujo de trabajo de comunicaciones como completado.
+
+Eso no es gestión del cambio multilingüe. Eso es comunicación multilingüe. La diferencia importa enormemente — y es la diferencia que determina si el sistema se usa o si silenciosamente se abandona en el segundo trimestre después del go-live.
+
+La verdadera gestión del cambio multilingüe es operativamente diferente de lo que la mayoría de los programas paneuropeos realmente entregan. Requiere tiempos diferentes, tonos diferentes, campeones diferentes, bucles de retroalimentación diferentes y un modelo fundamentalmente diferente de cómo el cambio realmente viaja a través de una gran organización con múltiples idiomas y culturas.
+
+Este artículo explica cómo es eso en la práctica — extraído de la entrega de programas de cambio en más de 10 mercados europeos.
+
+---
+
+## La trampa de la traducción
+
+El error más seductor en la gestión del cambio multilingüe es asumir que el idioma es el principal desafío — y que una vez que has abordado el idioma, has abordado el lado humano del programa.
+
+La traducción importa. Un director financiero alemán que no puede leer los materiales de formación claramente, porque fueron escritos por un hablante nativo de inglés y traducidos mecánicamente sin revisión, se desconectará. Eso es un problema real. Pero es el problema fácil.
+
+El problema más difícil es que incluso las comunicaciones perfectamente traducidas fallarán si no reflejan el contexto local. [Una encuesta de Harvard Business Review encontró que el 70% de los empleados que trabajan en corporaciones multinacionales enfrentan desafíos relacionados con las barreras idiomáticas y las normas culturales al comunicarse con colegas de diferentes orígenes](https://vorecol.com/blogs/blog-internal-communication-challenges-in-multinational-companies-7962) ¹. Las normas culturales — no solo el idioma — se citan explícitamente. Los dos no son el mismo desafío y no tienen la misma solución.
+
+Una comunicación que parece respetuosa e informativa para una audiencia del Reino Unido puede parecer vaga y poco comprometida para una alemana. Un mensaje directivo y rico en detalles que funciona bien en Alemania puede sentirse frío y descendente en España, donde el contexto relacional importa antes que el contenido de la tarea.
+
+---
+
+## Cómo se mueve realmente la adopción a través de una organización multilingüe
+
+En un programa de cambio en un solo país, la adopción sigue un camino relativamente predecible. El liderazgo comunica el cambio. Los directivos lo transmiten en cascada. Los empleados reciben formación. La adopción se construye a lo largo de semanas.
+
+En un programa paneuropeo, este modelo se rompe por una razón simple: la cascada viaja a través de múltiples idiomas y filtros interpretativos antes de llegar a la persona que realmente necesita cambiar su comportamiento. Cada filtro introduce distorsión.
+
+[La investigación del MIT confirma que las barreras idiomáticas reducen las transferencias de conocimiento de gestión dentro de las organizaciones, y que reducir los costes de comunicación aumenta directamente la calidad de las interacciones entre directivos y sus equipos](https://direct.mit.edu/rest/article/doi/10.1162/rest_a_01487/124135/Language-Barriers-in-Multinationals-and-Knowledge) ². La implicación para la gestión del cambio es directa: cuando tus comunicaciones de cambio tienen que viajar a través de capas lingüísticas y culturales antes de llegar a los usuarios, la calidad y precisión de lo que llega al final de esa cadena es materialmente menor que lo que se envió al principio.
+
+Esto no es un problema de traducción. Es un problema de arquitectura. La solución no es traducir mejor — es rediseñar cómo viaja el cambio.
+
+---
+
+## Cómo es realmente la arquitectura del cambio multilingüe
+
+### 1. Diagnóstico a nivel país antes del diseño del programa
+
+La primera diferencia estructural entre un programa de cambio multilingüe y un programa de un solo país traducido es cuándo entra el input a nivel país en el proceso.
+
+En la mayoría de los programas europeos, el plan de cambio se diseña centralmente — por el equipo del programa, típicamente ubicado en un país — y luego se localiza. Lo que funciona mejor: sesiones de diagnóstico estructuradas con un representante de cada país antes de que el plan de cambio esté finalizado. Las preguntas que importan son:
+
+- ¿Cuál es el sentimiento actual hacia este tipo de cambio en este mercado?
+- ¿Quiénes son las voces creíbles — a quién escucha y sigue la gente aquí?
+- ¿Qué se ha intentado antes que falló, y por qué?
+- ¿Cuál es la comunicación única que más socavaría este programa si se recibiera mal?
+
+Treinta a cuarenta minutos por país, bien estructurados, producen información que cambia el diseño del programa de manera significativa.
+
+### 2. Campeones locales como el canal de cambio principal
+
+[Cuando los programas de cambio globales tienen éxito, el patrón consistente es que los embajadores y campeones del cambio regionales entregaron las comunicaciones, revisaron los planes y garantizaron la relevancia para la organización y cultura local](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international) ³. El equipo del programa no impulsa la adopción en cada mercado. Lo hace el campeón local.
+
+El campeón no es un traductor. Es una persona creíble y de confianza en ese mercado que entiende el cambio, cree en él y está dispuesta a defenderlo entre sus pares. [Los campeones aprenden cómo defender el cambio dentro de sus organizaciones, reducir la resistencia entre los miembros del equipo y garantizar la adopción exitosa de nuevas iniciativas](https://changestrategists.com/change-champion-network-prosci/) ⁴.
+
+Un campeón sólido por país o unidad de negocio principal es más valioso que una cascada de comunicaciones pulida que llega centralmente y no significa nada localmente.
+
+### 3. Tiempos específicos por mercado, no una fecha de lanzamiento global
+
+La suposición de que un programa debería lanzarse simultáneamente en todos los mercados rara vez está justificada por las necesidades del programa. Normalmente está justificada por las necesidades del plan de proyecto.
+
+Diferentes mercados tienen diferentes niveles de preparación. Alemania puede necesitar más tiempo de preparación porque el proceso del comité de empresa requiere información y consulta formal antes de la implementación. Francia puede necesitar una participación más temprana del Comité Social y Económico. España puede necesitar trabajo adicional de construcción de relaciones a nivel de gestión local antes de que comience la comunicación formal.
+
+Un enfoque por fases — pilotando en uno o dos mercados, aprendiendo y luego desplegando con esos aprendizajes aplicados — produce consistentemente mejores resultados de adopción que un lanzamiento global simultáneo.
+
+### 4. Bucles de retroalimentación que realmente funcionan en varios idiomas
+
+Uno de los elementos más comúnmente rotos en la gestión del cambio multilingüe es el bucle de retroalimentación. La mayoría de los programas tienen un canal en inglés. El resultado es que los comentarios de los mercados de habla no inglesa están sistemáticamente infrarepresentados.
+
+Lo que funciona: un mecanismo de retroalimentación que opere en cada idioma local, revisado por el campeón local, con una ruta de escalada clara al equipo central. Los problemas planteados en francés deben resolverse en francés, con el campeón mediando entre el usuario y el equipo del programa central. La retroalimentación no necesita traducirse — necesita actuarse sobre ella. La acción, comunicada de vuelta en el idioma local, genera más confianza que cualquier email de lanzamiento del CFO del grupo.
+
+---
+
+## Las dimensiones culturales que realmente afectan la adopción
+
+### Mercados alemanes: precisión y proceso
+
+Los usuarios alemanes — ya sea en Alemania, Austria o Suiza — típicamente quieren entender la lógica del cambio antes de comprometerse con él. Una comunicación que simplemente anuncia el cambio sin explicar el porqué generará resistencia interna que solo surge en el período post-go-live. El plan de cambio en los mercados alemanes debería ser más detallado, más lógico y más orientado al proceso que el estándar global.
+
+### Mercados franceses: relación y autoridad
+
+En Francia, la secuencia importa tanto como el contenido. Una comunicación que llega del CEO del grupo a todos los empleados antes de que la gerencia local haya sido informada socava la credibilidad de los directivos locales. La secuencia de cambio para Francia debe informar primero a los directivos locales, darles tiempo para preparar su propia posición sobre el cambio, y luego dejar que siga la comunicación central.
+
+### Mercados españoles: relación y proximidad
+
+En España, la pregunta suele ser menos "¿tiene sentido lógico esto?" y más "¿confío en la persona que me habla de esto?" Una comunicación que llega de una función central distante, sin ningún contexto de relación local, aterriza de manera diferente que el mismo mensaje entregado por alguien a quien el equipo conoce y respeta.
+
+---
+
+## Lo que dice la investigación sobre por qué esto importa
+
+[El verdadero coste de las barreras idiomáticas en las organizaciones multinacionales no puede medirse solo en costes de traducción — debe verse en cómo distorsiona y daña las relaciones, lo que luego impone restricciones a las estrategias perseguidas y los sistemas adoptados](https://harzing.com/blog/2018/10/language-barriers-in-multinational-companies) ⁵.
+
+Cuando los empleados no entienden, no pueden hacer preguntas en su propio idioma, o reciben comunicaciones que parecen genéricas y distantes, no adoptan. Cumplen a nivel superficial mientras mantienen su comportamiento anterior por debajo — lo que explica por qué tantos programas paneuropeos reportan go-lives técnicamente exitosos seguidos de malas métricas de adopción seis meses después.
+
+[La investigación de Prosci muestra que el 89% de las grandes empresas están actualmente involucradas en transformación digital e IA](https://www.prosci.com/resources) ⁶. La minoría que trata la gestión del cambio multilingüe correctamente logrará tasas de adopción que la mayoría no puede replicar — no porque gasten más dinero, sino porque diseñaron el cambio para viajar a través de redes humanas reales en lugar de alrededor de ellas.
+
+---
+
+## Referencias
+
+1. Vorecol — *Internal Communication Challenges in Multinational Companies* — [vorecol.com](https://vorecol.com/blogs/blog-internal-communication-challenges-in-multinational-companies-7962)
+2. MIT Press — *Language Barriers in Multinationals and Knowledge Transfers* (2024) — [direct.mit.edu](https://direct.mit.edu/rest/article/doi/10.1162/rest_a_01487/124135/Language-Barriers-in-Multinationals-and-Knowledge)
+3. Prosci — *Building a Global Change Ambassador Network at Matthews International* (agosto 2024) — [prosci.com](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international)
+4. Change Strategists — *Building a Prosci Change Champion Network* (abril 2025) — [changestrategists.com](https://changestrategists.com/change-champion-network-prosci/)
+5. Harzing.com — *Language Barriers in Multinational Companies* (2018) — [harzing.com](https://harzing.com/blog/2018/10/language-barriers-in-multinational-companies)
+6. Prosci — *Change Management Resource Centre* (2025) — [prosci.com](https://www.prosci.com/resources)
+  `,
+
+      fr: `
+Quand une équipe de programme européenne dit avoir "fait la conduite du changement", ce qu'elle veut généralement dire, c'est ceci : elle a traduit les supports de formation en français, allemand et espagnol, envoyé un e-mail de lancement du CFO du groupe, animé une série de webinars avec interprétation simultanée, et marqué le flux de travail de communication comme terminé.
+
+Ce n'est pas de la conduite du changement multilingue. C'est de la communication multilingue. La différence est énorme — et c'est la différence qui détermine si le système est utilisé ou silencieusement abandonné dès le deuxième trimestre après le go-live.
+
+La véritable conduite du changement multilingue est opérationnellement différente de ce que la plupart des programmes paneuropéens délivrent réellement. Elle nécessite des temporalités différentes, des tons différents, des champions différents, des boucles de rétroaction différentes et un modèle fondamentalement différent de la façon dont le changement se propage dans une grande organisation avec plusieurs langues et cultures.
+
+Cet article explique ce que cela signifie en pratique — tiré de la livraison de programmes de changement dans plus de 10 marchés européens.
+
+---
+
+## Le piège de la traduction
+
+L'erreur la plus séduisante dans la conduite du changement multilingue est de supposer que la langue est le principal défi — et qu'une fois qu'on a traité la langue, on a traité le côté humain du programme.
+
+La traduction compte. Un directeur financier allemand qui ne peut pas lire clairement les supports de formation, parce qu'ils ont été rédigés par un locuteur natif anglophone et traduits mécaniquement sans révision, se désengagera. C'est un problème réel. Mais c'est le problème facile.
+
+Le problème plus difficile est que même les communications parfaitement traduites échoueront si elles ne reflètent pas le contexte local. [Une enquête de la Harvard Business Review a révélé que 70% des employés travaillant dans des multinationales font face à des défis liés aux barrières linguistiques et aux normes culturelles lorsqu'ils communiquent avec des collègues d'origines différentes](https://vorecol.com/blogs/blog-internal-communication-challenges-in-multinational-companies-7962) ¹. Les normes culturelles — pas seulement la langue — sont explicitement citées. Ce ne sont pas le même défi et ils n'ont pas la même solution.
+
+Une communication qui semble respectueuse et informative pour un public britannique peut paraître vague et peu engagée pour un public allemand. Un message directif et riche en détails qui fonctionne bien en Allemagne peut sembler froid et descendant en Espagne, où le contexte relationnel compte avant le contenu de la tâche.
+
+---
+
+## Comment l'adoption se propage dans une organisation multilingue
+
+Dans un programme de changement dans un seul pays, l'adoption suit un chemin relativement prévisible. Dans un programme paneuropéen, ce modèle se brise pour une raison simple : la cascade passe par plusieurs langues et filtres interprétatifs avant d'atteindre la personne qui doit réellement changer son comportement.
+
+[La recherche du MIT confirme que les barrières linguistiques réduisent les transferts de connaissances managériales au sein des organisations, et que réduire les coûts de communication augmente directement la qualité des interactions entre managers et leurs équipes](https://direct.mit.edu/rest/article/doi/10.1162/rest_a_01487/124135/Language-Barriers-in-Multinationals-and-Knowledge) ². L'implication pour la conduite du changement est directe : quand vos communications de changement doivent traverser des couches linguistiques et culturelles avant d'atteindre les utilisateurs, la qualité de ce qui arrive au bout de la chaîne est matériellement plus faible que ce qui a été envoyé au début.
+
+Ce n'est pas un problème de traduction. C'est un problème d'architecture. La solution n'est pas de mieux traduire — c'est de repenser comment le changement se propage.
+
+---
+
+## À quoi ressemble vraiment l'architecture du changement multilingue
+
+### 1. Diagnostic au niveau pays avant la conception du programme
+
+La première différence structurelle entre un programme de changement multilingue et un programme d'un seul pays traduit est le moment où l'input au niveau pays entre dans le processus.
+
+Ce qui fonctionne mieux : des sessions de diagnostic structurées avec un représentant de chaque pays avant que le plan de changement soit finalisé. Les questions qui comptent :
+
+- Quel est le sentiment actuel vis-à-vis de ce type de changement sur ce marché ?
+- Qui sont les voix crédibles — qui les gens écoutent-ils et suivent-ils ici ?
+- Qu'a-t-on essayé avant qui a échoué, et pourquoi ?
+- Quelle est la communication unique qui compromettrait le plus ce programme si elle était mal reçue ?
+
+Trente à quarante minutes par pays, bien structurées, produisent des informations qui changent la conception du programme de manière significative.
+
+### 2. Les champions locaux comme canal principal du changement
+
+[Quand les programmes de changement globaux réussissent, le schéma constant est que les ambassadeurs et champions du changement régionaux ont délivré les communications, vérifié les plans et assuré la pertinence pour l'organisation et la culture locale](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international) ³.
+
+Le champion n'est pas un traducteur. C'est une personne crédible et de confiance sur ce marché qui comprend le changement, y croit et est prête à le défendre auprès de ses pairs. [Les champions apprennent à défendre le changement au sein de leurs organisations, à réduire la résistance parmi les membres de l'équipe et à assurer l'adoption réussie des nouvelles initiatives](https://changestrategists.com/change-champion-network-prosci/) ⁴.
+
+Un champion solide par pays ou par unité commerciale principale est plus précieux qu'une cascade de communications soignée qui arrive centralement et ne signifie rien localement.
+
+### 3. Calendrier spécifique par marché, pas une date de lancement global
+
+L'hypothèse qu'un programme devrait se lancer simultanément sur tous les marchés est rarement justifiée par les besoins du programme. Elle est généralement justifiée par les besoins du plan de projet — ce qui est différent.
+
+Différents marchés ont différents niveaux de préparation. L'Allemagne peut avoir besoin de plus de temps de préparation car le processus du comité d'entreprise requiert une information et une consultation formelle. La France peut avoir besoin d'un engagement plus précoce du Comité Social et Économique. L'Espagne peut avoir besoin d'un travail de construction de relations supplémentaire au niveau de la direction locale.
+
+Une approche par phases — pilotant dans un ou deux marchés, apprenant, puis déployant avec ces apprentissages appliqués — produit systématiquement de meilleurs résultats d'adoption qu'un lancement global simultané.
+
+### 4. Boucles de rétroaction qui fonctionnent vraiment dans plusieurs langues
+
+L'un des éléments les plus fréquemment défaillants de la conduite du changement multilingue est la boucle de rétroaction. La plupart des programmes ont un canal en anglais. Le résultat est que les retours des marchés non anglophones sont systématiquement sous-représentés.
+
+Ce qui fonctionne : un mécanisme de rétroaction opérant dans chaque langue locale, examiné par le champion local, avec un chemin d'escalade clair vers l'équipe centrale. Les problèmes soulevés en français doivent être résolus en français. L'action, communiquée en retour dans la langue locale, génère plus de confiance que n'importe quel e-mail de lancement du CFO du groupe.
+
+---
+
+## Les dimensions culturelles qui affectent vraiment l'adoption
+
+### Marchés allemands : précision et processus
+
+Les utilisateurs allemands — qu'ils soient en Allemagne, en Autriche ou en Suisse — veulent généralement comprendre la logique du changement avant de s'y engager. Le plan de changement sur les marchés allemands devrait être plus détaillé, plus logique et plus orienté processus que la norme globale.
+
+### Marchés français : relation et autorité
+
+En France, la séquence compte autant que le contenu. Une communication qui arrive du PDG du groupe à tous les employés avant que la direction locale ait été briefée compromet la crédibilité des managers locaux. La séquence de changement pour la France doit briefer d'abord les managers locaux, leur laisser le temps de préparer leur propre position sur le changement, puis laisser la communication centrale suivre.
+
+### Marchés espagnols : relation et proximité
+
+En Espagne, la question est souvent moins "est-ce que ça a un sens logique ?" et plus "est-ce que je fais confiance à la personne qui m'en parle ?" Investir du temps à construire des relations avec la direction locale avant le début des communications formelles n'est pas un bonus en Espagne — c'est un prérequis pour que les communications soient bien reçues.
+
+---
+
+## Ce que dit la recherche sur l'importance de tout cela
+
+[Le véritable coût des barrières linguistiques dans les organisations multinationales ne peut pas se mesurer uniquement en coûts de traduction — il doit être vu dans la façon dont elles distordent et endommagent les relations, ce qui impose ensuite des contraintes sur les stratégies poursuivies et les systèmes adoptés](https://harzing.com/blog/2018/10/language-barriers-in-multinational-companies) ⁵.
+
+Quand les employés ne comprennent pas, ne peuvent pas poser de questions dans leur propre langue ou reçoivent des communications qui semblent génériques et distantes, ils n'adoptent pas. Ils se conforment en surface tout en maintenant leur comportement précédent en dessous — ce qui explique pourquoi tant de programmes paneuropéens rapportent des go-lives techniquement réussis suivis de mauvaises métriques d'adoption six mois plus tard.
+
+[La recherche Prosci montre que 89% des grandes entreprises sont actuellement engagées dans la transformation numérique et IA](https://www.prosci.com/resources) ⁶. La minorité qui traite correctement la conduite du changement multilingue atteindra des taux d'adoption que la majorité ne peut pas reproduire — non pas parce qu'elle dépense plus d'argent, mais parce qu'elle a conçu le changement pour se propager à travers de vraies réseaux humains plutôt qu'autour d'eux.
+
+---
+
+## Références
+
+1. Vorecol — *Internal Communication Challenges in Multinational Companies* — [vorecol.com](https://vorecol.com/blogs/blog-internal-communication-challenges-in-multinational-companies-7962)
+2. MIT Press — *Language Barriers in Multinationals and Knowledge Transfers* (2024) — [direct.mit.edu](https://direct.mit.edu/rest/article/doi/10.1162/rest_a_01487/124135/Language-Barriers-in-Multinationals-and-Knowledge)
+3. Prosci — *Building a Global Change Ambassador Network at Matthews International* (août 2024) — [prosci.com](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international)
+4. Change Strategists — *Building a Prosci Change Champion Network* (avril 2025) — [changestrategists.com](https://changestrategists.com/change-champion-network-prosci/)
+5. Harzing.com — *Language Barriers in Multinational Companies* (2018) — [harzing.com](https://harzing.com/blog/2018/10/language-barriers-in-multinational-companies)
+6. Prosci — *Change Management Resource Centre* (2025) — [prosci.com](https://www.prosci.com/resources)
+  `,
     },
   },
   {
@@ -1419,21 +2555,346 @@ More content here.
     readTime: 7,
     content: {
       en: `
-## The shift that is already happening
+The usual framing of this debate is binary. Either programme managers should learn to code, or they should not. Developers argue that non-technical managers slow things down, create requirements that cannot be built, and fail to appreciate the complexity of what they are asking for. Programme managers argue that their job is to manage the delivery, not to write the code — and that trying to be a developer makes you a mediocre manager.
 
-Your first paragraph goes here. Write in plain text or markdown.
-Each double line break becomes a new paragraph.
+Both positions miss the point.
 
-## Why finance teams are ahead of other functions
+The question is not whether programme managers should be able to build software. The vast majority should not attempt it — not because it is too hard, but because it is not their job. The question is whether they should understand how software gets built well enough to make better decisions about programmes that depend on it. And the answer to that question, based on what actually happens in European finance and operations programmes, is unambiguously yes.
 
-Another section here...
+This is not a theoretical argument. It comes from a specific experience: nine years managing finance system implementations from the business side, followed by a full-stack development bootcamp. What changed — in vendor conversations, in requirement reviews, in risk assessments — was not the ability to write code. It was the ability to read the situation differently.
 
-## The 10 processes worth automating first
+---
 
-More content here.
-    `,
-      es: `Spanish version of the full article...`,
-      fr: `French version of the full article...`,
+## What technical illiteracy costs a programme manager
+
+The most consequential way that technical illiteracy affects a programme manager is not in the things they get visibly wrong. It is in the things they cannot see.
+
+A vendor presents a configuration that technically meets the stated requirements but introduces significant maintenance overhead. A programme manager without technical literacy accepts it. One with technical literacy asks why the configuration was designed this way rather than a simpler alternative — and gets an honest answer about a constraint in the vendor's system that was not disclosed in the sales process.
+
+A development team estimates eight weeks for an integration. A programme manager without technical understanding accepts the estimate and puts it in the plan. One with technical understanding asks what the eight weeks breaks down into — and discovers that three of those weeks are for rework caused by incomplete requirements on the business side, not technical complexity. That is a conversation that produces a different project plan.
+
+A UAT defect is raised as low priority by the vendor. A programme manager without technical literacy accepts the classification and moves on. One with technical literacy understands that the defect is in a data mapping layer that affects downstream reporting — and escalates appropriately.
+
+None of these scenarios require writing a line of code. They require knowing enough about how systems work to ask the questions that produce useful answers.
+
+---
+
+## The specific value in finance and operations programmes
+
+Finance and operations programmes have a particular dynamic that makes technical literacy especially valuable: the gap between what the business side asks for and what is technically possible is frequently large, and the people on each side of that gap are often unable to communicate across it.
+
+A finance director who wants "a real-time dashboard showing expense liability by country" is asking for something that requires decisions about data refresh rates, API connections to the ERP, and choices about what "real-time" means given the latency in the source systems. None of those decisions are obvious. All of them have consequences. If the programme manager cannot bridge that conversation — cannot translate the business requirement into technical terms that allow the development team to make an informed recommendation — those decisions get made by default, usually in favour of whatever is easiest to build rather than what best serves the requirement.
+
+[Technical proficiency helps in setting realistic goals, making informed trade-offs, and understanding the implications of technical decisions on user experience and product feasibility](https://productschool.com/blog/skills/product-manager-skills) ¹. That framing, from the product management literature, translates directly to programme management in finance contexts. Realistic goals, informed trade-offs, understood implications — these are the deliverables of technical literacy, not of writing code.
+
+The damage done by the gap tends to surface in two places: requirements and vendor negotiations.
+
+### Requirements that cannot be built
+
+Requirements written by finance professionals without technical input are frequently imprecise in ways that become expensive during development. "The system should automatically reconcile transactions" is a requirement. It is not a specification. It leaves open every question about what counts as a match, what happens to exceptions, what data sources are involved, what tolerance thresholds apply, and what the output format should be.
+
+A programme manager with technical literacy notices these gaps before development begins. A programme manager without it discovers them during UAT, when they are expensive and time-consuming to resolve. [Business analysts who understand how software gets built write better requirements, help lower project risks, and reduce potential costly mistakes](https://khired.com/business-analysis-in-software-development/) ². The same principle applies directly to programme managers who own the requirements workstream.
+
+### Vendor negotiations that are one-sided
+
+Technology vendors are sophisticated commercial operators. They know that the person across the table from them, in most business-side programme manager roles, does not understand what they are selling well enough to challenge it. This asymmetry has consequences.
+
+Vendor estimates are inflated to absorb risk that the vendor has correctly identified but not disclosed. Configuration choices are made for vendor convenience rather than programme fitness. Change requests are framed as technically necessary when they are commercially motivated. Scope creep is attributed to requirement complexity when it is attributable to incomplete vendor discovery during the RFP process.
+
+[Technical fluency in systems — not coding, but knowing enough to challenge integrators and steer decisions — is becoming one of the most sought-after qualities in programme leaders](https://brookwoodrec.com/2025/07/30/the-future-of-programme-management/) ³. The operative phrase is "challenge integrators and steer decisions." That is exactly the conversation that technical literacy enables and that its absence forecloses.
+
+---
+
+## What "understanding code" actually means in practice
+
+It is worth being specific about what technical literacy looks like in a programme management context, because the term is often used loosely in ways that create false expectations.
+
+Technical literacy for a programme manager is not:
+- The ability to write production code in any language
+- Deep knowledge of database architecture or cloud infrastructure
+- Expertise in any specific platform or technology stack
+- The ability to review and approve code written by developers
+
+Technical literacy for a programme manager is:
+- Understanding how a REST API works well enough to ask sensible questions about integration scope and dependencies
+- Knowing what a data migration involves well enough to identify which parts of a vendor's estimate are credible and which are padding
+- Understanding the difference between a bug and a feature request well enough to challenge misclassifications in the defect log
+- Knowing what "configuration" means versus "customisation" in an enterprise system implementation — because that distinction has significant implications for cost, timeline, and future vendor dependency
+- Being able to read a system architecture diagram well enough to identify risks that the technical team has not surfaced in steering committee reports
+- Understanding what automated testing is, why it matters, and what the absence of it implies for UAT scope
+
+None of these require a computer science degree. All of them require a deliberate investment in technical literacy that most programme managers never make — because it is not listed in the job description, it is not covered in PRINCE2 or PMP certification, and the value of having it is only visible in retrospect, after the moment when it would have mattered has passed.
+
+---
+
+## How this plays out in a real programme
+
+Consider a T&E platform implementation. The programme manager receives the vendor's technical design document. It describes how the platform will connect to the ERP system via a scheduled batch integration running nightly.
+
+A programme manager without technical literacy reads this, notes that the integration is included in scope, and moves on. 
+
+A programme manager with technical literacy asks three questions:
+
+*Why nightly rather than real-time or near-real-time?* The answer reveals that the vendor's platform has a technical limitation that prevents live ERP connectivity — a limitation that was not disclosed in the RFP, that the business stakeholders assumed would not exist, and that has material implications for the finance team's month-end reporting timeline.
+
+*What happens if the nightly batch fails?* The answer reveals that the current design has no automated alerting — which means the finance team would discover the failure the following morning when users report missing data, not at the time of failure. This is a gap in the design that needs to be addressed before go-live.
+
+*What is the rollback procedure if the integration produces incorrect data after a platform update?* This question surfaces the fact that the vendor's standard contract puts the responsibility for data validation entirely on the customer — which has implications for how UAT is structured and who bears the cost of data remediation.
+
+These questions do not require knowing how to build an ERP integration. They require knowing enough about how integrations work to ask the right questions. The difference in outcome — a design that has been properly challenged versus one that has been passively accepted — is the difference that technical literacy makes.
+
+---
+
+## The change management angle
+
+There is a less obvious way in which technical literacy improves programme management: it changes how the programme manager relates to the technical team.
+
+In most business-led finance implementations, the relationship between the business-side programme manager and the technical team is characterised by mutual incomprehension. The business team does not understand why technical requests take as long as they do. The technical team does not understand why the business requirements keep changing. Both sides attribute the problem to the other.
+
+[Technical literacy is the bridge between the product vision and its execution — it allows you to understand the "how" behind the "what," fostering a stronger, more collaborative relationship with your engineering team](https://underdog.io/blog/product-manager-skills-required) ⁴. That collaborative relationship is not a soft benefit. It has direct programme consequences.
+
+A programme manager who can hold a genuine technical conversation earns credibility with the development team that changes what information gets shared. Technical teams are more likely to surface risks early to a programme manager they believe understands the problem. They are less likely to pad estimates for a manager who can read an estimate and ask specific questions about it. They are more willing to accept a business constraint when it is explained by someone who understands the technical trade-off it creates.
+
+---
+
+## The wider argument: T-shaped professionals in delivery roles
+
+[Programme managers who can combine technical literacy, governance mastery, and hands-on problem solving are becoming the most sought-after leaders in the field](https://brookwoodrec.com/2025/07/30/the-future-of-programme-management/) ³. The "T-shaped" metaphor — deep in one domain, broad across several — describes exactly the value that technical literacy adds to a fundamentally business-facing role.
+
+The depth is in programme management: stakeholder navigation, change management, risk governance, commercial awareness, delivery leadership. The breadth includes technical literacy — not as a second specialism but as a capability multiplier that makes the core specialism more effective.
+
+[While a CS degree is not a hard requirement, technical literacy is non-negotiable in 2026 — you must speak the same language as your engineers, understanding system limitations and contributing intelligently to technical trade-off discussions](https://www.aakashg.com/product-manager-requirements/) ⁵. That standard, written for product managers in technology companies, applies with equal force to programme managers in finance and operations roles where technology delivery is the primary workstream.
+
+The investment required to build this literacy is meaningful but finite. A programme manager who spends time building a basic understanding of APIs, data modelling, system integration patterns, and software development methodology will not become a developer. They will become a materially better programme manager — one who can hold their own in technical conversations, challenge vendor decisions, and avoid the category of expensive mistakes that only happen when nobody in the room understands both sides of the problem.
+
+---
+
+## References
+
+1. Product School — *18 Product Manager Skills to Master in 2026* (January 2026) — [productschool.com](https://productschool.com/blog/skills/product-manager-skills)
+2. Khired Networks — *Business Analysis in Software Development in 2025* (December 2025) — [khired.com](https://khired.com/business-analysis-in-software-development/)
+3. Brookwood Recruitment — *The Future of Programme Management* (September 2025) — [brookwoodrec.com](https://brookwoodrec.com/2025/07/30/the-future-of-programme-management/)
+4. Underdog.io — *The Top 10 Product Manager Skills Required to Succeed in 2026* (January 2026) — [underdog.io](https://underdog.io/blog/product-manager-skills-required)
+5. Aakash Gupta — *The Real Product Manager Requirements: Your 2026 Hiring Blueprint* (March 2026) — [aakashg.com](https://www.aakashg.com/product-manager-requirements/)
+  `,
+
+      es: `
+El encuadre habitual de este debate es binario. O los gestores de programas deberían aprender a programar, o no deberían. Los desarrolladores argumentan que los gestores no técnicos ralentizan las cosas y no aprecian la complejidad de lo que piden. Los gestores de programas argumentan que su trabajo es gestionar la entrega, no escribir el código.
+
+Ambas posiciones se pierden el punto.
+
+La pregunta no es si los gestores de programas deberían ser capaces de construir software. La gran mayoría no debería intentarlo — no porque sea demasiado difícil, sino porque no es su trabajo. La pregunta es si deberían entender cómo se construye el software con la suficiente profundidad como para tomar mejores decisiones sobre programas que dependen de él. Y la respuesta a esa pregunta, basada en lo que realmente ocurre en los programas europeos de finanzas y operaciones, es inequívocamente sí.
+
+Esto no es un argumento teórico. Proviene de una experiencia específica: nueve años gestionando implementaciones de sistemas financieros desde el lado de negocio, seguidos de un bootcamp de desarrollo full-stack. Lo que cambió — en las conversaciones con proveedores, en las revisiones de requisitos, en las evaluaciones de riesgos — no fue la capacidad de escribir código. Fue la capacidad de leer la situación de manera diferente.
+
+---
+
+## Lo que le cuesta a un gestor de programas la falta de conocimiento técnico
+
+La forma más importante en que la falta de conocimiento técnico afecta a un gestor de programas no está en las cosas que se equivocan de manera visible. Está en las cosas que no pueden ver.
+
+Un proveedor presenta una configuración que técnicamente cumple con los requisitos establecidos pero introduce una sobrecarga de mantenimiento significativa. Un gestor de programas sin conocimiento técnico la acepta. Uno con conocimiento técnico pregunta por qué la configuración se diseñó de esta manera en lugar de una alternativa más simple — y obtiene una respuesta honesta sobre una limitación en el sistema del proveedor que no se reveló en el proceso de ventas.
+
+Un equipo de desarrollo estima ocho semanas para una integración. Un gestor de programas sin comprensión técnica acepta la estimación. Uno con comprensión técnica pregunta en qué se desglosan esas ocho semanas — y descubre que tres de esas semanas son para trabajo rehecho causado por requisitos incompletos del lado de negocio, no por complejidad técnica.
+
+Ninguno de estos escenarios requiere escribir una línea de código. Requieren saber suficiente sobre cómo funcionan los sistemas para hacer las preguntas que producen respuestas útiles.
+
+---
+
+## El valor específico en los programas de finanzas y operaciones
+
+Los programas de finanzas y operaciones tienen una dinámica particular que hace que el conocimiento técnico sea especialmente valioso: la brecha entre lo que el lado de negocio pide y lo que es técnicamente posible es frecuentemente grande, y las personas a cada lado de esa brecha a menudo son incapaces de comunicarse a través de ella.
+
+[La competencia técnica ayuda a establecer objetivos realistas, tomar decisiones compensadas bien informadas y comprender las implicaciones de las decisiones técnicas en la experiencia del usuario y la viabilidad del producto](https://productschool.com/blog/skills/product-manager-skills) ¹. Ese encuadre, de la literatura de gestión de productos, se traduce directamente a la gestión de programas en contextos financieros. Objetivos realistas, compensaciones informadas, implicaciones comprendidas — estos son los entregables del conocimiento técnico, no de escribir código.
+
+### Requisitos que no se pueden construir
+
+Los requisitos escritos por profesionales financieros sin aportación técnica son frecuentemente imprecisos de maneras que resultan costosas durante el desarrollo. "El sistema debería conciliar automáticamente las transacciones" es un requisito. No es una especificación. Deja abierta cada pregunta sobre qué cuenta como una coincidencia, qué ocurre con las excepciones, qué fuentes de datos están involucradas.
+
+[Los analistas de negocio que entienden cómo se construye el software escriben mejores requisitos, ayudan a reducir los riesgos del proyecto y reducen los errores costosos potenciales](https://khired.com/business-analysis-in-software-development/) ². El mismo principio se aplica directamente a los gestores de programas que son propietarios del flujo de trabajo de requisitos.
+
+### Negociaciones con proveedores que son unilaterales
+
+Los proveedores de tecnología son operadores comerciales sofisticados. Saben que la persona al otro lado de la mesa, en la mayoría de los roles de gestor de programas del lado de negocio, no entiende lo que están vendiendo lo suficientemente bien como para cuestionarlo.
+
+Las estimaciones de los proveedores están infladas para absorber el riesgo que el proveedor ha identificado correctamente pero no ha revelado. Las opciones de configuración se hacen por conveniencia del proveedor en lugar de por adecuación al programa.
+
+[La fluidez técnica en los sistemas — no la programación, sino saber suficiente para desafiar a los integradores y guiar las decisiones — se está convirtiendo en una de las cualidades más buscadas en los líderes de programas](https://brookwoodrec.com/2025/07/30/the-future-of-programme-management/) ³.
+
+---
+
+## Lo que "entender el código" realmente significa en la práctica
+
+Vale la pena ser específico sobre lo que significa el conocimiento técnico en el contexto de la gestión de programas.
+
+El conocimiento técnico para un gestor de programas **no es**:
+- La capacidad de escribir código de producción en cualquier lenguaje
+- Conocimiento profundo de arquitectura de bases de datos o infraestructura en la nube
+- Experiencia en ninguna plataforma o pila tecnológica específica
+
+El conocimiento técnico para un gestor de programas **sí es**:
+- Entender cómo funciona una API REST lo suficientemente bien como para hacer preguntas sensatas sobre el alcance y las dependencias de la integración
+- Saber qué implica una migración de datos lo suficientemente bien como para identificar qué partes de la estimación de un proveedor son creíbles y cuáles son relleno
+- Entender la diferencia entre un bug y una solicitud de función lo suficientemente bien como para desafiar las clasificaciones incorrectas en el registro de defectos
+- Saber qué significa "configuración" versus "personalización" en una implementación de sistema empresarial — porque esa distinción tiene implicaciones significativas para el coste, el plazo y la dependencia futura del proveedor
+
+Nada de esto requiere un título en ciencias de la computación. Todo ello requiere una inversión deliberada en conocimiento técnico que la mayoría de los gestores de programas nunca hacen.
+
+---
+
+## Cómo se desarrolla esto en un programa real
+
+Consideremos una implementación de plataforma T&E. El gestor de programas recibe el documento de diseño técnico del proveedor. Describe cómo la plataforma se conectará al sistema ERP mediante una integración por lotes programada que se ejecuta nocturnamente.
+
+Un gestor de programas sin conocimiento técnico lee esto, anota que la integración está incluida en el alcance y sigue adelante.
+
+Un gestor de programas con conocimiento técnico hace tres preguntas:
+
+*¿Por qué nocturno en lugar de tiempo real o casi real?* La respuesta revela que la plataforma del proveedor tiene una limitación técnica que impide la conectividad ERP en vivo — una limitación que no se reveló en el RFP y que tiene implicaciones materiales para el calendario de cierre de mes del equipo financiero.
+
+*¿Qué ocurre si el lote nocturno falla?* La respuesta revela que el diseño actual no tiene alertas automáticas — lo que significa que el equipo financiero descubriría el fallo a la mañana siguiente cuando los usuarios reporten datos faltantes, no en el momento del fallo.
+
+*¿Cuál es el procedimiento de reversión si la integración produce datos incorrectos después de una actualización de la plataforma?* Esta pregunta saca a la luz que el contrato estándar del proveedor pone la responsabilidad de la validación de datos completamente en el cliente — lo que tiene implicaciones para cómo se estructura el UAT.
+
+Estas preguntas no requieren saber cómo construir una integración ERP. Requieren saber suficiente sobre cómo funcionan las integraciones para hacer las preguntas correctas.
+
+---
+
+## El ángulo de la gestión del cambio
+
+Hay una forma menos obvia en que el conocimiento técnico mejora la gestión de programas: cambia cómo el gestor de programas se relaciona con el equipo técnico.
+
+[El conocimiento técnico es el puente entre la visión del producto y su ejecución — te permite entender el "cómo" detrás del "qué", fomentando una relación más sólida y colaborativa con tu equipo de ingeniería](https://underdog.io/blog/product-manager-skills-required) ⁴.
+
+Un gestor de programas que puede mantener una conversación técnica genuina gana credibilidad con el equipo de desarrollo que cambia qué información se comparte. Los equipos técnicos tienen más probabilidades de revelar los riesgos anticipadamente a un gestor de programas que creen que entiende el problema. Tienen menos probabilidades de inflar las estimaciones para un gestor que puede leer una estimación y hacer preguntas específicas sobre ella.
+
+---
+
+## El argumento más amplio: profesionales en T en roles de entrega
+
+[Los gestores de programas que pueden combinar el conocimiento técnico, el dominio de la gobernanza y la resolución práctica de problemas se están convirtiendo en los líderes más buscados en el campo](https://brookwoodrec.com/2025/07/30/the-future-of-programme-management/) ³. La metáfora de la "forma T" describe exactamente el valor que el conocimiento técnico añade a un rol fundamentalmente orientado al negocio.
+
+[Aunque un título en informática no es un requisito imprescindible, el conocimiento técnico no es negociable en 2026 — debes hablar el mismo idioma que tus ingenieros, entender las limitaciones del sistema y contribuir de manera inteligente a las discusiones sobre compensaciones técnicas](https://www.aakashg.com/product-manager-requirements/) ⁵.
+
+La inversión requerida para construir este conocimiento es significativa pero finita. Un gestor de programas que dedica tiempo a construir una comprensión básica de las APIs, el modelado de datos, los patrones de integración de sistemas y la metodología de desarrollo de software no se convertirá en desarrollador. Se convertirá en un gestor de programas materialmente mejor — uno que puede mantener su posición en las conversaciones técnicas, desafiar las decisiones de los proveedores y evitar la categoría de errores costosos que solo ocurren cuando nadie en la sala entiende ambos lados del problema.
+
+---
+
+## Referencias
+
+1. Product School — *18 Product Manager Skills to Master in 2026* (enero 2026) — [productschool.com](https://productschool.com/blog/skills/product-manager-skills)
+2. Khired Networks — *Business Analysis in Software Development in 2025* (diciembre 2025) — [khired.com](https://khired.com/business-analysis-in-software-development/)
+3. Brookwood Recruitment — *The Future of Programme Management* (septiembre 2025) — [brookwoodrec.com](https://brookwoodrec.com/2025/07/30/the-future-of-programme-management/)
+4. Underdog.io — *The Top 10 Product Manager Skills Required to Succeed in 2026* (enero 2026) — [underdog.io](https://underdog.io/blog/product-manager-skills-required)
+5. Aakash Gupta — *The Real Product Manager Requirements: Your 2026 Hiring Blueprint* (marzo 2026) — [aakashg.com](https://www.aakashg.com/product-manager-requirements/)
+  `,
+
+      fr: `
+Le cadrage habituel de ce débat est binaire. Soit les chefs de programme devraient apprendre à coder, soit ils ne le devraient pas. Les développeurs arguent que les managers non techniques ralentissent les choses et ne comprennent pas la complexité de ce qu'ils demandent. Les chefs de programme arguent que leur travail est de gérer la livraison, pas d'écrire le code.
+
+Les deux positions passent à côté de l'essentiel.
+
+La question n'est pas de savoir si les chefs de programme devraient être capables de construire des logiciels. La grande majorité ne devrait pas le tenter — non pas parce que c'est trop difficile, mais parce que ce n'est pas leur travail. La question est de savoir s'ils devraient comprendre comment les logiciels sont construits suffisamment pour prendre de meilleures décisions sur les programmes qui en dépendent. Et la réponse à cette question, basée sur ce qui se passe réellement dans les programmes européens de finance et d'opérations, est sans ambiguïté : oui.
+
+Ce n'est pas un argument théorique. Il provient d'une expérience spécifique : neuf ans à gérer des implémentations de systèmes financiers du côté métier, suivis d'un bootcamp de développement full-stack. Ce qui a changé — dans les conversations avec les fournisseurs, dans les revues d'exigences, dans les évaluations des risques — n'était pas la capacité à écrire du code. C'était la capacité à lire la situation différemment.
+
+---
+
+## Ce que l'analphabétisme technique coûte à un chef de programme
+
+La façon la plus importante dont l'analphabétisme technique affecte un chef de programme n'est pas dans les choses qu'il fait visiblement mal. C'est dans les choses qu'il ne peut pas voir.
+
+Un fournisseur présente une configuration qui répond techniquement aux exigences formulées mais introduit une charge de maintenance significative. Un chef de programme sans culture technique l'accepte. Un chef de programme avec culture technique demande pourquoi la configuration a été conçue de cette façon plutôt qu'une alternative plus simple — et obtient une réponse honnête sur une contrainte dans le système du fournisseur qui n'a pas été divulguée lors du processus de vente.
+
+Une équipe de développement estime huit semaines pour une intégration. Un chef de programme avec culture technique demande en quoi se décomposent ces huit semaines — et découvre que trois de ces semaines concernent du rework causé par des exigences incomplètes du côté métier, pas par une complexité technique.
+
+Aucun de ces scénarios ne nécessite d'écrire une ligne de code. Ils nécessitent de savoir suffisamment sur le fonctionnement des systèmes pour poser les questions qui produisent des réponses utiles.
+
+---
+
+## La valeur spécifique dans les programmes de finance et d'opérations
+
+Les programmes de finance et d'opérations ont une dynamique particulière qui rend la culture technique particulièrement précieuse : l'écart entre ce que le côté métier demande et ce qui est techniquement possible est fréquemment grand, et les personnes de chaque côté de cet écart sont souvent incapables de communiquer à travers lui.
+
+[La compétence technique aide à fixer des objectifs réalistes, à effectuer des arbitrages éclairés et à comprendre les implications des décisions techniques sur l'expérience utilisateur et la faisabilité du produit](https://productschool.com/blog/skills/product-manager-skills) ¹.
+
+### Des exigences qui ne peuvent pas être construites
+
+Les exigences écrites par des professionnels financiers sans apport technique sont fréquemment imprécises de façons qui deviennent coûteuses pendant le développement. "Le système doit réconcilier automatiquement les transactions" est une exigence. Ce n'est pas une spécification. Elle laisse ouverte chaque question sur ce qui compte comme une correspondance, ce qui se passe avec les exceptions, quelles sources de données sont impliquées.
+
+[Les analystes métier qui comprennent comment les logiciels sont construits rédigent de meilleures exigences, contribuent à réduire les risques des projets et réduisent les erreurs coûteuses potentielles](https://khired.com/business-analysis-in-software-development/) ². Le même principe s'applique directement aux chefs de programme qui possèdent le flux de travail des exigences.
+
+### Des négociations fournisseurs unilatérales
+
+Les fournisseurs de technologie sont des opérateurs commerciaux sophistiqués. Ils savent que la personne en face d'eux, dans la plupart des rôles de chef de programme côté métier, ne comprend pas ce qu'ils vendent suffisamment pour le remettre en question.
+
+[La fluidité technique dans les systèmes — pas le codage, mais savoir suffisamment pour challenger les intégrateurs et orienter les décisions — devient l'une des qualités les plus recherchées chez les leaders de programme](https://brookwoodrec.com/2025/07/30/the-future-of-programme-management/) ³.
+
+---
+
+## Ce que "comprendre le code" signifie vraiment en pratique
+
+La culture technique pour un chef de programme **n'est pas** :
+- La capacité à écrire du code de production dans n'importe quel langage
+- Une connaissance approfondie de l'architecture de bases de données ou de l'infrastructure cloud
+- Une expertise dans une plateforme ou un stack technologique spécifique
+
+La culture technique pour un chef de programme **c'est** :
+- Comprendre comment fonctionne une API REST suffisamment pour poser des questions pertinentes sur le périmètre et les dépendances d'intégration
+- Savoir ce qu'implique une migration de données suffisamment pour identifier quelles parties de l'estimation d'un fournisseur sont crédibles et lesquelles sont du rembourrage
+- Comprendre la différence entre un bug et une demande de fonctionnalité suffisamment pour challenger les erreurs de classification dans le journal de défauts
+- Savoir ce que signifie "configuration" versus "personnalisation" dans une implémentation de système d'entreprise — car cette distinction a des implications significatives pour le coût, le délai et la dépendance future au fournisseur
+
+Rien de tout cela ne nécessite un diplôme en informatique. Tout cela nécessite un investissement délibéré en culture technique que la plupart des chefs de programme ne font jamais.
+
+---
+
+## Comment cela se joue dans un vrai programme
+
+Considérons une implémentation de plateforme T&E. Le chef de programme reçoit le document de conception technique du fournisseur. Il décrit comment la plateforme se connectera au système ERP via une intégration par batch planifiée s'exécutant la nuit.
+
+Un chef de programme sans culture technique lit ceci, note que l'intégration est dans le périmètre et passe à la suite.
+
+Un chef de programme avec culture technique pose trois questions :
+
+*Pourquoi nocturne plutôt qu'en temps réel ou quasi temps réel ?* La réponse révèle que la plateforme du fournisseur a une limitation technique qui empêche la connectivité ERP en direct — une limitation qui n'a pas été divulguée dans le RFP et qui a des implications matérielles pour le calendrier de clôture de fin de mois de l'équipe financière.
+
+*Que se passe-t-il si le batch nocturne échoue ?* La réponse révèle que la conception actuelle n'a pas d'alertes automatiques — ce qui signifie que l'équipe financière découvrirait l'échec le lendemain matin quand les utilisateurs signalent des données manquantes, pas au moment de l'échec.
+
+*Quelle est la procédure de rollback si l'intégration produit des données incorrectes après une mise à jour de la plateforme ?* Cette question fait apparaître que le contrat standard du fournisseur met la responsabilité de la validation des données entièrement sur le client.
+
+Ces questions ne nécessitent pas de savoir comment construire une intégration ERP. Elles nécessitent de savoir suffisamment sur le fonctionnement des intégrations pour poser les bonnes questions.
+
+---
+
+## L'angle de la conduite du changement
+
+Il y a une façon moins évidente dont la culture technique améliore la gestion de programme : elle change la façon dont le chef de programme se rapporte à l'équipe technique.
+
+[La culture technique est le pont entre la vision du produit et son exécution — elle vous permet de comprendre le "comment" derrière le "quoi", favorisant une relation plus solide et plus collaborative avec votre équipe d'ingénierie](https://underdog.io/blog/product-manager-skills-required) ⁴.
+
+Un chef de programme qui peut tenir une vraie conversation technique gagne une crédibilité auprès de l'équipe de développement qui change ce qui est partagé. Les équipes techniques sont plus susceptibles de remonter les risques en amont à un chef de programme qui comprend le problème. Elles sont moins susceptibles de gonfler les estimations pour un manager qui peut lire une estimation et poser des questions spécifiques à ce sujet.
+
+---
+
+## L'argument plus large : des professionnels en T dans les rôles de livraison
+
+[Les chefs de programme qui peuvent combiner la culture technique, la maîtrise de la gouvernance et la résolution pratique de problèmes sont en train de devenir les leaders les plus recherchés dans le domaine](https://brookwoodrec.com/2025/07/30/the-future-of-programme-management/) ³.
+
+[Bien qu'un diplôme en informatique ne soit pas une exigence impérative, la culture technique est non négociable en 2026 — vous devez parler le même langage que vos ingénieurs, comprendre les limitations des systèmes et contribuer intelligemment aux discussions sur les arbitrages techniques](https://www.aakashg.com/product-manager-requirements/) ⁵.
+
+L'investissement requis pour construire cette culture est significatif mais fini. Un chef de programme qui consacre du temps à construire une compréhension de base des APIs, de la modélisation des données, des patterns d'intégration des systèmes et de la méthodologie de développement logiciel ne deviendra pas développeur. Il deviendra un chef de programme matériellement meilleur — un qui peut tenir sa position dans les conversations techniques, remettre en question les décisions des fournisseurs, et éviter la catégorie d'erreurs coûteuses qui ne surviennent que quand personne dans la salle ne comprend les deux côtés du problème.
+
+---
+
+## Références
+
+1. Product School — *18 Product Manager Skills to Master in 2026* (janvier 2026) — [productschool.com](https://productschool.com/blog/skills/product-manager-skills)
+2. Khired Networks — *Business Analysis in Software Development in 2025* (décembre 2025) — [khired.com](https://khired.com/business-analysis-in-software-development/)
+3. Brookwood Recruitment — *The Future of Programme Management* (septembre 2025) — [brookwoodrec.com](https://brookwoodrec.com/2025/07/30/the-future-of-programme-management/)
+4. Underdog.io — *The Top 10 Product Manager Skills Required to Succeed in 2026* (janvier 2026) — [underdog.io](https://underdog.io/blog/product-manager-skills-required)
+5. Aakash Gupta — *The Real Product Manager Requirements: Your 2026 Hiring Blueprint* (mars 2026) — [aakashg.com](https://www.aakashg.com/product-manager-requirements/)
+  `,
     },
   },
   {
@@ -1460,21 +2921,367 @@ More content here.
     readTime: 5,
     content: {
       en: `
-## The shift that is already happening
+There is a version of this story that plays out in finance departments all over Europe, reliably, after every major system implementation.
 
-Your first paragraph goes here. Write in plain text or markdown.
-Each double line break becomes a new paragraph.
+The project team sends a launch announcement. Training sessions are scheduled and attended. A user guide is published to the intranet. The go-live date arrives and the system goes live. The steering committee signs off. The implementation partner submits their final invoice. The programme is declared a success.
 
-## Why finance teams are ahead of other functions
+Six months later, someone runs a report. Forty percent of expense submissions in Germany are still going through the old process. The French finance team has rebuilt the pre-implementation reconciliation spreadsheet because the new system's output does not match what their auditors require. The Italian entity's approval workflow has quietly been bypassed by a workaround that three people know about and nobody has documented.
 
-Another section here...
+The system is live. The programme failed.
 
-## The 10 processes worth automating first
+The reason, in almost every case, is that the people running the programme confused awareness with adoption — and built a change plan that delivered one while measuring the other.
 
-More content here.
-    `,
-      es: `Spanish version of the full article...`,
-      fr: `French version of the full article...`,
+---
+
+## The distinction that most change plans ignore
+
+Awareness means a person knows the change is happening. Adoption means a person has changed their behaviour as a result.
+
+These are not stages on the same spectrum. They are different outcomes that require different interventions, different timelines, and different measures of success. A person can be completely aware of a change — can have attended the training, read the communications, and correctly answered every question on the post-training assessment — and still not be using the new system six months after go-live.
+
+[The Prosci ADKAR Model, developed after studying the change patterns of more than 700 organisations, identifies five distinct building blocks for successful change: Awareness, Desire, Knowledge, Ability, and Reinforcement](https://www.prosci.com/methodology/adkar) ¹. Awareness is the first of these — and it is the one that communications and training programmes reliably produce. The three that follow it — Ability, and particularly Reinforcement — are the ones that determine whether awareness ever converts into the behaviour change that makes a programme worth the investment.
+
+Most finance system change programmes are designed to achieve awareness. They are then measured as if they have achieved adoption. The gap between those two things is where most of the value of a finance transformation disappears.
+
+---
+
+## What awareness looks like in a finance programme
+
+In a T&E or finance system implementation, awareness-level activities are the ones that appear on the communications workstream plan:
+
+- The launch announcement from the CFO, explaining why the new system is being introduced
+- The town hall or all-hands session where the programme team walks through the timeline
+- The training sessions, scheduled two to three weeks before go-live
+- The user guide, published to SharePoint and linked in the training email
+- The FAQ document covering the twenty most common questions
+
+All of these are necessary. None of them produce adoption.
+
+They produce a workforce that knows the system is coming, knows roughly what it will do, and has been told — once — how to use it. That is a different thing from a workforce that has changed how they do their job.
+
+---
+
+## Why awareness does not convert to adoption automatically
+
+The assumption behind most change communications is that if you explain the change clearly enough, people will adopt it. This assumption has been comprehensively disproved by decades of organisational change research. It is also plainly contradicted by the adoption data from system implementations.
+
+[Among organisations that measured adoption outcomes, 72% reported achieving their change objectives — compared to only 24% among those that did not measure, a three-to-one difference in outcomes driven not by strategy or budget but by whether a team tracked what was happening with adoption](https://thechangecompass.com/the-comprehensive-guide-to-change-management-metrics-for-adoption/) ². That gap is not explained by how well the change was communicated. It is explained by whether anyone was watching what happened after go-live and intervening when adoption stalled.
+
+The gap between awareness and adoption exists because awareness removes one barrier — not knowing — while leaving three others intact:
+
+**The competence gap.** A person can understand what a new system does without being able to use it fluently under normal working conditions. Training delivers familiarity. Competence is built through practice, reinforced by feedback, over weeks and months — not in a two-hour session delivered once, two weeks before go-live.
+
+**The desire gap.** Understanding why a change is happening does not automatically produce the motivation to embrace it. A finance manager in Spain who has used the same expense process for six years may understand perfectly well that the new system is more efficient. That does not mean she wants to change. She is competent at the current process. The new one requires effort. In the absence of any reason that makes that effort worthwhile to her personally — not to the organisation, to her — inertia wins.
+
+**The reinforcement gap.** Even when awareness, competence, and motivation are all present, new behaviour does not sustain itself without reinforcement. [If your team reverts to spreadsheets three months after launch, the issue is rarely that they do not know how to operate the system. More often, they lack Desire or Reinforcement — meaning they were never fully convinced the new system serves them better, or no structure exists to hold them accountable for using it](https://concentrus.com/prosci-change-management/) ³.
+
+---
+
+## The metrics problem
+
+Most finance system implementations measure adoption through activity metrics: how many people attended training, how many user guides were downloaded, how many sessions the system had on go-live day. These measure awareness-generating activity. They do not measure adoption.
+
+[True adoption metrics track completed, error-free workflows. Data quality becomes a primary indicator. Process compliance replaces training participation as the success signal](https://apty.ai/blog/change-management-adoption/) ⁴. The question is not "did this person attend training?" It is "is this person using the system correctly, consistently, in place of the previous process?"
+
+For a T&E implementation, the adoption metrics that actually tell you whether the programme worked are:
+
+**Submission rate through the system.** What percentage of expense claims, by country and by user group, are being submitted through the new platform? If this is not at or near 100% within 60–90 days of go-live, the programme has not succeeded — regardless of what the training attendance records show.
+
+**Out-of-policy submission rate.** Are users submitting correctly coded, policy-compliant claims, or are they using the system as a data entry tool while maintaining the old behaviour in terms of what they submit? A high submission rate with a high out-of-policy rate means the system is being used but the process has not changed.
+
+**Processing time.** Is the average time from submission to reimbursement improving? If not, the efficiency gains the business case was built on are not materialising.
+
+**Support ticket volume.** A high volume of support requests 60–90 days after go-live is a leading indicator that the competence gap has not closed. It means users are aware but not able.
+
+**Workaround incidence.** Are users creating shadow processes — maintaining offline spreadsheets alongside the new system, using manual approval chains in parallel with the automated workflow? Workarounds are the most reliable signal that adoption has failed, because they represent an active decision to route around the change.
+
+---
+
+## When adoption fails in finance: the specific patterns
+
+Finance system adoption failures are not random. They follow recognisable patterns that, once you know them, become predictable and therefore preventable.
+
+### The reversion pattern
+
+The system goes live. Adoption is reasonable in the first few weeks — partly because the programme team is still present and visible, partly because the novelty effect sustains engagement. Then the programme team disbands, the implementation consultant rolls off, and the project is closed.
+
+Over the following 60–90 days, users quietly revert. Not all of them — but enough to erode the data quality and policy compliance that justified the investment. By the time someone notices, the reversion has been normalised. Users have rebuilt workarounds. The behaviour has become entrenched.
+
+[When organisations invest $3.4 trillion globally in digital transformation yet 70% of initiatives fail to meet their objectives, the dominant cause is consistently the same: successful go-live, failed adoption](https://meltingspot.io/en/blog/why-digital-transformation-projects-fail) ⁵.
+
+### The compliance illusion
+
+The system records show high usage. The programme team reports success. The steering committee closes the project. But the usage data masks what is actually happening: users are entering claims in the system, but the claims are not policy-compliant, are not correctly categorised, and are not approved through the intended workflow.
+
+This is the gap between usage and adoption. The system is being used. The process has not changed. The finance team is still spending the same number of hours on manual review and correction. The business case has not been realised.
+
+### The island of adoption
+
+Adoption is high in some markets and low in others. Typically, the markets with high adoption are the ones where the programme team had direct engagement — where the local champion was active, where training was delivered in the local language, where feedback was responded to quickly. The markets with low adoption are the ones that received the global communications in English, attended a webinar, and were then left to manage the transition alone.
+
+This pattern is particularly common in pan-European programmes where the central team allocates change management effort unevenly across markets. Adoption in the pilot market does not predict adoption in the rollout markets unless the conditions that produced it are replicated.
+
+---
+
+## What it takes to close the awareness-to-adoption gap
+
+Closing the gap requires a deliberate shift in how change management is resourced, timed, and measured in finance programmes.
+
+### Extend the change timeline past go-live
+
+[Most companies rely on a standard playbook that builds awareness and excitement before launch, but awareness does not solve technical friction after it](https://apty.ai/blog/change-management-adoption/) ⁴. The change management effort in most programmes is front-loaded — concentrated in the weeks before go-live — and largely absent in the 90 days after it. This is the inverse of where the effort is needed.
+
+The most consequential change management period is the 90 days after go-live. That is when reversion happens, when workarounds are built, when the behaviour that will persist for the next three years is formed. Resourcing that period is not optional — it is the core investment.
+
+### Define adoption thresholds before go-live
+
+Every finance programme should have explicit adoption thresholds, agreed with the steering committee before go-live, that define what constitutes success. Not training completion rates — system usage rates, compliance rates, processing time targets. If any country falls below the agreed threshold at 30 days, it triggers an active intervention. The programme is not complete until every market has met its adoption threshold.
+
+### Maintain the local champion network post-launch
+
+[Change champions who deliver communications, ensure relevance, and reduce resistance are the primary mechanism through which adoption builds in complex multi-country programmes](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international) ⁶. Their role does not end at go-live. It intensifies immediately after it. The champion is the person who hears about the workaround before it becomes entrenched, who escalates the issue with the approval workflow before 40% of users have bypassed it, who notices that the training did not address the specific scenario that the German works council team faces.
+
+Disbanding the champion network at go-live to save cost is the most reliably expensive decision a programme can make.
+
+### Separate adoption measurement from rollout measurement
+
+Project managers measure milestones. Change managers should measure behaviour. These are different disciplines with different tools. The project is complete when the system goes live. The programme is complete when the target behaviour is embedded — which typically means 90–120 days after go-live, not on the day of it.
+
+[Tracking adoption metrics at individual, team, process, and organisational levels to understand how change permeates through various layers is how high-performing change functions identify bottlenecks before they become irreversible](https://thechangecompass.com/the-comprehensive-guide-to-change-management-metrics-for-adoption/) ². Monthly adoption reporting to the steering committee should continue for at least three months after go-live. If the steering committee has already been dissolved by then, that is itself a signal that the organisation has confused project closure with programme success.
+
+---
+
+## The business case implication
+
+Finance system investments are justified by a business case. The business case assumes that the new system will be used as intended, at the projected adoption rate, producing the projected efficiency gains and compliance improvements.
+
+Every percentage point of adoption shortfall is a direct reduction in the realised value of that business case. An organisation that invests €500,000 in a T&E platform and achieves 60% adoption has effectively spent €500,000 to replicate a degraded version of what it had before — with the added overhead of running two systems in parallel for the portion of the user base that has not adopted.
+
+Awareness is free. Go-live communications, training sessions, user guides — these are the lowest-cost elements of any finance system implementation. Adoption is expensive. It requires sustained effort, localised support, active measurement, and a willingness to invest in the 90-day post-go-live period when there is no project milestone to drive urgency and no implementation consultant billing to the project.
+
+The organisations that treat those costs as discretionary are the ones whose finance system implementations deliver the system but not the value.
+
+---
+
+## References
+
+1. Prosci — *The Prosci ADKAR® Model* — [prosci.com](https://www.prosci.com/methodology/adkar)
+2. The Change Compass — *Change Adoption Metrics: What to Track and How to Report It to Leadership* (August 2025) — [thechangecompass.com](https://thechangecompass.com/the-comprehensive-guide-to-change-management-metrics-for-adoption/)
+3. Concentrus — *Prosci Change Management: ADKAR, Certification, Costs* (April 2026) — [concentrus.com](https://concentrus.com/prosci-change-management/)
+4. Apty — *Change Management Adoption: Framework & Playbook 2026* (May 2026) — [apty.ai](https://apty.ai/blog/change-management-adoption/)
+5. MeltingSpot — *Digital Transformation Failure Rate 2025 — Why 70% of Projects Still Fail* (March 2026) — [meltingspot.io](https://meltingspot.io/en/blog/why-digital-transformation-projects-fail)
+6. Prosci — *Building a Global Change Ambassador Network at Matthews International* (August 2024) — [prosci.com](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international)
+  `,
+
+      es: `
+Hay una versión de esta historia que se repite en los departamentos financieros de toda Europa, de manera fiable, tras cada implementación importante de sistemas.
+
+El equipo del proyecto envía el anuncio de lanzamiento. Se programan y se asisten a las sesiones de formación. Se publica una guía de usuario en la intranet. Llega la fecha de go-live y el sistema entra en producción. El comité directivo da el visto bueno. El socio de implementación envía su factura final. El programa se declara un éxito.
+
+Seis meses después, alguien ejecuta un informe. El 40% de los gastos en Alemania siguen tramitándose a través del proceso antiguo. El equipo financiero francés ha reconstruido la hoja de cálculo de reconciliación previa a la implementación porque el output del nuevo sistema no coincide con lo que requieren sus auditores. El flujo de aprobación de la entidad italiana ha sido silenciosamente evitado por un workaround que conocen tres personas y que nadie ha documentado.
+
+El sistema está en funcionamiento. El programa fracasó.
+
+La razón, en casi todos los casos, es que las personas que gestionaban el programa confundieron la concienciación con la adopción — y construyeron un plan de cambio que entregaba una mientras medía la otra.
+
+---
+
+## La distinción que la mayoría de los planes de cambio ignoran
+
+La concienciación significa que una persona sabe que el cambio está ocurriendo. La adopción significa que una persona ha cambiado su comportamiento como resultado.
+
+No son etapas en el mismo espectro. Son resultados diferentes que requieren intervenciones diferentes, plazos diferentes y medidas de éxito diferentes. Una persona puede ser completamente consciente de un cambio — puede haber asistido a la formación, leído las comunicaciones y respondido correctamente cada pregunta del cuestionario posterior a la formación — y aún así no estar usando el nuevo sistema seis meses después del go-live.
+
+[El Modelo ADKAR de Prosci, desarrollado tras estudiar los patrones de cambio de más de 700 organizaciones, identifica cinco bloques de construcción distintos para el cambio exitoso: Concienciación (Awareness), Deseo (Desire), Conocimiento (Knowledge), Capacidad (Ability) y Refuerzo (Reinforcement)](https://www.prosci.com/methodology/adkar) ¹. La concienciación es el primero — y es el que los programas de comunicaciones y formación producen de manera fiable. Los tres que le siguen — especialmente la Capacidad y el Refuerzo — son los que determinan si la concienciación alguna vez se convierte en el cambio de comportamiento que hace que un programa valga la inversión.
+
+La mayoría de los programas de cambio de sistemas financieros están diseñados para lograr concienciación. Luego se miden como si hubieran logrado adopción. La brecha entre esas dos cosas es donde desaparece la mayor parte del valor de una transformación financiera.
+
+---
+
+## Por qué la concienciación no se convierte automáticamente en adopción
+
+La suposición detrás de la mayoría de las comunicaciones de cambio es que si explicas el cambio con suficiente claridad, la gente lo adoptará. Esta suposición ha sido refutada exhaustivamente por décadas de investigación sobre el cambio organizacional.
+
+[Entre las organizaciones que midieron los resultados de adopción, el 72% informó de haber alcanzado sus objetivos de cambio — en comparación con solo el 24% entre las que no midieron, una diferencia de tres a uno en los resultados impulsada no por la estrategia o el presupuesto, sino por si el equipo hacía seguimiento de lo que ocurría con la adopción](https://thechangecompass.com/the-comprehensive-guide-to-change-management-metrics-for-adoption/) ².
+
+La brecha entre concienciación y adopción existe porque la concienciación elimina una barrera — el desconocimiento — mientras deja otras tres intactas:
+
+**La brecha de competencia.** Una persona puede entender qué hace un nuevo sistema sin poder usarlo con fluidez en condiciones normales de trabajo. La formación ofrece familiaridad. La competencia se construye a través de la práctica, reforzada con retroalimentación, durante semanas y meses.
+
+**La brecha de deseo.** Entender por qué ocurre un cambio no produce automáticamente la motivación para adoptarlo. Una directora financiera en España que ha usado el mismo proceso de gastos durante seis años puede entender perfectamente que el nuevo sistema es más eficiente. Eso no significa que quiera cambiar. En ausencia de cualquier razón que haga que ese esfuerzo valga la pena para ella personalmente, gana la inercia.
+
+**La brecha de refuerzo.** Incluso cuando la concienciación, la competencia y la motivación están presentes, el nuevo comportamiento no se mantiene por sí solo sin refuerzo. [Si tu equipo vuelve a las hojas de cálculo tres meses después del lanzamiento, el problema raramente es que no sepan cómo operar el sistema. Más a menudo, les falta Deseo o Refuerzo — lo que significa que nunca estuvieron completamente convencidos de que el nuevo sistema les sirve mejor, o no existe ninguna estructura que les haga responsables de usarlo](https://concentrus.com/prosci-change-management/) ³.
+
+---
+
+## El problema de las métricas
+
+La mayoría de las implementaciones de sistemas financieros miden la adopción a través de métricas de actividad: cuántas personas asistieron a la formación, cuántas guías de usuario se descargaron, cuántas sesiones tuvo el sistema el día del go-live. Estas miden la actividad generadora de concienciación. No miden la adopción.
+
+[La verdadera adopción se rastrea mediante flujos de trabajo completados y sin errores. La calidad de los datos se convierte en un indicador primario. El cumplimiento del proceso reemplaza a la participación en la formación como la señal de éxito](https://apty.ai/blog/change-management-adoption/) ⁴.
+
+Para una implementación T&E, las métricas de adopción que realmente indican si el programa funcionó son:
+
+**Tasa de envío a través del sistema.** ¿Qué porcentaje de los gastos, por país y por grupo de usuarios, se están presentando a través de la nueva plataforma? Si esto no está en o cerca del 100% en los 60–90 días posteriores al go-live, el programa no ha tenido éxito.
+
+**Tasa de envíos fuera de política.** ¿Están los usuarios presentando solicitudes correctamente codificadas y conformes con la política, o están usando el sistema como una herramienta de entrada de datos mientras mantienen el comportamiento anterior en cuanto a lo que presentan?
+
+**Incidencia de workarounds.** ¿Están los usuarios creando procesos paralelos — manteniendo hojas de cálculo offline junto con el nuevo sistema? Los workarounds son la señal más fiable de que la adopción ha fracasado.
+
+---
+
+## Los patrones específicos de fracaso de la adopción en finanzas
+
+### El patrón de reversión
+
+El sistema entra en producción. La adopción es razonable en las primeras semanas. Luego el equipo del programa se disuelve y el consultor de implementación abandona el proyecto.
+
+Durante los siguientes 60–90 días, los usuarios revierten silenciosamente. No todos — pero los suficientes como para erosionar la calidad de los datos y el cumplimiento de la política que justificó la inversión. [Con 3,4 billones de dólares invertidos globalmente en transformación digital y el 70% de las iniciativas sin alcanzar sus objetivos, la causa dominante es consistentemente la misma: go-live exitoso, adopción fallida](https://meltingspot.io/en/blog/why-digital-transformation-projects-fail) ⁵.
+
+### La ilusión de cumplimiento
+
+Los registros del sistema muestran un uso elevado. El equipo del programa informa del éxito. Pero los datos de uso enmascaran lo que realmente está ocurriendo: los usuarios están introduciendo datos en el sistema, pero las solicitudes no cumplen con la política, no están correctamente categorizadas y no se aprueban a través del flujo de trabajo previsto. El sistema se está usando. El proceso no ha cambiado.
+
+---
+
+## Lo que se necesita para cerrar la brecha concienciación-adopción
+
+### Extender el plazo del cambio más allá del go-live
+
+[La mayoría de las empresas siguen un manual estándar que genera concienciación y entusiasmo antes del lanzamiento, pero la concienciación no resuelve la fricción técnica después](https://apty.ai/blog/change-management-adoption/) ⁴. El esfuerzo de gestión del cambio en la mayoría de los programas está cargado hacia adelante — concentrado en las semanas anteriores al go-live — y prácticamente ausente en los 90 días posteriores. El período más importante es precisamente ese.
+
+### Definir umbrales de adopción antes del go-live
+
+Cada programa financiero debería tener umbrales de adopción explícitos, acordados con el comité directivo antes del go-live, que definan qué constituye el éxito. No tasas de finalización de formación — tasas de uso del sistema, tasas de cumplimiento, objetivos de tiempo de procesamiento. Si algún país cae por debajo del umbral acordado a los 30 días, se activa una intervención activa.
+
+### Mantener la red de campeones locales después del lanzamiento
+
+[Los campeones del cambio que entregan comunicaciones, garantizan la relevancia y reducen la resistencia son el mecanismo principal a través del cual se construye la adopción en programas multinacionales complejos](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international) ⁶. Su papel no termina en el go-live. Se intensifica inmediatamente después. Disolver la red de campeones en el go-live para ahorrar costes es la decisión más fiablemente costosa que puede tomar un programa.
+
+---
+
+## La implicación para el caso de negocio
+
+Las inversiones en sistemas financieros están justificadas por un caso de negocio. Ese caso de negocio asume que el nuevo sistema se usará tal como se prevé, a la tasa de adopción proyectada, produciendo las ganancias de eficiencia y las mejoras de cumplimiento proyectadas.
+
+Cada punto porcentual de déficit de adopción es una reducción directa en el valor realizado de ese caso de negocio. Una organización que invierte 500.000 € en una plataforma T&E y logra un 60% de adopción ha gastado efectivamente 500.000 € para replicar una versión degradada de lo que tenía antes — con el overhead adicional de gestionar dos sistemas en paralelo.
+
+La concienciación es gratuita. La adopción es costosa. Las organizaciones que tratan esos costes como discrecionales son las que obtienen el sistema pero no el valor.
+
+---
+
+## Referencias
+
+1. Prosci — *El Modelo Prosci ADKAR®* — [prosci.com](https://www.prosci.com/methodology/adkar)
+2. The Change Compass — *Change Adoption Metrics: What to Track and How to Report It to Leadership* (agosto 2025) — [thechangecompass.com](https://thechangecompass.com/the-comprehensive-guide-to-change-management-metrics-for-adoption/)
+3. Concentrus — *Prosci Change Management: ADKAR, Certification, Costs* (abril 2026) — [concentrus.com](https://concentrus.com/prosci-change-management/)
+4. Apty — *Change Management Adoption: Framework & Playbook 2026* (mayo 2026) — [apty.ai](https://apty.ai/blog/change-management-adoption/)
+5. MeltingSpot — *Digital Transformation Failure Rate 2025 — Why 70% of Projects Still Fail* (marzo 2026) — [meltingspot.io](https://meltingspot.io/en/blog/why-digital-transformation-projects-fail)
+6. Prosci — *Building a Global Change Ambassador Network at Matthews International* (agosto 2024) — [prosci.com](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international)
+  `,
+
+      fr: `
+Il y a une version de cette histoire qui se joue dans les services financiers de toute l'Europe, de manière fiable, après chaque implémentation majeure de système.
+
+L'équipe de projet envoie l'annonce de lancement. Les sessions de formation sont planifiées et suivies. Un guide utilisateur est publié sur l'intranet. La date de go-live arrive et le système entre en production. Le comité de pilotage valide. Le partenaire d'implémentation soumet sa dernière facture. Le programme est déclaré un succès.
+
+Six mois plus tard, quelqu'un lance un rapport. 40% des notes de frais en Allemagne passent encore par l'ancien processus. L'équipe financière française a reconstruit le tableur de réconciliation pré-implémentation parce que l'output du nouveau système ne correspond pas à ce que leurs auditeurs exigent. Le flux d'approbation de l'entité italienne a été silencieusement contourné par un workaround que trois personnes connaissent et que personne n'a documenté.
+
+Le système est en production. Le programme a échoué.
+
+La raison, dans presque tous les cas, est que les personnes qui géraient le programme ont confondu la sensibilisation avec l'adoption — et ont construit un plan de changement qui délivrait l'une tout en mesurant l'autre.
+
+---
+
+## La distinction que la plupart des plans de changement ignorent
+
+La sensibilisation signifie qu'une personne sait que le changement se produit. L'adoption signifie qu'une personne a changé son comportement en conséquence.
+
+Ce ne sont pas des étapes sur le même spectre. Ce sont des résultats différents qui nécessitent des interventions différentes, des calendriers différents et des mesures de succès différentes.
+
+[Le Modèle Prosci ADKAR, développé après l'étude des patterns de changement de plus de 700 organisations, identifie cinq blocs de construction distincts pour un changement réussi : Sensibilisation (Awareness), Désir (Desire), Connaissance (Knowledge), Capacité (Ability) et Renforcement (Reinforcement)](https://www.prosci.com/methodology/adkar) ¹. La sensibilisation est le premier — et c'est celui que les programmes de communication et de formation produisent de manière fiable. Les trois qui suivent — en particulier la Capacité et le Renforcement — sont ceux qui déterminent si la sensibilisation se convertit jamais en changement de comportement.
+
+---
+
+## Pourquoi la sensibilisation ne se convertit pas automatiquement en adoption
+
+[Parmi les organisations qui ont mesuré les résultats d'adoption, 72% ont déclaré avoir atteint leurs objectifs de changement — contre seulement 24% parmi celles qui n'ont pas mesuré, une différence de trois à un dans les résultats due non pas à la stratégie ou au budget, mais au fait qu'une équipe suivait ce qui se passait avec l'adoption](https://thechangecompass.com/the-comprehensive-guide-to-change-management-metrics-for-adoption/) ².
+
+L'écart entre sensibilisation et adoption existe parce que la sensibilisation élimine une barrière — l'ignorance — tout en en laissant trois autres intactes :
+
+**L'écart de compétence.** Une personne peut comprendre ce que fait un nouveau système sans pouvoir l'utiliser couramment dans des conditions normales de travail. La formation donne de la familiarité. La compétence se construit par la pratique, renforcée par le feedback, sur des semaines et des mois.
+
+**L'écart de désir.** Comprendre pourquoi un changement se produit ne produit pas automatiquement la motivation pour l'adopter. Une directrice financière en Espagne qui utilise le même processus de frais depuis six ans peut parfaitement comprendre que le nouveau système est plus efficace. Cela ne signifie pas qu'elle veut changer. En l'absence de toute raison qui rende cet effort valable pour elle personnellement, l'inertie l'emporte.
+
+**L'écart de renforcement.** [Si votre équipe revient aux tableurs trois mois après le lancement, le problème est rarement qu'elle ne sait pas utiliser le système. Plus souvent, elle manque de Désir ou de Renforcement — ce qui signifie qu'elle n'a jamais été pleinement convaincue que le nouveau système la sert mieux, ou qu'aucune structure n'existe pour la responsabiliser de son utilisation](https://concentrus.com/prosci-change-management/) ³.
+
+---
+
+## Le problème des métriques
+
+La plupart des implémentations de systèmes financiers mesurent l'adoption à travers des métriques d'activité : combien de personnes ont assisté à la formation, combien de guides utilisateur ont été téléchargés. Ces métriques mesurent l'activité génératrice de sensibilisation. Elles ne mesurent pas l'adoption.
+
+[La vraie adoption se suit à travers des workflows complétés et sans erreur. La qualité des données devient un indicateur primaire. La conformité des processus remplace la participation aux formations comme signal de succès](https://apty.ai/blog/change-management-adoption/) ⁴.
+
+Pour une implémentation T&E, les métriques d'adoption qui indiquent réellement si le programme a fonctionné sont :
+
+**Le taux de soumission via le système.** Quel pourcentage des demandes de frais, par pays et par groupe d'utilisateurs, est soumis via la nouvelle plateforme ? Si ce n'est pas à ou près de 100% dans les 60–90 jours suivant le go-live, le programme n'a pas réussi.
+
+**Le taux de soumissions hors politique.** Les utilisateurs soumettent-ils des demandes correctement codées et conformes à la politique, ou utilisent-ils le système comme outil de saisie de données tout en maintenant l'ancien comportement ?
+
+**L'incidence des workarounds.** Les utilisateurs créent-ils des processus parallèles ? Les workarounds sont le signal le plus fiable que l'adoption a échoué.
+
+---
+
+## Les patterns spécifiques d'échec d'adoption en finance
+
+### Le pattern de réversion
+
+Le système entre en production. L'adoption est raisonnable dans les premières semaines. Puis l'équipe programme se dissout et le consultant d'implémentation quitte le projet.
+
+Au cours des 60–90 jours suivants, les utilisateurs réverssent silencieusement. [Avec 3,4 billions de dollars investis globalement dans la transformation numérique et 70% des initiatives ne répondant pas à leurs objectifs, la cause dominante est systématiquement la même : go-live réussi, adoption ratée](https://meltingspot.io/en/blog/why-digital-transformation-projects-fail) ⁵.
+
+### L'illusion de conformité
+
+Les registres système montrent une utilisation élevée. Mais les données d'utilisation masquent ce qui se passe réellement : les utilisateurs saisissent des données dans le système, mais les demandes ne sont pas conformes à la politique. Le système est utilisé. Le processus n'a pas changé.
+
+---
+
+## Ce qu'il faut pour combler l'écart sensibilisation-adoption
+
+### Étendre la temporalité du changement au-delà du go-live
+
+[La plupart des entreprises suivent un manuel standard qui construit la sensibilisation et l'enthousiasme avant le lancement, mais la sensibilisation ne résout pas la friction technique après](https://apty.ai/blog/change-management-adoption/) ⁴. L'effort de conduite du changement est concentré dans les semaines précédant le go-live — et largement absent dans les 90 jours qui suivent. C'est l'inverse de là où l'effort est nécessaire.
+
+### Définir des seuils d'adoption avant le go-live
+
+Chaque programme financier devrait avoir des seuils d'adoption explicites, convenus avec le comité de pilotage avant le go-live. Pas des taux de complétion des formations — des taux d'utilisation du système, des taux de conformité, des objectifs de temps de traitement.
+
+### Maintenir le réseau de champions locaux après le lancement
+
+[Les champions du changement qui délivrent les communications, assurent la pertinence et réduisent la résistance sont le mécanisme principal par lequel l'adoption se construit dans les programmes multinationaux complexes](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international) ⁶. Leur rôle ne se termine pas au go-live. Il s'intensifie immédiatement après. Dissoudre le réseau de champions au go-live pour réduire les coûts est la décision la plus fiablement coûteuse qu'un programme puisse prendre.
+
+---
+
+## L'implication pour le cas d'affaires
+
+Les investissements dans les systèmes financiers sont justifiés par un cas d'affaires. Ce cas d'affaires suppose que le nouveau système sera utilisé tel que prévu, au taux d'adoption projeté, produisant les gains d'efficacité et les améliorations de conformité prévus.
+
+Chaque point de pourcentage de déficit d'adoption est une réduction directe de la valeur réalisée de ce cas d'affaires. Une organisation qui investit 500 000 € dans une plateforme T&E et atteint 60% d'adoption a effectivement dépensé 500 000 € pour reproduire une version dégradée de ce qu'elle avait avant.
+
+La sensibilisation est gratuite. L'adoption est coûteuse. Les organisations qui traitent ces coûts comme discrétionnaires sont celles dont les implémentations de systèmes financiers livrent le système mais pas la valeur.
+
+---
+
+## Références
+
+1. Prosci — *Le Modèle Prosci ADKAR®* — [prosci.com](https://www.prosci.com/methodology/adkar)
+2. The Change Compass — *Change Adoption Metrics: What to Track and How to Report It to Leadership* (août 2025) — [thechangecompass.com](https://thechangecompass.com/the-comprehensive-guide-to-change-management-metrics-for-adoption/)
+3. Concentrus — *Prosci Change Management: ADKAR, Certification, Costs* (avril 2026) — [concentrus.com](https://concentrus.com/prosci-change-management/)
+4. Apty — *Change Management Adoption: Framework & Playbook 2026* (mai 2026) — [apty.ai](https://apty.ai/blog/change-management-adoption/)
+5. MeltingSpot — *Digital Transformation Failure Rate 2025 — Why 70% of Projects Still Fail* (mars 2026) — [meltingspot.io](https://meltingspot.io/en/blog/why-digital-transformation-projects-fail)
+6. Prosci — *Building a Global Change Ambassador Network at Matthews International* (août 2024) — [prosci.com](https://www.prosci.com/blog/building-a-global-change-ambassador-network-at-matthews-international)
+  `,
     },
   },
 ];

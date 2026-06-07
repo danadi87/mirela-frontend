@@ -77,7 +77,7 @@ export const freeResources = [
     },
     format: "PDF · 8 pages",
     price: null,
-    downloadUrl: null,
+    downloadUrl: "/downloads/te-checklist.pdf",
     color: "#1A3C5E",
     isNew: false,
   },
