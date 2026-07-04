@@ -323,7 +323,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Issues Log — Excel (.xlsx)",
       "Priority classification",
@@ -356,7 +356,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Meeting Notes — Word (.docx)",
       "Action item tracker",
@@ -389,7 +389,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Budget Tracker — Excel (.xlsx)",
       "Approved vs actual vs forecast",
@@ -422,7 +422,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Change Request Log — Excel (.xlsx)",
       "Impact assessment columns",
@@ -455,7 +455,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Dependency Map — Excel (.xlsx)",
       "Workstream dependency grid",
@@ -488,7 +488,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Lessons Learned — Word (.docx)",
       "What went well / what to improve",
@@ -521,7 +521,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Milestone Tracker — Excel (.xlsx)",
       "Planned vs actual dates",
@@ -554,7 +554,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "50-item risk register",
       "Risk heat map",
@@ -588,7 +588,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Stakeholder analysis framework",
       "Engagement channel matrix",
@@ -622,7 +622,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Terms of Reference template",
       "Decision authority matrix",
@@ -656,7 +656,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Monthly steering committee pack",
       "Executive dashboard slide",
@@ -690,7 +690,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "SLA monitoring dashboard",
       "Change request log",
@@ -724,7 +724,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Benefit profile template",
       "Measurement plan",
@@ -758,7 +758,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Sprint planning template",
       "Backlog prioritisation matrix",
@@ -792,7 +792,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "15-person capacity planner",
       "Workstream allocation matrix",
@@ -826,7 +826,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Strategic rationale section",
       "Options appraisal framework",
@@ -860,7 +860,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Quality plan template",
       "Testing standards guide",
@@ -894,7 +894,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Crisis trigger criteria",
       "Escalation path diagram",
@@ -928,7 +928,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "8-workstream Gantt template",
       "Resource allocation matrix",
@@ -962,7 +962,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Competency framework guide",
       "30 common PM interview questions",
@@ -996,7 +996,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "50-page programme guide",
       "Governance framework templates",
@@ -1030,7 +1030,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "All 8 free PM templates",
       "All 22 premium PM templates",
@@ -1330,7 +1330,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "60-criterion scorecard",
       "6 evaluation dimensions",
@@ -1364,7 +1364,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "25 data quality checks",
       "Assessment scoring",
@@ -1397,7 +1397,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Month-end process map",
       "Automation opportunity ratings",
@@ -1430,7 +1430,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Validation framework overview",
       "Number check protocol",
@@ -1463,7 +1463,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Hallucination risk explanation",
       "Finance-specific risk examples",
@@ -1496,7 +1496,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Power Query template",
       "3 worked examples",
@@ -1529,7 +1529,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "5 Power Automate templates",
       "Invoice approval routing flow",
@@ -1563,7 +1563,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "50 AI and automation terms",
       "Plain language definitions",
@@ -1596,7 +1596,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Pre-built financial dashboard template",
       "KPI card library (15 metrics)",
@@ -1630,7 +1630,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "KPI definition framework",
       "DAX measure library (20 measures)",
@@ -1664,7 +1664,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Excel KPI dashboard (no Power BI required)",
       "Power BI version with live connections",
@@ -1698,7 +1698,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "150 finance-specific prompts",
       "12 use case categories",
@@ -1732,7 +1732,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Business case template",
       "ROI calculation model",
@@ -1766,7 +1766,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Process mapping templates",
       "Automation specification guide",
@@ -1800,7 +1800,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Vendor selection criteria",
       "Implementation phase guide",
@@ -1834,7 +1834,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Automated forecasting template",
       "Variance analysis automation guide",
@@ -1868,7 +1868,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Data definition dictionary",
       "Quality standards framework",
@@ -1902,7 +1902,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Copilot setup guide",
       "Excel Agent Mode walkthroughs",
@@ -1936,7 +1936,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Rolling 13-week forecast model",
       "Live data connection guide",
@@ -1970,7 +1970,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "5 finance bot use cases",
       "Power Automate build instructions",
@@ -2004,7 +2004,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "AI audit documentation guide",
       "Evidence trail templates",
@@ -2038,7 +2038,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "12-month roadmap template",
       "Current state assessment",
@@ -2072,7 +2072,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Change management framework",
       "Communication templates",
@@ -2106,7 +2106,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "70-page implementation guide",
       "Readiness assessment framework",
@@ -2140,7 +2140,7 @@ export const allResources = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "All 8 free AI & Finance resources",
       "All 24 premium AI & Finance resources",
@@ -2438,7 +2438,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Workshop design template",
       "Objective-setting framework",
@@ -2471,7 +2471,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "360 feedback questionnaire",
       "Competency behaviour guide",
@@ -2504,7 +2504,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Preparation checklist",
       "Conversation structure guide",
@@ -2537,7 +2537,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Development plan template",
       "Current state reflection",
@@ -2570,7 +2570,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Conflict styles assessment",
       "De-escalation techniques",
@@ -2603,7 +2603,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Virtual platform setup guide",
       "Engagement techniques",
@@ -2636,7 +2636,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Full-day facilitator guide",
       "Participant workbook",
@@ -2670,7 +2670,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "6 complete session guides",
       "Team diagnostics",
@@ -2704,7 +2704,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Half-day facilitator guide",
       "Participant workbook",
@@ -2738,7 +2738,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Full-day facilitator guide",
       "Participant workbook",
@@ -2772,7 +2772,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Half-day workshop guide",
       "Team safety assessment",
@@ -2806,7 +2806,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "4 session facilitator guides",
       "Participant workbooks",
@@ -2840,7 +2840,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "3 session facilitator guides",
       "GROW model tools",
@@ -2874,7 +2874,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Half-day facilitator guide",
       "Individual resilience assessment",
@@ -2908,7 +2908,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Full-day facilitator guide",
       "Participant workbook",
@@ -2942,7 +2942,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Half-day facilitator guide",
       "Strategy narrative tools",
@@ -2976,7 +2976,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Critical role assessment",
       "Talent pipeline matrix",
@@ -3010,7 +3010,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "4 assessment exercises",
       "Assessor observation guides",
@@ -3044,7 +3044,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Large group facilitation guide",
       "Conflict management in sessions",
@@ -3078,7 +3078,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Programme design framework",
       "Needs analysis tools",
@@ -3112,7 +3112,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Meeting design framework",
       "Participation techniques guide",
@@ -3146,7 +3146,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "All 8 free leadership resources",
       "All 22 premium workshop packs",
@@ -3408,7 +3408,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "15 listening questions",
       "4 listening dimensions",
@@ -3437,7 +3437,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Strengths identification framework",
       "Role application guide",
@@ -3466,7 +3466,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Limiting beliefs identification",
       "Evidence challenge questions",
@@ -3495,7 +3495,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Career identity exploration",
       "Values alignment check",
@@ -3525,7 +3525,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "20 diagnostic questions",
       "5 team dimensions",
@@ -3554,7 +3554,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Session reflection framework",
       "Ethical considerations prompts",
@@ -3583,7 +3583,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Feedback reception framework",
       "Emotional response guide",
@@ -3612,7 +3612,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "4 coaching model guides",
       "Question banks (200+ questions)",
@@ -3642,7 +3642,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Executive contracting guide",
       "6-session programme framework",
@@ -3672,7 +3672,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Team coaching design guide",
       "Diagnostic tools",
@@ -3702,7 +3702,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Performance coaching framework",
       "Conversation guides",
@@ -3732,7 +3732,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "6 complete session guides",
       "Client workbooks",
@@ -3762,7 +3762,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Systems thinking framework",
       "Stakeholder ecology tools",
@@ -3792,7 +3792,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "4 session guides",
       "Resilience assessment",
@@ -3822,7 +3822,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Neuroscience principles overview",
       "Threat/reward state tools",
@@ -3852,7 +3852,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Practice positioning guide",
       "Pricing framework",
@@ -3882,7 +3882,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "3 supervision model guides",
       "Contracting templates",
@@ -3912,7 +3912,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "5 session guides",
       "Leadership identity assessment",
@@ -3942,7 +3942,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Transition assessment framework",
       "3 transition type guides",
@@ -3972,7 +3972,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "8 ICF competency guides",
       "Competency self-assessment",
@@ -4002,7 +4002,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Mindfulness principles guide",
       "10 coaching exercises",
@@ -4032,7 +4032,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "All 8 free coaching resources",
       "All 22 premium coaching packs",
@@ -4330,7 +4330,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "15 social awareness questions",
       "3 awareness dimensions",
@@ -4363,7 +4363,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Daily journal template",
       "Morning intention prompts",
@@ -4396,7 +4396,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Emotional preparation guide",
       "Empathic delivery framework",
@@ -4429,7 +4429,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "10 team EQ questions",
       "4 team EQ dimensions",
@@ -4462,7 +4462,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Boundary types explanation",
       "Communication scripts",
@@ -4495,7 +4495,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Conflict trigger awareness",
       "De-escalation techniques",
@@ -4528,7 +4528,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Virtual EQ challenges",
       "Digital communication guide",
@@ -4561,7 +4561,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Client EQ reading guide",
       "Rapport-building techniques",
@@ -4595,7 +4595,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "5 complete session guides",
       "EQ assessments",
@@ -4629,7 +4629,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Full-day facilitator guide",
       "Participant workbook",
@@ -4663,7 +4663,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Self-report EQ assessment",
       "360-degree EQ tool",
@@ -4697,7 +4697,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "3 session facilitator guides",
       "Resilience-EQ assessment",
@@ -4731,7 +4731,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Team assessment tool",
       "3 workshop guides",
@@ -4765,7 +4765,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "4 session guides",
       "Compassion self-assessment",
@@ -4799,7 +4799,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "EQ assessment interpretation guide",
       "Coaching model application",
@@ -4833,7 +4833,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Half-day facilitator guide",
       "Finance context case studies",
@@ -4867,7 +4867,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "3 session guides",
       "Burnout risk assessment",
@@ -4901,7 +4901,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Conversation preparation framework",
       "Emotional regulation techniques",
@@ -4935,7 +4935,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Cultural EQ framework",
       "Communication style guide",
@@ -4969,7 +4969,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Age-appropriate EQ guide",
       "Parent conversation tools",
@@ -5003,7 +5003,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Pre/post EQ measurement",
       "Behavioural observation guide",
@@ -5037,7 +5037,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "All 8 free EQ resources",
       "All 22 premium EQ programmes",
@@ -5337,7 +5337,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Page inventory template",
       "Content status tracker",
@@ -5371,7 +5371,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Architecture requirements",
       "Integration specifications",
@@ -5405,7 +5405,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Endpoint documentation format",
       "Request/response examples",
@@ -5439,7 +5439,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "25 performance checks",
       "Core Web Vitals targets",
@@ -5472,7 +5472,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Project scope section",
       "Deliverables definition",
@@ -5506,7 +5506,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "20-criterion comparison matrix",
       "5 CMS platforms covered",
@@ -5540,7 +5540,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "5 React component templates",
       "TypeScript types included",
@@ -5573,7 +5573,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Architecture decision template",
       "Database schema guide",
@@ -5607,7 +5607,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Project setup guide",
       "Folder structure conventions",
@@ -5641,7 +5641,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Sprint planning templates",
       "Backlog management guide",
@@ -5675,7 +5675,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Website strategy framework",
       "Audience definition tools",
@@ -5709,7 +5709,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Colour token system",
       "Typography scale guide",
@@ -5743,7 +5743,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "5 finance API guides",
       "Authentication patterns",
@@ -5777,7 +5777,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Core Web Vitals guide",
       "Image optimisation workflow",
@@ -5811,7 +5811,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "OWASP Top 10 guide",
       "Authentication security",
@@ -5845,7 +5845,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "i18n architecture guide",
       "React/Next.js i18n setup",
@@ -5879,7 +5879,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Platform selection matrix",
       "Product setup guide",
@@ -5913,7 +5913,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "JavaScript fundamentals guide",
       "React interview questions (50)",
@@ -5947,7 +5947,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Next.js setup guide",
       "CMS comparison and selection",
@@ -5981,7 +5981,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "GA4 setup guide",
       "Custom event tracking",
@@ -6015,7 +6015,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "Client onboarding system",
       "Contract template library",
@@ -6049,7 +6049,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: null,
-    purchaseUrl: "https://mdconsulting.netlify.app/resources",
+    purchaseUrl: "https://mddbusinessconsulting.com/resources",
     includes: [
       "All 8 free web resources",
       "All 22 premium web guides",
