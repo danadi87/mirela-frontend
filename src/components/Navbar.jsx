@@ -42,8 +42,8 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <nav className={styles.nav}>
         <Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
-          <span className={styles.logoInitials}>Mirela Dragulescu</span>
-          <span className={styles.logoText}>Consulting</span>
+          <span className={styles.logoInitials}>Mirela D. Dragulescu</span>
+          <span className={styles.logoText}>Business Consulting</span>
         </Link>
 
         <ul className={styles.links}>

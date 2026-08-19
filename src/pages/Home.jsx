@@ -7,6 +7,28 @@ import { allInsights } from "../data/insights";
 import { freeResources, premiumResources } from "../data/resources";
 import styles from "../styles/Home.module.css";
 
+// Pick up to `max` resources — one per category first, then fill
+function pickByCategory(pool, max) {
+  const cats = [...new Set(pool.map((r) => r.categoryId))];
+  const picked = [];
+  // First pass: one per category
+  for (const cat of cats) {
+    if (picked.length >= max) break;
+    const match = pool.find((r) => r.categoryId === cat && !picked.includes(r));
+    if (match) picked.push(match);
+  }
+  // Fill remaining slots with whatever is next in the pool
+  for (const r of pool) {
+    if (picked.length >= max) break;
+    if (!picked.includes(r)) picked.push(r);
+  }
+  return picked;
+}
+
+// Computed once — one resource per category, up to 6
+const HOME_FREE = pickByCategory(freeResources, 6);
+const HOME_PREMIUM = pickByCategory(premiumResources, 6);
+
 export default function Home() {
   useScrollReveal();
   const { t } = useLanguage();
@@ -14,10 +36,6 @@ export default function Home() {
   // Latest article = first in the array (keep insights.js sorted newest first)
   const featuredArticle = allInsights[0];
   const otherArticles = allInsights.slice(1, 7); // up to 6 supporting cards
-
-  // 6 free + 6 premium for homepage
-  const homeFree = freeResources.slice(0, 6);
-  const homePremium = premiumResources.slice(0, 6);
 
   return (
     <>
@@ -74,7 +92,7 @@ export default function Home() {
             </Link>
           </div>
           <div className={styles.resourcesGrid}>
-            {homeFree.map((resource, i) => (
+            {HOME_FREE.map((resource, i) => (
               <div
                 key={resource.id}
                 className={`reveal reveal-delay-${(i % 3) + 1}`}
@@ -102,7 +120,7 @@ export default function Home() {
             </Link>
           </div>
           <div className={styles.resourcesGrid}>
-            {homePremium.map((resource, i) => (
+            {HOME_PREMIUM.map((resource, i) => (
               <div
                 key={resource.id}
                 className={`reveal reveal-delay-${(i % 3) + 1}`}

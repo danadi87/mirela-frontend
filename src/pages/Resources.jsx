@@ -40,7 +40,7 @@ export default function Resources() {
 
   return (
     <>
-      {/* ── HERO ─────────────────────────────────────────────── */}
+      {/* ── HERO ──*/}
       <section className={styles.pageHero}>
         <div className="container">
           <p className="tag tag--amber" data-reveal="fade-up">
@@ -53,7 +53,7 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* ── FREE RESOURCES ───────────────────────────────────── */}
+      {/* ── FREE RESOURCES ── */}
       <section className="section" style={{ paddingBottom: "2rem" }}>
         <div className="container">
           <div className={styles.sectionHeader} data-reveal="fade-up">
@@ -83,7 +83,7 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* ── PREMIUM RESOURCES ────────────────────────────────── */}
+      {/* ── PREMIUM RESOURCES ── */}
       <section
         className="section"
         style={{ paddingTop: "2rem", background: "var(--ivory)" }}
@@ -116,7 +116,7 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* ── CTA ── */}
       <section className={`section ${styles.cta}`}>
         <div className="container">
           <div className="cta-band" data-reveal="fade-up">
@@ -135,7 +135,7 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* ── RESOURCE MODAL ───────────────────────────────────── */}
+      {/* ── RESOURCE MODAL ── */}
       {selected && (
         <ResourceModal
           resource={selected}
@@ -149,7 +149,7 @@ export default function Resources() {
         />
       )}
 
-      {/* ── DOWNLOAD GATE ────────────────────────────────────── */}
+      {/* ── DOWNLOAD GATE ── */}
       {gateResource && (
         <DownloadGateModal
           resource={gateResource}
@@ -160,7 +160,7 @@ export default function Resources() {
   );
 }
 
-// ── ResourceCard ───────────────────────────────────────────────
+// ── ResourceCard ──
 function ResourceCard({ resource, lang, t, onClick }) {
   const isFree = resource.type === "free";
   return (
@@ -199,7 +199,7 @@ function ResourceCard({ resource, lang, t, onClick }) {
   );
 }
 
-// ── ResourceModal ──────────────────────────────────────────────
+// ── ResourceModal ──
 function ResourceModal({ resource, lang, t, onClose, onDownload }) {
   const isFree = resource.type === "free";
 
