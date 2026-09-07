@@ -154,6 +154,7 @@ export default function Resources() {
         <DownloadGateModal
           resource={gateResource}
           onClose={() => setGateResource(null)}
+          lang={lang}
         />
       )}
     </>

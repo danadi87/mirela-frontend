@@ -216,6 +216,7 @@ export default function ResourceLibrary() {
         <DownloadGateModal
           resource={gateResource}
           onClose={() => setGateResource(null)}
+          lang={lang}
         />
       )}
     </>

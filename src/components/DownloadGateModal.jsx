@@ -80,7 +80,7 @@ const copy = {
 
 const INITIAL = { name: "", email: "", position: "", company: "" };
 
-export default function DownloadGateModal({ resource, onClose }) {
+export default function DownloadGateModal({ resource, onClose, lang }) {
   const { lang } = useLanguage();
   const c = copy[lang] || copy.en;
 
@@ -89,7 +89,8 @@ export default function DownloadGateModal({ resource, onClose }) {
   const [status, setStatus] = useState("idle"); // idle | sending | ready | error
 
   const resourceTitle = resource?.title?.[lang] || resource?.title?.en || "";
-  const downloadUrl = resource?.downloadUrl || null;
+  const downloadUrl =
+    resource?.downloadUrl?.[lang] || resource?.downloadUrl?.en || null;
 
   // ── Validation ───────────────────────────────────────────────
   const validate = () => {
