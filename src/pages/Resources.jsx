@@ -36,7 +36,7 @@ export default function Resources() {
   const [selected, setSelected] = useState(null);
   const [gateResource, setGateResource] = useState(null);
 
-  const isFree = selected?.type === "free";
+  const isFree = true; // TEMP: all resources free until payment/invoicing is sorted
 
   return (
     <>
@@ -162,7 +162,7 @@ export default function Resources() {
 
 // ── ResourceCard ──
 function ResourceCard({ resource, lang, t, onClick }) {
-  const isFree = resource.type === "free";
+  const isFree = true; // TEMP: all resources free until payment/invoicing is sorted
   return (
     <button
       className={`${styles.resourceCard} ${isFree ? styles.freeCard : styles.premiumCard}`}
@@ -201,7 +201,7 @@ function ResourceCard({ resource, lang, t, onClick }) {
 
 // ── ResourceModal ──
 function ResourceModal({ resource, lang, t, onClose, onDownload }) {
-  const isFree = resource.type === "free";
+  const isFree = true; // TEMP: all resources free until payment/invoicing is sorted
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>

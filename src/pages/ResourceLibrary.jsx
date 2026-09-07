@@ -90,8 +90,8 @@ export default function ResourceLibrary() {
                 {type === "all"
                   ? "All resources"
                   : type === "free"
-                    ? "Free"
-                    : "Premium"}
+                    ? "Beginner"
+                    : "Advanced"}
               </button>
             ))}
           </div>
@@ -146,7 +146,7 @@ export default function ResourceLibrary() {
 
                   {freeItems.length > 0 && typeFilter !== "premium" && (
                     <div className={styles.tierBlock}>
-                      <p className={styles.tierLabel}>Free</p>
+                      <p className={styles.tierLabel}>Beginner</p>
                       <div className={styles.libGrid}>
                         {freeItems.map((r) => (
                           <LibCard
@@ -162,7 +162,7 @@ export default function ResourceLibrary() {
 
                   {premiumItems.length > 0 && typeFilter !== "free" && (
                     <div className={styles.tierBlock}>
-                      <p className={styles.tierLabel}>Premium</p>
+                      <p className={styles.tierLabel}>Advanced</p>
                       <div className={styles.libGrid}>
                         {premiumItems.map((r) => (
                           <LibCard
@@ -224,7 +224,7 @@ export default function ResourceLibrary() {
 
 // ── LibCard ────────────────────────────────────────────────────
 function LibCard({ resource, lang, onClick }) {
-  const isFree = resource.type === "free";
+  const isFree = true; // TEMP: all resources free until payment/invoicing is sorted
   return (
     <button
       className={`${styles.libCard} ${isFree ? styles.libCardFree : styles.libCardPremium}`}
@@ -258,7 +258,7 @@ function LibCard({ resource, lang, onClick }) {
 
 // ── LibModal ───────────────────────────────────────────────────
 function LibModal({ resource, lang, onClose, onDownload }) {
-  const isFree = resource.type === "free";
+  const isFree = true; // TEMP: all resources free until payment/invoicing is sorted
 
   return (
     <div className={styles.overlay} onClick={onClose}>

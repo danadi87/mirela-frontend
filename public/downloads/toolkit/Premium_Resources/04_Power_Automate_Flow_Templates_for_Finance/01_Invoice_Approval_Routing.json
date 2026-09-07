@@ -1,0 +1,243 @@
+{
+  "properties": {
+    "displayName": "Invoice Approval Routing",
+    "description": "Routes invoices over $10,000 to the submitter's manager for approval; auto-approves invoices below that threshold and notifies AP either way.",
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "When_an_item_is_created": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetOnNewItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "YOUR_SHAREPOINT_SITE_URL",
+              "table": "Invoices"
+            }
+          },
+          "splitOn": null,
+          "metadata": {
+            "_note": "Replace 'dataset' with your SharePoint site URL and confirm 'table' matches your 'Invoices' list exactly."
+          }
+        }
+      },
+      "actions": {
+        "Check_high_value": {
+          "type": "If",
+          "expression": {
+            "greater": ["@triggerBody()?['Amount']", 10000]
+          },
+          "actions": {
+            "Get_manager_of_submitter": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_office365users",
+                  "operationId": "UserProfileV2",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365users"
+                },
+                "parameters": {
+                  "userId": "@triggerBody()?['Author']?['Email']"
+                }
+              },
+              "runAfter": {},
+              "metadata": {
+                "_note": "This is the 'Get manager (V2)' action — resolves the approver dynamically rather than a hardcoded email."
+              }
+            },
+            "Start_and_wait_for_an_approval": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_approvals",
+                  "operationId": "StartAndWaitForAnApproval",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_approvals"
+                },
+                "parameters": {
+                  "approvalType": "Approve/Reject - First to respond",
+                  "title": "@concat('Invoice approval required: ', triggerBody()?['InvoiceNumber'])",
+                  "assignedTo": "@body('Get_manager_of_submitter')?['mail']",
+                  "details": "@concat('Vendor: ', triggerBody()?['VendorName'], ' | Amount: ', triggerBody()?['Amount'])"
+                }
+              },
+              "runAfter": {
+                "Get_manager_of_submitter": ["Succeeded"]
+              }
+            },
+            "Check_approval_outcome": {
+              "type": "If",
+              "expression": {
+                "equals": [
+                  "@outputs('Start_and_wait_for_an_approval')?['body/outcome']",
+                  "Approve"
+                ]
+              },
+              "actions": {
+                "Update_item_Approved": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_sharepointonline",
+                      "operationId": "PatchItem",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                    },
+                    "parameters": {
+                      "dataset": "YOUR_SHAREPOINT_SITE_URL",
+                      "table": "Invoices",
+                      "id": "@triggerBody()?['ID']",
+                      "item": {
+                        "Status": "Approved"
+                      }
+                    }
+                  },
+                  "runAfter": {}
+                },
+                "Notify_AP_team_approved": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_office365",
+                      "operationId": "SendEmailV2",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                    },
+                    "parameters": {
+                      "emailMessage/To": "ap-team@yourcompany.com",
+                      "emailMessage/Subject": "@concat('Invoice approved: ', triggerBody()?['InvoiceNumber'])",
+                      "emailMessage/Body": "@concat('Invoice ', triggerBody()?['InvoiceNumber'], ' was approved and is ready to post.')"
+                    }
+                  },
+                  "runAfter": {
+                    "Update_item_Approved": ["Succeeded"]
+                  }
+                }
+              },
+              "else": {
+                "actions": {
+                  "Update_item_Rejected": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_sharepointonline",
+                        "operationId": "PatchItem",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                      },
+                      "parameters": {
+                        "dataset": "YOUR_SHAREPOINT_SITE_URL",
+                        "table": "Invoices",
+                        "id": "@triggerBody()?['ID']",
+                        "item": {
+                          "Status": "Rejected"
+                        }
+                      }
+                    },
+                    "runAfter": {}
+                  },
+                  "Notify_submitter_rejected": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_office365",
+                        "operationId": "SendEmailV2",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                      },
+                      "parameters": {
+                        "emailMessage/To": "@triggerBody()?['Author']?['Email']",
+                        "emailMessage/Subject": "@concat('Invoice rejected: ', triggerBody()?['InvoiceNumber'])",
+                        "emailMessage/Body": "@concat('Invoice ', triggerBody()?['InvoiceNumber'], ' was rejected. Please review and resubmit if needed.')"
+                      }
+                    },
+                    "runAfter": {
+                      "Update_item_Rejected": ["Succeeded"]
+                    }
+                  }
+                }
+              },
+              "runAfter": {
+                "Start_and_wait_for_an_approval": ["Succeeded"]
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "Update_item_Auto_Approved": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_sharepointonline",
+                    "operationId": "PatchItem",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "YOUR_SHAREPOINT_SITE_URL",
+                    "table": "Invoices",
+                    "id": "@triggerBody()?['ID']",
+                    "item": {
+                      "Status": "Auto-Approved"
+                    }
+                  }
+                },
+                "runAfter": {}
+              },
+              "Notify_AP_team_ready_to_post": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_office365",
+                    "operationId": "SendEmailV2",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                  },
+                  "parameters": {
+                    "emailMessage/To": "ap-team@yourcompany.com",
+                    "emailMessage/Subject": "@concat('Invoice ready to post: ', triggerBody()?['InvoiceNumber'])",
+                    "emailMessage/Body": "@concat('Invoice ', triggerBody()?['InvoiceNumber'], ' is below the approval threshold and ready to post.')"
+                  }
+                },
+                "runAfter": {
+                  "Update_item_Auto_Approved": ["Succeeded"]
+                }
+              }
+            }
+          },
+          "runAfter": {}
+        }
+      },
+      "outputs": {}
+    },
+    "connectionReferences": {
+      "shared_sharepointonline": {
+        "connectionName": "YOUR_SHAREPOINT_CONNECTION",
+        "source": "Embedded",
+        "id": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+        "tier": "NotSpecified"
+      },
+      "shared_office365users": {
+        "connectionName": "YOUR_OFFICE365USERS_CONNECTION",
+        "source": "Embedded",
+        "id": "/providers/Microsoft.PowerApps/apis/shared_office365users",
+        "tier": "NotSpecified"
+      },
+      "shared_approvals": {
+        "connectionName": "YOUR_APPROVALS_CONNECTION",
+        "source": "Embedded",
+        "id": "/providers/Microsoft.PowerApps/apis/shared_approvals",
+        "tier": "NotSpecified"
+      },
+      "shared_office365": {
+        "connectionName": "YOUR_OUTLOOK_CONNECTION",
+        "source": "Embedded",
+        "id": "/providers/Microsoft.PowerApps/apis/shared_office365",
+        "tier": "NotSpecified"
+      }
+    }
+  }
+}

@@ -120,36 +120,24 @@ export default function DownloadGateModal({ resource, onClose }) {
 
     // ── 1. Write lead to Airtable ──
     try {
-      const response = await fetch(
-        `https://api.airtable.com/v0/${import.meta.env.VITE_AIRTABLE_BASE_ID}/${encodeURIComponent(import.meta.env.VITE_AIRTABLE_TABLE)}`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_TOKEN}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            fields: {
-              Name: form.name,
-              Email: form.email,
-              Position: form.position,
-              Company: form.company,
-              Resource: resourceTitle,
-              Timestamp: new Date().toISOString(),
-              Status: "New",
-            },
-          }),
-        },
-      );
+      const response = await fetch("/.netlify/functions/submit-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          position: form.position,
+          company: form.company,
+          resourceTitle,
+        }),
+      });
 
       if (!response.ok) {
-        // Log the error detail but do not block the user
         const detail = await response.text();
-        console.warn("Airtable write failed:", response.status, detail);
+        console.warn("Lead submission failed:", response.status, detail);
       }
     } catch (err) {
-      // Network failure — non-blocking, download still proceeds
-      console.warn("Airtable request error:", err);
+      console.warn("Lead submission request error:", err);
     }
 
     // ── 2. Optional EmailJS notification ──
