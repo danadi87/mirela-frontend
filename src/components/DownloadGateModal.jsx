@@ -80,7 +80,7 @@ const copy = {
 
 const INITIAL = { name: "", email: "", position: "", company: "" };
 
-export default function DownloadGateModal({ resource, onClose, lang }) {
+export default function DownloadGateModal({ resource, onClose }) {
   const { lang } = useLanguage();
   const c = copy[lang] || copy.en;
 
