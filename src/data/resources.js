@@ -58,7 +58,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Project Charter Template — Word (.docx)",
@@ -91,7 +91,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/raci-matrix-template.xlsx",
+    downloadUrl: { en: "/downloads/raci-matrix-template.xlsx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "RACI Matrix — Excel (.xlsx)",
@@ -124,7 +124,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/risk-register-starter.xlsx",
+    downloadUrl: { en: "/downloads/risk-register-starter.xlsx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Risk Register — Excel (.xlsx)",
@@ -157,7 +157,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-kick-off-agenda-template.docx",
+    downloadUrl: { en: "/downloads/project-kick-off-agenda-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Kick-off Agenda — Word (.docx)",
@@ -190,7 +190,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-status-report-template.docx",
+    downloadUrl: { en: "/downloads/project-status-report-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Status Report Template — Word (.docx)",
@@ -223,7 +223,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/stakeholder-mapping-template.xlsx",
+    downloadUrl: { en: "/downloads/stakeholder-mapping-template.xlsx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Stakeholder Map — Excel (.xlsx)",
@@ -256,7 +256,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-closure-checklist.pdf",
+    downloadUrl: { en: "/downloads/project-closure-checklist.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Project Closure Checklist — PDF",
@@ -289,7 +289,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-health-check-questionnaire.pdf",
+    downloadUrl: { en: "/downloads/project-health-check-questionnaire.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Health Check — PDF",
@@ -322,7 +322,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/issues-log-template.xlsx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Issues Log — Excel (.xlsx)",
@@ -355,7 +355,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/meeting-notes-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Meeting Notes — Word (.docx)",
@@ -388,7 +388,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/budget-tracker-template.xlsx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Budget Tracker — Excel (.xlsx)",
@@ -421,7 +421,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/change-request-log.xlsx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Change Request Log — Excel (.xlsx)",
@@ -454,7 +454,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/dependency-map-template.xlsx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Dependency Map — Excel (.xlsx)",
@@ -487,7 +487,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/lessons-learned-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Lessons Learned — Word (.docx)",
@@ -520,7 +520,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/milestone-tracker-template.xlsx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Milestone Tracker — Excel (.xlsx)",
@@ -553,7 +553,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/advanced-risk-mngmt-toolkit", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "50-item risk register",
@@ -587,7 +587,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Stakeholder analysis framework",
@@ -621,7 +621,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Terms of Reference template",
@@ -655,7 +655,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Monthly steering committee pack",
@@ -689,7 +689,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "SLA monitoring dashboard",
@@ -723,7 +723,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Benefit profile template",
@@ -757,7 +757,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Sprint planning template",
@@ -791,7 +791,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "15-person capacity planner",
@@ -825,7 +825,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Strategic rationale section",
@@ -859,7 +859,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Quality plan template",
@@ -893,7 +893,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Crisis trigger criteria",
@@ -927,7 +927,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "8-workstream Gantt template",
@@ -961,7 +961,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Competency framework guide",
@@ -995,7 +995,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "50-page programme guide",
@@ -1029,7 +1029,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1A3C5E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "All 8 free PM templates",
@@ -1063,7 +1063,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/ai-prompt-library-for-finance-teams.pdf",
+    downloadUrl: { en: "/downloads/ai-prompt-library-for-finance-teams.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "30 finance-specific prompts",
@@ -1096,7 +1096,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/finance-automation-readiness-assessment.pdf",
+    downloadUrl: { en: "/downloads/finance-automation-readiness-assessment.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "20 readiness questions",
@@ -1129,7 +1129,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/10-finance-tasks-to-automate-first-checklist.pdf",
+    downloadUrl: { en: "/downloads/10-finance-tasks-to-automate-first-checklist.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "10 prioritised automation tasks",
@@ -1197,7 +1197,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/ai-governance-checklist-for-finance.pdf",
+    downloadUrl: { en: "/downloads/ai-governance-checklist-for-finance.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "15 governance checks",
@@ -1230,7 +1230,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/variance-commentary-prompt-templates.pdf",
+    downloadUrl: { en: "/downloads/variance-commentary-prompt-templates.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "5 variance commentary prompts",
@@ -1263,7 +1263,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/te-vendor-evaluation-scorecard.xlsx",
+    downloadUrl: { en: "/downloads/te-vendor-evaluation-scorecard.xlsx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Scorecard — Excel (.xlsx)",
@@ -1296,7 +1296,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/finance-automation-roi-calculator.xlsx",
+    downloadUrl: { en: "/downloads/finance-automation-roi-calculator.xlsx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "ROI calculation model",
@@ -1329,7 +1329,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "60-criterion scorecard",
@@ -1363,7 +1363,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "25 data quality checks",
@@ -1396,7 +1396,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Month-end process map",
@@ -1429,7 +1429,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Validation framework overview",
@@ -1462,7 +1462,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Hallucination risk explanation",
@@ -1495,7 +1495,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Power Query template",
@@ -1528,7 +1528,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "5 Power Automate templates",
@@ -1562,7 +1562,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "50 AI and automation terms",
@@ -1595,7 +1595,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Pre-built financial dashboard template",
@@ -1629,7 +1629,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "KPI definition framework",
@@ -1663,7 +1663,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Excel KPI dashboard (no Power BI required)",
@@ -1697,7 +1697,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "150 finance-specific prompts",
@@ -1731,7 +1731,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Business case template",
@@ -1765,7 +1765,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Process mapping templates",
@@ -1799,7 +1799,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Vendor selection criteria",
@@ -1833,7 +1833,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Automated forecasting template",
@@ -1867,7 +1867,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Data definition dictionary",
@@ -1901,7 +1901,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Copilot setup guide",
@@ -1935,7 +1935,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Rolling 13-week forecast model",
@@ -1969,7 +1969,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "5 finance bot use cases",
@@ -2003,7 +2003,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "AI audit documentation guide",
@@ -2037,7 +2037,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "12-month roadmap template",
@@ -2071,7 +2071,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Change management framework",
@@ -2105,7 +2105,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "70-page implementation guide",
@@ -2139,7 +2139,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "All 8 free AI & Finance resources",
@@ -2173,7 +2173,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#6B21A8",
-    downloadUrl: "/downloads/leadership-self-assessment.pdf",
+    downloadUrl: { en: "/downloads/leadership-self-assessment.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "20 leadership questions",
@@ -2206,7 +2206,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#6B21A8",
-    downloadUrl: "/downloads/facilitation-techniques-quick-reference.pdf",
+    downloadUrl: { en: "/downloads/facilitation-techniques-quick-reference.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "12 facilitation techniques",
@@ -2239,7 +2239,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/team-charter-template.docx",
+    downloadUrl: { en: "/downloads/team-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Team charter template",
@@ -2272,7 +2272,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/difficult-conversations-framework.pdf",
+    downloadUrl: { en: "/downloads/difficult-conversations-framework.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "5-step conversation framework",
@@ -2305,7 +2305,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/leadership-communication-checklist.pdf",
+    downloadUrl: { en: "/downloads/leadership-communication-checklist.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "15 communication checks",
@@ -2338,7 +2338,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/coaching-conversation-starter-questions.pdf",
+    downloadUrl: { en: "/downloads/coaching-conversation-starter-questions.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "50 coaching questions",
@@ -2371,7 +2371,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/culture-assessment-questionnaire.pdf",
+    downloadUrl: { en: "/downloads/culture-assessment-questionnaire.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "15 culture questions",
@@ -2404,7 +2404,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/leadership-styles-overview.pdf",
+    downloadUrl: { en: "/downloads/leadership-styles-overview.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "6 leadership style summaries",
@@ -2437,7 +2437,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Workshop design template",
@@ -2470,7 +2470,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "360 feedback questionnaire",
@@ -2503,7 +2503,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Preparation checklist",
@@ -2536,7 +2536,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Development plan template",
@@ -2569,7 +2569,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Conflict styles assessment",
@@ -2602,7 +2602,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Virtual platform setup guide",
@@ -2635,7 +2635,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Full-day facilitator guide",
@@ -2669,7 +2669,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "6 complete session guides",
@@ -2703,7 +2703,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Half-day facilitator guide",
@@ -2737,7 +2737,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Full-day facilitator guide",
@@ -2771,7 +2771,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Half-day workshop guide",
@@ -2805,7 +2805,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "4 session facilitator guides",
@@ -2839,7 +2839,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "3 session facilitator guides",
@@ -2873,7 +2873,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Half-day facilitator guide",
@@ -2907,7 +2907,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Full-day facilitator guide",
@@ -2941,7 +2941,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Half-day facilitator guide",
@@ -2975,7 +2975,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Critical role assessment",
@@ -3009,7 +3009,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "4 assessment exercises",
@@ -3043,7 +3043,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Large group facilitation guide",
@@ -3077,7 +3077,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Programme design framework",
@@ -3111,7 +3111,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Meeting design framework",
@@ -3145,7 +3145,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#6B21A8",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "All 8 free leadership resources",
@@ -3175,7 +3175,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/grow-model-quick-reference.pdf",
+    downloadUrl: { en: "/downloads/grow-model-quick-reference.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "GROW model explanation",
@@ -3204,7 +3204,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/powerful-questions-bank-60-questions.pdf",
+    downloadUrl: { en: "/downloads/powerful-questions-bank-60-questions.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "60 coaching questions",
@@ -3233,7 +3233,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/coaching-agreement-template.docx",
+    downloadUrl: { en: "/downloads/coaching-agreement-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Coaching agreement template",
@@ -3262,7 +3262,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/goal-setting-worksheet.pdf",
+    downloadUrl: { en: "/downloads/goal-setting-worksheet.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "SMART goal framework",
@@ -3291,7 +3291,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/coaching-vs-mentoring-vs-managing.pdf",
+    downloadUrl: { en: "/downloads/coaching-vs-mentoring-vs-managing.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Three-way comparison",
@@ -3320,7 +3320,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/wheel-of-life-assessment.pdf",
+    downloadUrl: { en: "/downloads/wheel-of-life-assessment.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Wheel of Life template",
@@ -3349,7 +3349,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/values-clarification-exercise.pdf",
+    downloadUrl: { en: "/downloads/values-clarification-exercise.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "50-value card sort",
@@ -3378,7 +3378,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/coaching-session-preparation-template.docx",
+    downloadUrl: { en: "/downloads/coaching-session-preparation-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Session preparation template",
@@ -3407,7 +3407,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "15 listening questions",
@@ -3436,7 +3436,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Strengths identification framework",
@@ -3465,7 +3465,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Limiting beliefs identification",
@@ -3494,7 +3494,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Career identity exploration",
@@ -3524,7 +3524,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "20 diagnostic questions",
@@ -3553,7 +3553,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Session reflection framework",
@@ -3582,7 +3582,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Feedback reception framework",
@@ -3611,7 +3611,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "4 coaching model guides",
@@ -3641,7 +3641,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Executive contracting guide",
@@ -3671,7 +3671,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Team coaching design guide",
@@ -3701,7 +3701,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Performance coaching framework",
@@ -3731,7 +3731,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "6 complete session guides",
@@ -3761,7 +3761,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Systems thinking framework",
@@ -3791,7 +3791,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "4 session guides",
@@ -3821,7 +3821,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Neuroscience principles overview",
@@ -3851,7 +3851,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Practice positioning guide",
@@ -3881,7 +3881,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "3 supervision model guides",
@@ -3911,7 +3911,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "5 session guides",
@@ -3941,7 +3941,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Transition assessment framework",
@@ -3971,7 +3971,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "8 ICF competency guides",
@@ -4001,7 +4001,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Mindfulness principles guide",
@@ -4031,7 +4031,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#1E6B4A",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "All 8 free coaching resources",
@@ -4065,7 +4065,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#991B1B",
-    downloadUrl: "/downloads/eq-self-assessment.pdf",
+    downloadUrl: { en: "/downloads/eq-self-assessment.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "20 EQ questions",
@@ -4098,7 +4098,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#991B1B",
-    downloadUrl: "/downloads/emotion-wheel-reference-card.pdf",
+    downloadUrl: { en: "/downloads/emotion-wheel-reference-card.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "72-emotion wheel",
@@ -4131,7 +4131,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/emotional-regulation-toolkit.pdf",
+    downloadUrl: { en: "/downloads/emotional-regulation-toolkit.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "8 regulation techniques",
@@ -4164,7 +4164,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/empathy-in-the-workplace-guide.pdf",
+    downloadUrl: { en: "/downloads/empathy-in-the-workplace-guide.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Empathy definition and types",
@@ -4197,7 +4197,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/eq-and-leadership-introductory-guide.pdf",
+    downloadUrl: { en: "/downloads/eq-and-leadership-introductory-guide.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "EQ-leadership research overview",
@@ -4230,7 +4230,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/stress-triggers-identification-worksheet.pdf",
+    downloadUrl: { en: "/downloads/stress-triggers-identification-worksheet.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Trigger identification framework",
@@ -4263,7 +4263,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/introduction-to-psychological-safety.pdf",
+    downloadUrl: { en: "/downloads/introduction-to-psychological-safety.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Psychological safety definition",
@@ -4296,7 +4296,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/wellbeing-at-work-self-assessment.pdf",
+    downloadUrl: { en: "/downloads/wellbeing-at-work-self-assessment.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "20 wellbeing questions",
@@ -4329,7 +4329,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "15 social awareness questions",
@@ -4362,7 +4362,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Daily journal template",
@@ -4395,7 +4395,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Emotional preparation guide",
@@ -4428,7 +4428,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "10 team EQ questions",
@@ -4461,7 +4461,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Boundary types explanation",
@@ -4494,7 +4494,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Conflict trigger awareness",
@@ -4527,7 +4527,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Virtual EQ challenges",
@@ -4560,7 +4560,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Client EQ reading guide",
@@ -4594,7 +4594,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "5 complete session guides",
@@ -4628,7 +4628,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Full-day facilitator guide",
@@ -4662,7 +4662,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Self-report EQ assessment",
@@ -4696,7 +4696,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "3 session facilitator guides",
@@ -4730,7 +4730,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Team assessment tool",
@@ -4764,7 +4764,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "4 session guides",
@@ -4798,7 +4798,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "EQ assessment interpretation guide",
@@ -4832,7 +4832,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Half-day facilitator guide",
@@ -4866,7 +4866,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "3 session guides",
@@ -4900,7 +4900,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Conversation preparation framework",
@@ -4934,7 +4934,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Cultural EQ framework",
@@ -4968,7 +4968,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Age-appropriate EQ guide",
@@ -5002,7 +5002,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Pre/post EQ measurement",
@@ -5036,7 +5036,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#991B1B",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "All 8 free EQ resources",
@@ -5070,7 +5070,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/web-project-brief-template.docx",
+    downloadUrl: { en: "/downloads/web-project-brief-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Project objectives section",
@@ -5104,7 +5104,7 @@ export const allResources = [
     price: null,
     isNew: true,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/website-launch-checklist.pdf",
+    downloadUrl: { en: "/downloads/website-launch-checklist.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "40 pre-launch checks",
@@ -5137,7 +5137,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/user-story-template-pack.docx",
+    downloadUrl: { en: "/downloads/user-story-template-pack.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "20 user story templates",
@@ -5170,7 +5170,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/git-workflow-guide-for-small-teams.pdf",
+    downloadUrl: { en: "/downloads/git-workflow-guide-for-small-teams.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Branching strategy guide",
@@ -5203,7 +5203,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/web-accessibility-quick-reference.pdf",
+    downloadUrl: { en: "/downloads/web-accessibility-quick-reference.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "WCAG 2.1 overview",
@@ -5236,7 +5236,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/bug-report-template.docx",
+    downloadUrl: { en: "/downloads/bug-report-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Bug description format",
@@ -5270,7 +5270,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/seo-technical-audit-checklist.pdf",
+    downloadUrl: { en: "/downloads/seo-technical-audit-checklist.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "30 technical SEO checks",
@@ -5303,7 +5303,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/software-development-glossary.pdf",
+    downloadUrl: { en: "/downloads/software-development-glossary.pdf", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "60 technical terms",
@@ -5336,7 +5336,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Page inventory template",
@@ -5370,7 +5370,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Architecture requirements",
@@ -5404,7 +5404,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Endpoint documentation format",
@@ -5438,7 +5438,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "25 performance checks",
@@ -5471,7 +5471,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Project scope section",
@@ -5505,7 +5505,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "20-criterion comparison matrix",
@@ -5539,7 +5539,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "5 React component templates",
@@ -5572,7 +5572,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Architecture decision template",
@@ -5606,7 +5606,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Project setup guide",
@@ -5640,7 +5640,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Sprint planning templates",
@@ -5674,7 +5674,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Website strategy framework",
@@ -5708,7 +5708,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Colour token system",
@@ -5742,7 +5742,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "5 finance API guides",
@@ -5776,7 +5776,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Core Web Vitals guide",
@@ -5810,7 +5810,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "OWASP Top 10 guide",
@@ -5844,7 +5844,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "i18n architecture guide",
@@ -5878,7 +5878,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Platform selection matrix",
@@ -5912,7 +5912,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "JavaScript fundamentals guide",
@@ -5946,7 +5946,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Next.js setup guide",
@@ -5980,7 +5980,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "GA4 setup guide",
@@ -6014,7 +6014,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "Client onboarding system",
@@ -6048,7 +6048,7 @@ export const allResources = [
     price: null,
     isNew: false,
     color: "#0D4B6E",
-    downloadUrl: "/downloads/project-charter-template.docx",
+    downloadUrl: { en: "/downloads/project-charter-template.docx", es: null, fr: null },
     purchaseUrl: null,
     includes: [
       "All 8 free web resources",
