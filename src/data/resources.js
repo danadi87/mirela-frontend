@@ -1108,7 +1108,7 @@ export const allResources = [
     isNew: false,
     color: "#1A3C5E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/programme-delivery-playbook.pdf",
       es: null,
       fr: null,
     },
