@@ -2718,7 +2718,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/workshop-design-template.docx",
       es: null,
       fr: null,
     },
@@ -2755,7 +2755,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/360-feedback.zip",
       es: null,
       fr: null,
     },
@@ -2792,7 +2792,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/performance-conversation-guide.pdf",
       es: null,
       fr: null,
     },
@@ -2829,7 +2829,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/leadership-development-plan-template.docx",
       es: null,
       fr: null,
     },
@@ -2866,7 +2866,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/conflict-resolution-toolkit.pdf",
       es: null,
       fr: null,
     },
@@ -2903,7 +2903,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/virtual-workshop-facilitation-guide.pdf",
       es: null,
       fr: null,
     },
@@ -2940,7 +2940,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/leadership-workshop-facilitator-pack.zip",
       es: null,
       fr: null,
     },
@@ -2978,7 +2978,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/high-performance-team-programme.zip",
       es: null,
       fr: null,
     },
@@ -3016,7 +3016,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/leadership-communication-masterclass-pack.zip",
       es: null,
       fr: null,
     },
@@ -3054,7 +3054,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/change-leadership-workshop-pack.zip",
       es: null,
       fr: null,
     },
@@ -3808,7 +3808,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/active-listening-self-assessment.pdf",
       es: null,
       fr: null,
     },
@@ -3841,7 +3841,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/strengths-based-coaching-guide.pdf",
       es: null,
       fr: null,
     },
@@ -3907,7 +3907,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/career-transition-coaching-workbook.pdf",
       es: null,
       fr: null,
     },
@@ -5977,7 +5977,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/website-content-inventory.xlsx",
       es: null,
       fr: null,
     },
@@ -6015,7 +6015,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/technical-requirements-template.docx",
       es: null,
       fr: null,
     },
@@ -6053,7 +6053,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/API-documentation-template.zip",
       es: null,
       fr: null,
     },
@@ -6091,7 +6091,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/website-performance-checklist.pdf",
       es: null,
       fr: null,
     },
@@ -6128,7 +6128,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/freelance-web-developer-contract.docx",
       es: null,
       fr: null,
     },
