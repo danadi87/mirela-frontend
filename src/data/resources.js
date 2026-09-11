@@ -3168,7 +3168,7 @@ export const allResources = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/coaching-skills-for-managers.zip",
       es: null,
       fr: null,
     },
@@ -3874,7 +3874,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/limiting-beliefs-worksheet.pdf",
       es: null,
       fr: null,
     },
@@ -3941,7 +3941,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/team-coaching-diagnostic.pdf",
       es: null,
       fr: null,
     },
@@ -4007,7 +4007,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/feedback-for-coachees-guide.pdf",
       es: null,
       fr: null,
     },
@@ -4040,7 +4040,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/complete-coaching-toolkit.pdf",
       es: null,
       fr: null,
     },
@@ -4074,7 +4074,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/executive-coaching-programme.zip",
       es: null,
       fr: null,
     },
@@ -4108,7 +4108,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/team-coaching-programme-guide.zip",
       es: null,
       fr: null,
     },
@@ -4142,7 +4142,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/coaching-for-performance-toolkit.zip",
       es: null,
       fr: null,
     },
@@ -4176,7 +4176,7 @@ export const allResources = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/career-coaching-programme.zip",
       es: null,
       fr: null,
     },
@@ -4850,7 +4850,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/social-awareness-assessment.pdf",
       es: null,
       fr: null,
     },
@@ -4887,7 +4887,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/mindset-emotion-journal.pdf",
       es: null,
       fr: null,
     },
@@ -4924,7 +4924,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/feedback-with-eq-guide.pdf",
       es: null,
       fr: null,
     },
@@ -4961,7 +4961,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/team-eq-pulse-check.pdf",
       es: null,
       fr: null,
     },
@@ -4998,7 +4998,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/boundaries-at-work-guide.pdf",
       es: null,
       fr: null,
     },
@@ -5035,7 +5035,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/conflict-emotion-management-guide.pdf",
       es: null,
       fr: null,
     },
@@ -5072,7 +5072,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/eq-virtual-teams-guide.pdf",
       es: null,
       fr: null,
     },
@@ -5109,7 +5109,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/EQ-in-sales-and-client-management.zip",
       es: null,
       fr: null,
     },
@@ -5147,7 +5147,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/emotional-intelligence-development.zip",
       es: null,
       fr: null,
     },
@@ -5185,7 +5185,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/eq-for-leaders-masterclass.zip",
       es: null,
       fr: null,
     },
@@ -5223,7 +5223,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/advanced-EQ-assessment-toolkit.zip",
       es: null,
       fr: null,
     },
@@ -5413,7 +5413,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/EQ-in-finance-and-operations-workshop-pack.zip",
       es: null,
       fr: null,
     },
@@ -6166,7 +6166,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/cms-selection-comparison-matrix.xlsx",
       es: null,
       fr: null,
     },
@@ -6355,7 +6355,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/business-website-strategy-guide.pdf",
       es: null,
       fr: null,
     },
@@ -6507,7 +6507,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/web-security-checklist-guide.pdf",
       es: null,
       fr: null,
     },
@@ -6583,7 +6583,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/ecommerce-website-setup-guide.pdf",
       es: null,
       fr: null,
     },
@@ -6621,7 +6621,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/technical-interview-prep-webdev.pdf",
       es: null,
       fr: null,
     },
@@ -6697,7 +6697,7 @@ export const allResources = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/web-analytics-reporting-setup-guide.pdf",
       es: null,
       fr: null,
     },
