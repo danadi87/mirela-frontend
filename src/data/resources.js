@@ -33,7 +33,7 @@ export const CATEGORIES = [
   },
 ];
 
-export const allResources = [
+export const allResourcesRaw = [
   {
     id: "project-management-01",
     icon: "◈",
@@ -4787,6 +4787,7 @@ export const allResources = [
       "Safe vs unsafe team signs",
       "Cultivation strategies",
     ],
+    published: false,
   },
   {
     id: "emotional-intelligence-08",
@@ -5311,6 +5312,7 @@ export const allResources = [
       "Team practices toolkit",
       "Progress measurement system",
     ],
+    published: false,
   },
   {
     id: "emotional-intelligence-22",
@@ -5349,6 +5351,7 @@ export const allResources = [
       "Team culture assessment",
       "90-day practice plan",
     ],
+    published: false,
   },
   {
     id: "emotional-intelligence-23",
@@ -5451,7 +5454,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/managing -stress-and-burnout-prevention-programme.zip",
       es: null,
       fr: null,
     },
@@ -5489,7 +5492,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/difficult-conversations-and-EQ-toolkit",
       es: null,
       fr: null,
     },
@@ -5527,7 +5530,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/EQ-for-cross-cultural-teams.zip",
       es: null,
       fr: null,
     },
@@ -5577,6 +5580,7 @@ export const allResources = [
       "EQ milestone framework",
       "Resource library",
     ],
+    published: false,
   },
   {
     id: "emotional-intelligence-29",
@@ -5603,7 +5607,7 @@ export const allResources = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/EQ-measurement-and-ROI-toolkit.zip",
       es: null,
       fr: null,
     },
@@ -6787,7 +6791,9 @@ export const allResources = [
     ],
   },
 ];
-
+export const allResources = allResourcesRaw.filter(
+  (r) => r.published !== false,
+);
 export const freeResources = allResources.filter((r) => r.type === "free");
 export const premiumResources = allResources.filter(
   (r) => r.type === "premium",
