@@ -1826,6 +1826,7 @@ export const allResourcesRaw = [
       "Alert and threshold configuration",
       "Stakeholder distribution workflow",
     ],
+    published: false,
   },
   {
     id: "ai-finance-automation-19",
@@ -1864,6 +1865,7 @@ export const allResourcesRaw = [
       "Variance vs budget and prior year",
       "Automated data refresh configuration",
     ],
+    published: false,
   },
   {
     id: "ai-finance-automation-20",
@@ -1966,7 +1968,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#0D6E6E",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/month-end-close-automation-toolkit.zip",
       es: null,
       fr: null,
     },
@@ -3104,6 +3106,7 @@ export const allResourcesRaw = [
       "Manager commitment framework",
       "Progress tracking tool",
     ],
+    published: false,
   },
   {
     id: "leadership-facilitation-20",
@@ -3130,7 +3133,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/executive-presence-development-programme.zip",
       es: null,
       fr: null,
     },
@@ -3206,7 +3209,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/team-resilience-workshop-pack.zip",
       es: null,
       fr: null,
     },
@@ -5262,7 +5265,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/resilience-and-EQ-at-work.zip",
       es: null,
       fr: null,
     },
@@ -5370,15 +5373,15 @@ export const allResourcesRaw = [
     },
     desc: {
       en: "A specialist EQ coaching toolkit — EQ assessment interpretation, coaching with the Goleman model, EQ-based interventions, and progress measurement.",
-      es: "A specialist EQ coaching toolkit — EQ assessment interpretation, coaching with the Goleman model, EQ-based interventions, and progress measurement.",
-      fr: "A specialist EQ coaching toolkit — EQ assessment interpretation, coaching with the Goleman model, EQ-based interventions, and progress measurement.",
+      es: "Un conjunto de herramientas especializadas para el coaching en inteligencia emocional: interpretación de evaluaciones de inteligencia emocional, coaching basado en el modelo de Goleman, intervenciones basadas en la inteligencia emocional y medición del progreso.",
+      fr: "Une boîte à outils spécialisée dans le coaching en intelligence émotionnelle : interprétation des évaluations d'intelligence émotionnelle, coaching selon le modèle de Goleman, interventions axées sur l'intelligence émotionnelle et suivi des progrès.",
     },
     format: "PDF + Word",
     price: null,
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/emotional-intelligence-coaching-toolkit.zip",
       es: null,
       fr: null,
     },
@@ -5636,9 +5639,9 @@ export const allResourcesRaw = [
       fr: "Complete EQ Development Bundle",
     },
     desc: {
-      en: "All 8 free resources plus all 22 premium EQ programmes in one complete download.",
-      es: "All 8 free resources plus all 22 premium EQ programmes in one complete download.",
-      fr: "All 8 free resources plus all 22 premium EQ programmes in one complete download.",
+      en: "All 7 beginner resources plus all 18 advanced EQ programmes in one complete download.",
+      es: "Los 7 recursos para principiantes y los 18 programas avanzados de IE en una única descarga completa.",
+      fr: "Les 7 ressources pour débutants ainsi que les 18 programmes avancés sur l'IE réunis dans un seul téléchargement complet.",
     },
     format: "Multi-format",
     price: null,
@@ -5651,8 +5654,8 @@ export const allResourcesRaw = [
     },
     purchaseUrl: null,
     includes: [
-      "All 8 free EQ resources",
-      "All 22 premium EQ programmes",
+      "All 7 free EQ resources",
+      "All 18 premium EQ programmes",
       "Editable master versions",
       "Facilitator certification guide",
       "Lifetime updates included",
