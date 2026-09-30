@@ -21,10 +21,12 @@ export default function ResourceLibrary() {
 
   const initType = searchParams.get("type") || "all"; // all | free | premium
   const initCat = searchParams.get("cat") || "all";
+  const initResource =
+    allResources.find((r) => r.id === searchParams.get("resource")) || null;
 
   const [typeFilter, setTypeFilter] = useState(initType);
   const [catFilter, setCatFilter] = useState(initCat);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(initResource);
   const [gateResource, setGateResource] = useState(null);
 
   // Sync URL params when filters change
@@ -32,8 +34,9 @@ export default function ResourceLibrary() {
     const params = {};
     if (typeFilter !== "all") params.type = typeFilter;
     if (catFilter !== "all") params.cat = catFilter;
+    if (selected) params.resource = selected.id;
     setSearchParams(params, { replace: true });
-  }, [typeFilter, catFilter]);
+  }, [typeFilter, catFilter, selected]);
 
   // Compute filtered list
   const filtered = useMemo(() => {
@@ -70,7 +73,7 @@ export default function ResourceLibrary() {
           <h1 data-reveal="fade-up">Browse the full library</h1>
           <p className={styles.heroSub} data-reveal="fade-up">
             {allResources.length} resources across {CATEGORIES.length - 1}{" "}
-            categories — free tools and premium toolkits for finance and
+            categories — beginner tools and advanced toolkits for finance and
             operations professionals.
           </p>
         </div>
@@ -117,7 +120,9 @@ export default function ResourceLibrary() {
             {catFilter !== "all"
               ? ` in ${CATEGORIES.find((c) => c.id === catFilter)?.[lang]}`
               : ""}
-            {typeFilter !== "all" ? ` · ${typeFilter}` : ""}
+            {typeFilter !== "all"
+              ? ` · ${typeFilter === "free" ? "Beginner" : "Advanced"}`
+              : ""}
           </p>
         </div>
       </div>
@@ -332,6 +337,25 @@ function LibModal({ resource, lang, onClose, onDownload }) {
               Enquire →
             </Link>
           )}
+          <button
+            className="btn btn--outline"
+            onClick={(e) => {
+              const link = `${window.location.origin}/resources/library?resource=${resource.id}`;
+              navigator.clipboard.writeText(link);
+              e.currentTarget.textContent =
+                lang === "fr"
+                  ? "Lien copié ✓"
+                  : lang === "es"
+                    ? "Enlace copiado ✓"
+                    : "Link copied ✓";
+            }}
+          >
+            {lang === "fr"
+              ? "Copier le lien"
+              : lang === "es"
+                ? "Copiar enlace"
+                : "Copy link"}
+          </button>
           <button className="btn btn--outline" onClick={onClose}>
             {lang === "fr" ? "Fermer" : lang === "es" ? "Cerrar" : "Close"}
           </button>

@@ -1294,8 +1294,11 @@ export const allResourcesRaw = [
     price: null,
     isNew: false,
     color: "#0D6E6E",
-    downloadUrl:
-      "/downloads/ai-tool-comparison-matrix-chatgpt-vs-copilot-vs-gemini.xlsx",
+    downloadUrl: {
+      en: "/downloads/ai-tool-comparison-matrix.xlsx",
+      es: null,
+      fr: null,
+    },
     purchaseUrl: null,
     includes: [
       "Tool comparison matrix",
@@ -2461,7 +2464,7 @@ export const allResourcesRaw = [
     isNew: true,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/facilitation-techniques-quick-reference.pdf",
+      en: "/downloads/Facilitation_Techniques_Quick_Reference.pdf",
       es: null,
       fr: null,
     },
@@ -2498,7 +2501,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/team-charter-template.docx",
+      en: "/downloads/Team_Charter_Template.docx",
       es: null,
       fr: null,
     },
@@ -2572,7 +2575,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/leadership-communication-checklist.pdf",
+      en: "/downloads/Leadership_Communication_Checklist.pdf",
       es: null,
       fr: null,
     },
@@ -2683,7 +2686,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/leadership-styles-overview.pdf",
+      en: "/downloads/Leadership_Styles_Overview.pdf",
       es: null,
       fr: null,
     },
@@ -3247,7 +3250,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/inclusive-leadership-workshop.zip",
       es: null,
       fr: null,
     },
@@ -3285,7 +3288,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/strategy-communication-workshop-pack.zip",
       es: null,
       fr: null,
     },
@@ -3323,7 +3326,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#6B21A8",
     downloadUrl: {
-      en: "/downloads/project-charter-template.docx",
+      en: "/downloads/succession-planning-toolkit.zip",
       es: null,
       fr: null,
     },
@@ -3547,7 +3550,7 @@ export const allResourcesRaw = [
     isNew: true,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/grow-model-quick-reference.pdf",
+      en: "/downloads/GROW_Model_Quick_Reference.pdf",
       es: null,
       fr: null,
     },
@@ -3580,7 +3583,7 @@ export const allResourcesRaw = [
     isNew: true,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/powerful-questions-bank-60-questions.pdf",
+      en: "/downloads/Powerful_Questions_Bank_60_Questions.pdf",
       es: null,
       fr: null,
     },
@@ -3613,7 +3616,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/coaching-agreement-template.docx",
+      en: "/downloads/Coaching_Agreement_Template.docx",
       es: null,
       fr: null,
     },
@@ -3646,7 +3649,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/goal-setting-worksheet.pdf",
+      en: "/downloads/Goal_Setting_Worksheet.pdf",
       es: null,
       fr: null,
     },
@@ -3679,7 +3682,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/coaching-vs-mentoring-vs-managing.pdf",
+      en: "/downloads/Coaching_vs_Mentoring_vs_Managing.pdf",
       es: null,
       fr: null,
     },
@@ -3712,7 +3715,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/wheel-of-life-assessment.pdf",
+      en: "/downloads/Wheel_of_Life_Assessment.pdf",
       es: null,
       fr: null,
     },
@@ -3745,7 +3748,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/values-clarification-exercise.pdf",
+      en: "/downloads/Values_Clarification_Exercise.pdf",
       es: null,
       fr: null,
     },
@@ -3778,7 +3781,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#1E6B4A",
     downloadUrl: {
-      en: "/downloads/coaching-session-preparation-template.docx",
+      en: "/downloads/Coaching_Session_Preparation_Template.docx",
       es: null,
       fr: null,
     },
@@ -4557,7 +4560,7 @@ export const allResourcesRaw = [
     isNew: true,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/eq-self-assessment.pdf",
+      en: "/downloads/EQ_Self_Assessment.pdf",
       es: null,
       fr: null,
     },
@@ -4594,7 +4597,7 @@ export const allResourcesRaw = [
     isNew: true,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/emotion-wheel-reference-card.pdf",
+      en: "/downloads/Emotion_Wheel_Reference_Card.pdf",
       es: null,
       fr: null,
     },
@@ -4631,7 +4634,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/emotional-regulation-toolkit.pdf",
+      en: "/downloads/Emotional_Regulation_Toolkit.pdf",
       es: null,
       fr: null,
     },
@@ -4668,7 +4671,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/empathy-in-the-workplace-guide.pdf",
+      en: "/downloads/Empathy_in_the_Workplace_Guide.pdf",
       es: null,
       fr: null,
     },
@@ -4705,7 +4708,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/eq-and-leadership-introductory-guide.pdf",
+      en: "/downloads/EQ_and_Leadership_Introductory_Guide.pdf",
       es: null,
       fr: null,
     },
@@ -4742,7 +4745,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/stress-triggers-identification-worksheet.pdf",
+      en: "/downloads/Stress_Triggers_Identification_Worksheet.pdf",
       es: null,
       fr: null,
     },
@@ -4821,6 +4824,7 @@ export const allResourcesRaw = [
       es: null,
       fr: null,
     },
+    published: false,
     purchaseUrl: null,
     includes: [
       "20 wellbeing questions",
@@ -5495,7 +5499,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#991B1B",
     downloadUrl: {
-      en: "/downloads/difficult-conversations-and-EQ-toolkit",
+      en: "/downloads/difficult-conversations-and-EQ-toolkit.zip",
       es: null,
       fr: null,
     },
@@ -5724,7 +5728,7 @@ export const allResourcesRaw = [
     isNew: true,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/website-launch-checklist.pdf",
+      en: "/downloads/Website_Launch_Checklist.pdf",
       es: null,
       fr: null,
     },
@@ -5798,7 +5802,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/git-workflow-guide-for-small-teams.pdf",
+      en: "/downloads/Git_Workflow_Guide_for_Small_Teams.pdf",
       es: null,
       fr: null,
     },
@@ -5835,7 +5839,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/web-accessibility-quick-reference.pdf",
+      en: "/downloads/Web_Accessibility_Quick_Reference.pdf",
       es: null,
       fr: null,
     },
@@ -5872,7 +5876,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/bug-report-template.docx",
+      en: "/downloads/Bug_Report_Template.docx",
       es: null,
       fr: null,
     },
@@ -5910,7 +5914,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/seo-technical-audit-checklist.pdf",
+      en: "/downloads/SEO_Technical_Audit_Checklist.pdf",
       es: null,
       fr: null,
     },
@@ -5947,7 +5951,7 @@ export const allResourcesRaw = [
     isNew: false,
     color: "#0D4B6E",
     downloadUrl: {
-      en: "/downloads/software-development-glossary.pdf",
+      en: "/downloads/Software_Development_Glossary.pdf",
       es: null,
       fr: null,
     },

@@ -26,6 +26,7 @@ export default function Footer() {
               { to: "/services", key: t("nav", "services") },
               { to: "/projects", key: t("nav", "projects") },
               { to: "/resources", key: t("nav", "resources") },
+              { to: "/insights", key: t("nav", "insights") },
               { to: "/contact", key: t("nav", "contact") },
             ].map(({ to, key }) => (
               <li key={to}>
@@ -55,7 +56,7 @@ export default function Footer() {
                 href="mailto:dragulescumirela@gmail.com"
                 className={styles.footerLink}
               >
-                dragulescumirela@gmail.com
+                info@mddbusinessconsulting.com
               </a>
             </li>
             <li>

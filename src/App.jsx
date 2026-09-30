@@ -11,12 +11,13 @@ import Insights from "./components/Insights";
 import Enquiry from "./components/Enquiry";
 import InsightArticle from "./pages/InsightArticle";
 import ResourceLibrary from "./pages/ResourceLibrary";
-
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
 function App() {
   return (
     <div className="app">
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
