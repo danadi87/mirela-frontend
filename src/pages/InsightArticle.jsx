@@ -14,7 +14,7 @@ export default function InsightArticle() {
   const article = allInsights.find((a) => a.id === id);
 
   // If no article found, redirect to insights hub
-  if (!article) return <Navigate to="/insights" replace />;
+  if (!article) return <Navigate to="/articles" replace />;
 
   const title = article.title[lang] || article.title.en;
   const tag = article.tag[lang] || article.tag.en;
@@ -33,13 +33,13 @@ export default function InsightArticle() {
       {/* ── ARTICLE HERO ── */}
       <section className={styles.hero} style={{ "--accent": article.color }}>
         <div className="container--narrow">
-          <Link to="/insights" className={styles.backLink}>
+          <Link to="/articles" className={styles.backLink}>
             ←{" "}
             {lang === "fr"
-              ? "Retour aux perspectives"
+              ? "Retour aux articles"
               : lang === "es"
-                ? "Volver a perspectivas"
-                : "Back to Insights"}
+                ? "Volver a los artículos"
+                : "Back to Articles"}
           </Link>
 
           <div className={styles.meta}>
@@ -96,7 +96,7 @@ export default function InsightArticle() {
                     : "This content will be available shortly."}
               </p>
               <Link
-                to="/insights"
+                to="/articles"
                 className="btn btn--outline"
                 style={{ marginTop: "1.5rem" }}
               >
@@ -148,7 +148,7 @@ function RelatedArticles({ current, lang }) {
             return (
               <Link
                 key={article.id}
-                to={`/insights/${article.id}`}
+                to={`/articles/${article.id}`}
                 className={styles.relatedCard}
                 style={{ "--accent": article.color }}
               >

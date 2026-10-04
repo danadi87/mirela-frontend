@@ -28,7 +28,7 @@ export default function InsightCard({ article, featured = false }) {
             {article.readTime} {t("resources", "readTime")}
           </span>
           <Link
-            to={`/insights/${article.id}`}
+            to={`/articles/${article.id}`}
             className={`btn btn--ghost ${styles.cta}`}
           >
             {t("resources", "readMore")}

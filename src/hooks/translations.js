@@ -5,7 +5,7 @@ export const translations = {
       services: "Services",
       projects: "Case Studies",
       resources: "Resources",
-      insights: "Insights",
+      insights: "Articles",
       contact: "Contact",
       cta: "Submit an Enquiry",
     },
@@ -66,7 +66,7 @@ export const translations = {
       ctaBody:
         "Guides, frameworks, checklists, and AI playbooks — built from operational experience delivering programmes across Europe.",
       ctaBtn1: "Browse the Resources",
-      ctaBtn2: "Read the Insights",
+      ctaBtn2: "Read the articles",
     },
     stats: {
       s1v: "9+",
@@ -235,7 +235,7 @@ export const translations = {
       new: "New",
     },
     insights: {
-      tag: "Insights",
+      tag: "Articles",
       heading: "Perspectives from the field.",
       sub: "Practical analysis on finance transformation, change management, and cross-border programme delivery — drawn from operational experience, not theory.",
       featuredLabel: "Featured",
@@ -305,7 +305,7 @@ export const translations = {
       services: "Servicios",
       projects: "Proyectos",
       resources: "Recursos",
-      insights: "Perspectivas",
+      insights: "Artículos",
       contact: "Contacto",
       cta: "Enviar consulta",
     },
@@ -366,7 +366,7 @@ export const translations = {
       ctaBody:
         "Guías, marcos, checklists y playbooks de IA — desarrollados desde la experiencia operativa en programas europeos.",
       ctaBtn1: "Ver los recursos",
-      ctaBtn2: "Leer las perspectivas",
+      ctaBtn2: "Leer los artículos",
     },
     stats: {
       s1v: "9+",
@@ -537,7 +537,7 @@ export const translations = {
       new: "Nuevo",
     },
     insights: {
-      tag: "Perspectivas",
+      tag: "Artículos",
       heading: "Análisis desde el terreno.",
       sub: "Análisis práctico sobre transformación financiera, gestión del cambio y entrega de programas transfronterizos — extraído de la experiencia operativa, no de la teoría.",
       featuredLabel: "Destacado",
@@ -608,7 +608,7 @@ export const translations = {
       services: "Services",
       projects: "Études de cas",
       resources: "Ressources",
-      insights: "Perspectives",
+      insights: "Articles",
       contact: "Contact",
       cta: "Soumettre une demande",
     },
@@ -669,7 +669,7 @@ export const translations = {
       ctaBody:
         "Guides, cadres, checklists et playbooks IA — construits à partir d'une expérience opérationnelle sur les marchés européens.",
       ctaBtn1: "Parcourir les ressources",
-      ctaBtn2: "Lire les perspectives",
+      ctaBtn2: "Lire les articles",
     },
     stats: {
       s1v: "9+",
@@ -840,7 +840,7 @@ export const translations = {
       new: "Nouveau",
     },
     insights: {
-      tag: "Perspectives",
+      tag: "Articles",
       heading: "Analyses depuis le terrain.",
       sub: "Analyses pratiques sur la transformation financière, la conduite du changement et la livraison de programmes transfrontaliers — tirées de l'expérience opérationnelle, pas de la théorie.",
       featuredLabel: "À la une",

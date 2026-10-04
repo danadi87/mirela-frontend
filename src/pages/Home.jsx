@@ -48,7 +48,7 @@ export default function Home() {
               <h2>{t("home", "insightsTitle")}</h2>
             </div>
             <Link
-              to="/insights"
+              to="/articles"
               className={`btn btn--ghost reveal reveal-delay-2 ${styles.seeAll}`}
             >
               {t("home", "insightsAll")}
@@ -144,7 +144,7 @@ export default function Home() {
             <Link to="/resources" className="btn btn--primary">
               {t("home", "ctaBtn1")}
             </Link>
-            <Link to="/insights" className="btn btn--outline-light">
+            <Link to="/articles" className="btn btn--outline-light">
               {t("home", "ctaBtn2")}
             </Link>
           </div>

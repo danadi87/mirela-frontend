@@ -26,7 +26,7 @@ export default function Footer() {
               { to: "/services", key: t("nav", "services") },
               { to: "/projects", key: t("nav", "projects") },
               { to: "/resources", key: t("nav", "resources") },
-              { to: "/insights", key: t("nav", "insights") },
+              { to: "/articles", key: t("nav", "articles") },
               { to: "/contact", key: t("nav", "contact") },
             ].map(({ to, key }) => (
               <li key={to}>

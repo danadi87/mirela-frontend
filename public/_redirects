@@ -1,1 +1,4 @@
 /* /index.html 200
+/insights      /articles           301
+/insights/*    /articles/:splat    301
+/*             /index.html         200

@@ -81,7 +81,7 @@ The most significant development of the past twelve months is not a new tool —
 
 Agentic AI refers to AI systems that do not just respond to a prompt but take sequences of actions autonomously: checking a system, making a decision based on rules and context, initiating a process, and completing a workflow without human input at each step. According to [Gartner's agentic AI in finance report](https://www.gartner.com/en/articles/agentic-ai-in-finance), **57% of finance teams are already implementing or planning to implement agentic AI** ⁷, and it has the potential to perform a high volume of complex, judgment-based activities across multiple applications and stakeholders.
 
-[Citizens Bank's 2026 AI Trends in Financial Management research](https://www.citizensbank.com/corporate-finance/insights/ai-trends-financial-management-2026.aspx) reports that **82% of midsize companies and 95% of private equity firms have either begun or plan to implement agentic AI in 2026** ⁸. Top use cases include cybersecurity, fraud detection, and financial planning and analysis.
+[Citizens Bank's 2026 AI Trends in Financial Management research](https://www.citizensbank.com/corporate-finance/articles/ai-trends-financial-management-2026.aspx) reports that **82% of midsize companies and 95% of private equity firms have either begun or plan to implement agentic AI in 2026** ⁸. Top use cases include cybersecurity, fraud detection, and financial planning and analysis.
 
 For finance operations specifically, agentic AI means workflows that were previously a sequence of human tasks — receive invoice, check against PO, route for approval, post to ledger, file — can now run end-to-end with minimal human intervention. The human role shifts to exception handling, governance, and decision-making on cases that fall outside the defined parameters.
 
@@ -164,7 +164,8 @@ That combination — AI that handles the volume, humans who govern the quality �
 5. BCG — *The CFO's AI Agenda: From Automation to Advantage* (2026) — [bcg.com](https://www.bcg.com/publications/2026/the-cfos-ai-agenda-from-automation-to-advantage)
 6. Gartner — *Gartner Predicts by 2029, CFOs Who Implement Strategic AI Deployment Will Add 10 Margin Points* (April 2026) — [gartner.com](https://www.gartner.com/en/newsroom/press-releases/2026-04-28-gartnerpredicts-by-2029-cfos-who-implement-strategic-ai-deploymnt-will-add-10-margin-points-of-growth)
 7. Gartner — *Agentic AI Will Transform Finance: Here's What CFOs Should Do Now* (October 2025) — [gartner.com](https://www.gartner.com/en/articles/agentic-ai-in-finance)
-8. Citizens Bank — *2026 AI Trends in Financial Management* (December 2025) — [citizensbank.com](https://www.citizensbank.com/corporate-finance/insights/ai-trends-financial-management-2026.aspx)
+8. Citizens Bank — *2026 AI Trends in Financial Management* (December 2025) — [citizensbank.com](https://www.citizensbank.com/corporate-finance/articles
+/ai-trends-financial-management-2026.aspx)
 9. SolveXia — *32 Finance Automation Trends and Statistics for 2026* (November 2025) — [solvexia.com](https://www.solvexia.com/blog/finance-automation-trends-and-statistics)
 10. Fortune — *AI in 2026: CFOs Predict Transformation, Not Just Efficiency Gains* (December 2025) — [fortune.com](https://fortune.com/2025/12/24/ai-in-2026-cfos-predict-transformation-not-just-efficiency-gains/)
   `,
@@ -216,7 +217,7 @@ La previsión asistida por IA ha pasado de ser un experimento de FP&A a ser una 
 
 El desarrollo más significativo de los últimos doce meses no es una nueva herramienta — es una nueva categoría de comportamiento de IA.
 
-Según el [informe de Gartner sobre IA agéntica en finanzas](https://www.gartner.com/en/articles/agentic-ai-in-finance), el **57% de los equipos financieros ya está implementando o planea implementar IA agéntica** ⁷. La [investigación de Citizens Bank sobre tendencias de IA 2026](https://www.citizensbank.com/corporate-finance/insights/ai-trends-financial-management-2026.aspx) informa de que el **82% de las empresas medianas y el 95% de las firmas de private equity han comenzado o planean implementar IA agéntica en 2026** ⁸.
+Según el [informe de Gartner sobre IA agéntica en finanzas](https://www.gartner.com/en/articles/agentic-ai-in-finance), el **57% de los equipos financieros ya está implementando o planea implementar IA agéntica** ⁷. La [investigación de Citizens Bank sobre tendencias de IA 2026](https://www.citizensbank.com/corporate-finance/articles/ai-trends-financial-management-2026.aspx) informa de que el **82% de las empresas medianas y el 95% de las firmas de private equity han comenzado o planean implementar IA agéntica en 2026** ⁸.
 
 Para las operaciones financieras específicamente, la IA agéntica significa que los flujos de trabajo que antes eran una secuencia de tareas humanas — recibir factura, verificar contra pedido de compra, enrutar para aprobación, contabilizar en el libro mayor, archivar — ahora pueden ejecutarse de principio a fin con mínima intervención humana. Como predice Gartner, **el 15% de las decisiones de trabajo diarias serán tomadas de forma autónoma por la IA agéntica para 2028** ⁷.
 
@@ -285,7 +286,7 @@ Esa combinación — IA que gestiona el volumen, humanos que gobiernan la calida
 5. BCG — *The CFO's AI Agenda: From Automation to Advantage* (2026) — [bcg.com](https://www.bcg.com/publications/2026/the-cfos-ai-agenda-from-automation-to-advantage)
 6. Gartner — *Gartner Predicts by 2029, CFOs Who Implement Strategic AI Deployment Will Add 10 Margin Points* (abril 2026) — [gartner.com](https://www.gartner.com/en/newsroom/press-releases/2026-04-28-gartnerpredicts-by-2029-cfos-who-implement-strategic-ai-deploymnt-will-add-10-margin-points-of-growth)
 7. Gartner — *Agentic AI Will Transform Finance: Here's What CFOs Should Do Now* (octubre 2025) — [gartner.com](https://www.gartner.com/en/articles/agentic-ai-in-finance)
-8. Citizens Bank — *2026 AI Trends in Financial Management* (diciembre 2025) — [citizensbank.com](https://www.citizensbank.com/corporate-finance/insights/ai-trends-financial-management-2026.aspx)
+8. Citizens Bank — *2026 AI Trends in Financial Management* (diciembre 2025) — [citizensbank.com](https://www.citizensbank.com/corporate-finance/articles/ai-trends-financial-management-2026.aspx)
 9. SolveXia — *32 Finance Automation Trends and Statistics for 2026* (noviembre 2025) — [solvexia.com](https://www.solvexia.com/blog/finance-automation-trends-and-statistics)
 10. Fortune — *AI in 2026: CFOs Predict Transformation, Not Just Efficiency Gains* (diciembre 2025) — [fortune.com](https://fortune.com/2025/12/24/ai-in-2026-cfos-predict-transformation-not-just-efficiency-gains/)
   `,
@@ -333,7 +334,7 @@ Selon le [rapport Accounts Payable Automation Trends 2025](https://acarp-edu.org
 
 Le développement le plus significatif des douze derniers mois n'est pas un nouvel outil — c'est une nouvelle catégorie de comportement IA.
 
-Selon le [rapport Gartner sur l'IA agentique en finance](https://www.gartner.com/en/articles/agentic-ai-in-finance), **57% des équipes financières implémentent déjà ou envisagent d'implémenter l'IA agentique** ⁷. La [recherche de Citizens Bank sur les tendances IA 2026](https://www.citizensbank.com/corporate-finance/insights/ai-trends-financial-management-2026.aspx) rapporte que **82% des entreprises de taille intermédiaire et 95% des firmes de private equity ont commencé ou envisagent d'implémenter l'IA agentique en 2026** ⁸.
+Selon le [rapport Gartner sur l'IA agentique en finance](https://www.gartner.com/en/articles/agentic-ai-in-finance), **57% des équipes financières implémentent déjà ou envisagent d'implémenter l'IA agentique** ⁷. La [recherche de Citizens Bank sur les tendances IA 2026](https://www.citizensbank.com/corporate-finance/articles/ai-trends-financial-management-2026.aspx) rapporte que **82% des entreprises de taille intermédiaire et 95% des firmes de private equity ont commencé ou envisagent d'implémenter l'IA agentique en 2026** ⁸.
 
 Pour les opérations financières, l'IA agentique signifie que les workflows qui étaient auparavant une séquence de tâches humaines peuvent maintenant s'exécuter de bout en bout avec une intervention humaine minimale. Comme Gartner le prédit, **15% des décisions de travail quotidiennes seront prises de manière autonome par l'IA agentique d'ici 2028** ⁷.
 
@@ -402,7 +403,7 @@ Cette combinaison — l'IA qui gère le volume, les humains qui gouvernent la qu
 5. BCG — *L'agenda IA du CFO : De l'automatisation à l'avantage* (2026) — [bcg.com](https://www.bcg.com/publications/2026/the-cfos-ai-agenda-from-automation-to-advantage)
 6. Gartner — *Gartner prédit que d'ici 2029, les CFOs qui implémentent un déploiement IA stratégique ajouteront 10 points de marge* (avril 2026) — [gartner.com](https://www.gartner.com/en/newsroom/press-releases/2026-04-28-gartnerpredicts-by-2029-cfos-who-implement-strategic-ai-deploymnt-will-add-10-margin-points-of-growth)
 7. Gartner — *L'IA agentique va transformer la finance : Voici ce que les CFOs devraient faire maintenant* (octobre 2025) — [gartner.com](https://www.gartner.com/en/articles/agentic-ai-in-finance)
-8. Citizens Bank — *Tendances IA en gestion financière 2026* (décembre 2025) — [citizensbank.com](https://www.citizensbank.com/corporate-finance/insights/ai-trends-financial-management-2026.aspx)
+8. Citizens Bank — *Tendances IA en gestion financière 2026* (décembre 2025) — [citizensbank.com](https://www.citizensbank.com/corporate-finance/articles/ai-trends-financial-management-2026.aspx)
 9. SolveXia — *32 tendances et statistiques d'automatisation financière pour 2026* (novembre 2025) — [solvexia.com](https://www.solvexia.com/blog/finance-automation-trends-and-statistics)
 10. Fortune — *L'IA en 2026 : Les CFOs prédisent une transformation, pas seulement des gains d'efficacité* (décembre 2025) — [fortune.com](https://fortune.com/2025/12/24/ai-in-2026-cfos-predict-transformation-not-just-efficiency-gains/)
   `,
