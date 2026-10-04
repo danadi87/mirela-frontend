@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { useLanguage } from "../hooks/useLanguage";
-import InsightCard from "../components/InsightCard";
+import InsightCard from "./InsightCard";
 import { allInsights } from "../data/insights";
-import styles from "../styles/Insights.module.css";
+import styles from "../styles/Articles.module.css";
 
-export default function Insights() {
+export default function Articles() {
   useScrollReveal();
   const { lang, t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState("all");

@@ -7,7 +7,7 @@ import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Resources from "./pages/Resources";
-import Insights from "./components/Insights";
+import Articles from "./components/Articles";
 import Enquiry from "./components/Enquiry";
 import InsightArticle from "./pages/InsightArticle";
 import ResourceLibrary from "./pages/ResourceLibrary";
@@ -26,7 +26,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/insights" element={<Insights />} />
+        <Route path="/articles" element={<Articles />} />
         <Route path="/enquiry" element={<Enquiry />} />
         <Route path="/insights/:id" element={<InsightArticle />} />
         <Route path="/resources/library" element={<ResourceLibrary />} />
