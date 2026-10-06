@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -14,6 +14,12 @@ import ResourceLibrary from "./pages/ResourceLibrary";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
+// Sends old /insights/<article> links to /articles/<article>
+function OldArticleRedirect() {
+  const { id } = useParams();
+  return <Navigate to={`/articles/${id}`} replace />;
+}
+
 function App() {
   return (
     <div className="app">
@@ -28,8 +34,10 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/enquiry" element={<Enquiry />} />
-        <Route path="/insights/:id" element={<InsightArticle />} />
+        <Route path="/articles/:id" element={<InsightArticle />} />
         <Route path="/resources/library" element={<ResourceLibrary />} />
+        <Route path="/insights" element={<Navigate to="/articles" replace />} />
+        <Route path="/insights/:id" element={<OldArticleRedirect />} />
       </Routes>
       <Footer />
     </div>
