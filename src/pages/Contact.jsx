@@ -10,12 +10,7 @@ const contactDetails = [
     value: "business.mdconsulting@gmail.com",
     href: "mailto:business.mdconsulting@gmail.com",
   },
-  {
-    icon: "📞",
-    labelKey: "Phone",
-    value: "+34 642 251 466",
-    href: "tel:+34642251466",
-  },
+
   {
     icon: "🔗",
     labelKey: "LinkedIn",
