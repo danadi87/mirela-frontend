@@ -14,7 +14,7 @@ export default function Navbar() {
     { to: "/services", label: t("nav", "services") },
     { to: "/projects", label: t("nav", "projects") },
     { to: "/resources", label: t("nav", "resources") },
-    { to: "/insights", label: t("nav", "insights") },
+    { to: "/articles", label: t("nav", "articles") },
     { to: "/contact", label: t("nav", "contact") },
   ];
 
